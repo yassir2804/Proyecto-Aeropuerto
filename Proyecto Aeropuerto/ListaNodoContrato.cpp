@@ -20,33 +20,64 @@ NodoContratoBase* ListaNodoContrato::getPrimero()
 	return primero;
 }
 
-bool ListaNodoContrato::esVacio()
+bool ListaNodoContrato::estaVacio()
 {
 	return (primero == NULL);
 }
 
-bool  ListaNodoContrato::ingresaContrato(NodoContratoBase* ptrContrato)  
+bool  ListaNodoContrato::ingresaContrato(contratoBase* ptrContrato)
 {
-	NodoContratoBase* nuevoNodo = new NodoContratoBase(ptrContrato, nullptr);
+	NodoContratoBase* nuevoNodo = primero;
 
-	if (esVacio()) {
-		primero = nuevoNodo;
+	if (estaVacio()) { 
+		primero = new NodoContratoBase(*ptrContrato, NULL); 
+		return true;
 	}
 	else {
-		NodoContratoBase* aux = primero;
-		while (aux->getNodoContratoBase() != nullptr) {
-			aux = aux->getNodoContratoBase();
+		while (nuevoNodo->getNodoContratoBase() != nullptr) {
+			nuevoNodo = nuevoNodo->getNodoContratoBase(); 
 		}
-		aux->setNodoContratoBase(nuevoNodo);
+		nuevoNodo->setNodoContratoBase(new NodoContratoBase(*ptrContrato, NULL));  
+		return true;
 	}
+	return false;
 }
 
-bool ListaNodoContrato::eliminaContrato()
+bool ListaNodoContrato::eliminaContratoPorCodigo(string cod)
 {
+	NodoContratoBase* aux = primero;
+	NodoContratoBase* anterior = NULL; 
+
+	if (!estaVacio() && aux->getContratoBase()->getCodContrato() == cod) {
+		NodoContratoBase* actual = primero;
+		if (!estaVacio()) {
+			primero = actual->getNodoContratoBase();
+			delete actual;
+			return true;
+		}
+	}
+	else 
+		if (!estaVacio()) {
+			while (aux != NULL && aux->getContratoBase()->getCodContrato() != cod) {
+				anterior = aux;
+				aux = aux->getNodoContratoBase();
+			}
+			anterior->setNodoContratoBase(aux->getNodoContratoBase());
+			delete aux;
+			return true;
+		}
 	return false;
 }
 
 string ListaNodoContrato::toString()
 {
-	return string();
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	while (aux != NULL) {
+		s << aux->getContratoBase()->toString();
+		aux = aux->getNodoContratoBase();
+		s << endl;
+	}
+	return s.str();  
 }

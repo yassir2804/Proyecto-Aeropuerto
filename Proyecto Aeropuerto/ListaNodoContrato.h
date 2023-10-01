@@ -15,11 +15,11 @@ public:
 	NodoContratoBase* getPrimero();
 
 	//Ingresar
-	bool esVacio();
-	bool ingresaContrato(NodoContratoBase* ptrContrato); 
+	bool estaVacio();
+	bool ingresaContrato(contratoBase* ptrContrato);  
 
 	//Eliminar
-	bool eliminaContrato();
+	bool eliminaContratoPorCodigo(string cod);
 
 	//toString
 	string toString();
