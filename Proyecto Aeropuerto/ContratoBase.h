@@ -5,11 +5,28 @@
 using namespace std;
 
 class contratoBase {
-private:
-	string horario;
-	string nombre;
-	int precio;
+protected: 
+	string descPuesto;
+	string codContrato;
+	double salario;
 
 public:
+	//Constructores
+	contratoBase();
+	contratoBase(string desc, string cod, double sala);
+
+	//Destructor
+	virtual ~contratoBase();
+
+	//get's
+	string getDescPuesto();
+	string getCodContrato();
+	double getSalario();
+
+	//set's
+
+	void setDescPuesto(string desc);
+	void setCodContrato(string cod);
+	void setSalario(double sal);
 
 };

@@ -128,6 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ContratoBase.h" />
+    <ClInclude Include="Fecha.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ContratoBase.cpp" />
+    <ClCompile Include="Fecha.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
