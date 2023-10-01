@@ -129,10 +129,15 @@
   <ItemGroup>
     <ClInclude Include="ContratoBase.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="Plaza.h" />
+    <ClInclude Include="PlazoFijo.h" />
+    <ClInclude Include="TiempoIndefinido.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContratoBase.cpp" />
     <ClCompile Include="Fecha.cpp" />
+    <ClCompile Include="Plaza.cpp" />
+    <ClCompile Include="PlazoFijo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

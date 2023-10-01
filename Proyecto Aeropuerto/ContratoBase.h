@@ -18,15 +18,17 @@ public:
 	//Destructor
 	virtual ~contratoBase();
 
-	//get's
+	//Get's
 	string getDescPuesto();
 	string getCodContrato();
 	double getSalario();
 
-	//set's
-
+	//Set's
 	void setDescPuesto(string desc);
 	void setCodContrato(string cod);
 	void setSalario(double sal);
+
+	//toString
+	virtual string toString() = 0;
 
 };
