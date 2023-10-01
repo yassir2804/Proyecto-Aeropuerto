@@ -8,6 +8,8 @@ class contratoBase {
 private:
 	string horario;
 	string nombre;
+	int precio;
+
 public:
 
 };
