@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="ContratoBase.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="ListaNodoContrato.h" />
     <ClInclude Include="NodoContrato.h" />
     <ClInclude Include="Plaza.h" />
     <ClInclude Include="PlazoFijo.h" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClCompile Include="ContratoBase.cpp" />
     <ClCompile Include="Fecha.cpp" />
+    <ClCompile Include="ListaNodoContrato.cpp" />
     <ClCompile Include="NodoContrato.cpp" />
     <ClCompile Include="Plaza.cpp" />
     <ClCompile Include="PlazoFijo.cpp" />
