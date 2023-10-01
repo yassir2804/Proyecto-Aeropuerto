@@ -10,7 +10,7 @@ private:
 	Fecha* ptrFechaCulminacion;
 public:
 	//Constructor
-	tiempoIndefinido(Plaza& plaza, Fecha& fIngreso, Fecha& fCulmina);
+	tiempoIndefinido(Plaza& plaza, Fecha& fIngreso, Fecha& fCulmina, string desc, string cod, double sala);
 
 	//Destructor
 	virtual ~tiempoIndefinido();

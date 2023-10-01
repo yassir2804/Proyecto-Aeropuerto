@@ -25,7 +25,7 @@ bool ListaNodoContrato::esVacio()
 	return (primero == NULL);
 }
 
-bool  ListaNodoContrato::ingresaContrato(NodoContratoBase* ptrContrato) 
+bool  ListaNodoContrato::ingresaContrato(NodoContratoBase* ptrContrato)  
 {
 	NodoContratoBase* nuevoNodo = new NodoContratoBase(ptrContrato, nullptr);
 

@@ -16,7 +16,7 @@ public:
 
 	//Ingresar
 	bool esVacio();
-	bool ingresaContrato(NodoContratoBase* ptrContrato);
+	bool ingresaContrato(NodoContratoBase* ptrContrato); 
 
 	//Eliminar
 	bool eliminaContrato();

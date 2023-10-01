@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Avion.h" />
+    <ClInclude Include="avionCivil.h" />
+    <ClInclude Include="avionMilitar.h" />
     <ClInclude Include="ContratoBase.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="ListaNodoContrato.h" />
@@ -134,8 +137,13 @@
     <ClInclude Include="Plaza.h" />
     <ClInclude Include="PlazoFijo.h" />
     <ClInclude Include="TiempoIndefinido.h" />
+    <ClInclude Include="tipoCarga.h" />
+    <ClInclude Include="tipoComerciales.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Avion.cpp" />
+    <ClCompile Include="avionCivil.cpp" />
+    <ClCompile Include="avionMilitar.cpp" />
     <ClCompile Include="ContratoBase.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="ListaNodoContrato.cpp" />
@@ -143,6 +151,8 @@
     <ClCompile Include="Plaza.cpp" />
     <ClCompile Include="PlazoFijo.cpp" />
     <ClCompile Include="TiempoIndefinido.cpp" />
+    <ClCompile Include="tipoCarga.cpp" />
+    <ClCompile Include="tipoComerciales.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

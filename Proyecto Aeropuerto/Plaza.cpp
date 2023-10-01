@@ -1,6 +1,6 @@
 #include "Plaza.h"
 
-Plaza::Plaza(string codPlaza, string nomPlaza): codigoPlaza(codPlaza), nombrePlaza(nomPlaza)
+Plaza::Plaza(string codPlaza, string nomPlaza, string desc, string cod, double sala): codigoPlaza(codPlaza), nombrePlaza(nomPlaza)
 {
 }
 
