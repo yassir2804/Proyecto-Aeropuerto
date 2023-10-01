@@ -6,7 +6,7 @@ using namespace std;
 
 class contratoBase {
 private:
-
+	string horario;
 public:
 
 };
