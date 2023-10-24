@@ -127,32 +127,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Avion.h" />
-    <ClInclude Include="avionCivil.h" />
-    <ClInclude Include="avionMilitar.h" />
-    <ClInclude Include="ContratoBase.h" />
-    <ClInclude Include="Fecha.h" />
-    <ClInclude Include="ListaNodoContrato.h" />
-    <ClInclude Include="NodoContrato.h" />
-    <ClInclude Include="Plaza.h" />
-    <ClInclude Include="PlazoFijo.h" />
-    <ClInclude Include="TiempoIndefinido.h" />
-    <ClInclude Include="tipoCarga.h" />
-    <ClInclude Include="tipoComerciales.h" />
+    <ClCompile Include="..\..\Respaldo\Avion.cpp" />
+    <ClCompile Include="..\..\Respaldo\AvionCarga.cpp" />
+    <ClCompile Include="..\..\Respaldo\AvionCivil.cpp" />
+    <ClCompile Include="..\..\Respaldo\AvionComercial.cpp" />
+    <ClCompile Include="..\..\Respaldo\AvionMilitar.cpp" />
+    <ClCompile Include="..\..\Respaldo\ContratoBase.cpp" />
+    <ClCompile Include="..\..\Respaldo\Fecha.cpp" />
+    <ClCompile Include="..\..\Respaldo\ListaNodoContrato.cpp" />
+    <ClCompile Include="..\..\Respaldo\Main.cpp" />
+    <ClCompile Include="..\..\Respaldo\NodoContrato.cpp" />
+    <ClCompile Include="..\..\Respaldo\Plaza.cpp" />
+    <ClCompile Include="..\..\Respaldo\PlazoFijo.cpp" />
+    <ClCompile Include="..\..\Respaldo\TiempoIndefinido.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Avion.cpp" />
-    <ClCompile Include="avionCivil.cpp" />
-    <ClCompile Include="avionMilitar.cpp" />
-    <ClCompile Include="ContratoBase.cpp" />
-    <ClCompile Include="Fecha.cpp" />
-    <ClCompile Include="ListaNodoContrato.cpp" />
-    <ClCompile Include="NodoContrato.cpp" />
-    <ClCompile Include="Plaza.cpp" />
-    <ClCompile Include="PlazoFijo.cpp" />
-    <ClCompile Include="TiempoIndefinido.cpp" />
-    <ClCompile Include="tipoCarga.cpp" />
-    <ClCompile Include="tipoComerciales.cpp" />
+    <ClInclude Include="..\..\Respaldo\Avion.h" />
+    <ClInclude Include="..\..\Respaldo\AvionCarga.h" />
+    <ClInclude Include="..\..\Respaldo\AvionCivil.h" />
+    <ClInclude Include="..\..\Respaldo\AvionComercial.h" />
+    <ClInclude Include="..\..\Respaldo\AvionMilitar.h" />
+    <ClInclude Include="..\..\Respaldo\ContratoBase.h" />
+    <ClInclude Include="..\..\Respaldo\Fecha.h" />
+    <ClInclude Include="..\..\Respaldo\ListaAvion.h" />
+    <ClInclude Include="..\..\Respaldo\ListaNodoContrato.h" />
+    <ClInclude Include="..\..\Respaldo\NodoAvion.h" />
+    <ClInclude Include="..\..\Respaldo\NodoContrato.h" />
+    <ClInclude Include="..\..\Respaldo\Plaza.h" />
+    <ClInclude Include="..\..\Respaldo\PlazoFijo.h" />
+    <ClInclude Include="..\..\Respaldo\TiempoIndefinido.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
