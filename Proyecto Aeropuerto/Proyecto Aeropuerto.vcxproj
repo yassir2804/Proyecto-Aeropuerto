@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administrativo.cpp" />
     <ClCompile Include="Avion.cpp" />
     <ClCompile Include="AvionCarga.cpp" />
     <ClCompile Include="AvionCivil.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="TiempoIndefinido.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Administrativo.h" />
     <ClInclude Include="Avion.h" />
     <ClInclude Include="AvionCarga.h" />
     <ClInclude Include="AvionCivil.h" />
