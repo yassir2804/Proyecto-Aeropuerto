@@ -2,7 +2,7 @@
 #include "Persona.h"
 
 class Empleado :public Persona {
-private:
+protected:
 	string puesto;
 	double salarioBase;
 public:

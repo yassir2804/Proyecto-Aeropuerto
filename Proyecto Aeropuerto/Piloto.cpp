@@ -20,7 +20,16 @@ int Piloto::getAnioExp()
 
 string Piloto::toString()
 {
-	return string();
+	stringstream s;
+
+	s << "-----INFORMACION DEL PILOTO-----" << endl;
+	s << "Nombre: " << nombre << endl;
+	s << "Cedula: " << cedula<< endl;
+	s << "Edad: " << edad<< endl;
+	s << "Puesto: " << puesto << endl;
+	s << "Anios Experiencia: " << aniosExp << endl;
+
+	return s.str();
 }
 
 
