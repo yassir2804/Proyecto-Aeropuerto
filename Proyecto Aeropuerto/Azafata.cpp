@@ -22,7 +22,7 @@ string Azafata::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DE LA AZFATA-----" << endl;
+	s << "-----INFORMACION DE LA AZAFATA-----" << endl;
 	s << "Nombre: " << nombre << endl;
 	s << "Cedula: " << cedula << endl;
 	s << "Edad: " << edad << endl;
