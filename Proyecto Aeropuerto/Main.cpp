@@ -1,6 +1,7 @@
 #include "ListaAvion.h"
 #include "Piloto.h"
 #include "Copiloto.h"
+#include "Azafata.h"
 
 int main() {
 
@@ -35,9 +36,11 @@ int main() {
 
 	Empleado* pil = new Piloto("Carlos","4000",33,"Supervisor",10);
 	Empleado* copil = new Copiloto("Carlos", "4000", 33, "Supervisor","625464");
+	Empleado* aza = new Azafata("Carlos", "4000", 33, "Supervisor", "China");
 
 	cout << pil->toString() << endl;
 	cout << copil->toString() << endl;
+	cout << aza->toString() << endl;
 
 	system("pause");
 
