@@ -25,7 +25,7 @@ bool ListaNodoContrato::estaVacio()
 	return (primero == NULL);
 }
 
-bool  ListaNodoContrato::ingresaContrato(contratoBase* ptrContrato)
+bool  ListaNodoContrato::ingresaContrato(ContratoBase* ptrContrato)
 {
 	NodoContratoBase* nuevoNodo = primero;
 

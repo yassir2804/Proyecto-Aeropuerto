@@ -16,7 +16,7 @@ public:
 
 	//Ingresar
 	bool estaVacio();
-	bool ingresaContrato(contratoBase* ptrContrato);
+	bool ingresaContrato(ContratoBase* ptrContrato);
 
 	//Eliminar
 	bool eliminaContratoPorCodigo(string cod);

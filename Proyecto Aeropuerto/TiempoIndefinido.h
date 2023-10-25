@@ -3,27 +3,27 @@
 #include"Fecha.h"
 #include"Plaza.h"
 
-class tiempoIndefinido : public contratoBase {
+class TiempoIndefinido : public ContratoBase {
 private:
 	Plaza* ptrPlaza;
-	Fecha* ptrFechaIngreso;
-	Fecha* ptrFechaCulminacion;
+	Fecha* fIngreso;
+	Fecha* fCese;
 public:
 	//Constructor
-	tiempoIndefinido(Plaza& plaza, Fecha& fIngreso, Fecha& fCulmina, string desc, string cod, double sala);
+	TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes);
 
 	//Destructor
-	virtual ~tiempoIndefinido();
+	virtual ~TiempoIndefinido();
 
 	//Set's
 	void setPlaza(Plaza& plaza);
 	void setFechaIngreso(Fecha& fI);
-	void setFechaCulmina(Fecha& fC);
+	void setFechaCese(Fecha& fC);
 
 	//Get's
 	Plaza* getPlaza();
 	Fecha* getFechaIngreso();
-	Fecha* getFechaCulmina();
+	Fecha* getFechaCese();
 
 	//toString
 

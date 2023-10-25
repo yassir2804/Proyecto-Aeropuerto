@@ -10,7 +10,7 @@ private:
 	string nombrePlaza;
 public:
 	//Constructor
-	Plaza(string codPlaza, string nomPlaza, string desc, string cod, double sala);
+	Plaza(string codPlaza, string nomPlaza);
 
 	//Destructor
 	virtual ~Plaza();

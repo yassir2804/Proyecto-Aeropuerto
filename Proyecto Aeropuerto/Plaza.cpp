@@ -1,6 +1,6 @@
 #include "Plaza.h"
 
-Plaza::Plaza(string codPlaza, string nomPlaza, string desc, string cod, double sala) : codigoPlaza(codPlaza), nombrePlaza(nomPlaza)
+Plaza::Plaza(string codPlaza, string nomPlaza) : codigoPlaza(codPlaza), nombrePlaza(nomPlaza)
 {
 }
 
@@ -31,7 +31,8 @@ string Plaza::getNombrePlaza()
 string Plaza::toString()
 {
 	stringstream s;
-	s << "El codigo de la plaza es el siguiente: " << codigoPlaza << endl
-		<< "El nombre de la plaza es el siguiente: " << nombrePlaza << endl;
+	s <<"----------INFORMACION DE LA PLAZA----------\n"
+		<< "Codigo de plaza: " << codigoPlaza << endl
+		<< "Nombre de plaza: " << nombrePlaza << endl;
 	return s.str();
 }

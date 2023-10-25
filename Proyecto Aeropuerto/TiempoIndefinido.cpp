@@ -1,60 +1,85 @@
 #include "TiempoIndefinido.h"
 
-tiempoIndefinido::tiempoIndefinido(Plaza& plaza, Fecha& fIngreso, Fecha& fCulmina, string desc, string cod, double sala)
-	:contratoBase(desc, cod, sala)
+
+
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes) :ContratoBase(desc, cod, sala,av,emp), ptrPlaza((Plaza*)&plaza), fIngreso((Fecha*)&fIng), fCese((Fecha*)&fCes)
 {
-	ptrPlaza = (Plaza*)&plaza;
-	ptrFechaIngreso = (Fecha*)&fIngreso;
-	ptrFechaCulminacion = (Fecha*)&fCulmina;
 }
 
-tiempoIndefinido::~tiempoIndefinido()
+TiempoIndefinido::~TiempoIndefinido()
 {
 	if (ptrPlaza != NULL)
 		delete ptrPlaza;
-	if (ptrFechaIngreso != NULL)
-		delete ptrFechaIngreso;
-	if (ptrFechaCulminacion != NULL)
-		delete ptrFechaCulminacion;
+	if (fIngreso != NULL)
+		delete fIngreso;
+	if (fCese != NULL)
+		delete fCese;
 }
 
-void tiempoIndefinido::setPlaza(Plaza& plaza)
+void TiempoIndefinido::setPlaza(Plaza& plaza)
 {
 	ptrPlaza = &plaza;
 }
 
-void tiempoIndefinido::setFechaIngreso(Fecha& fI)
+void TiempoIndefinido::setFechaIngreso(Fecha& fI)
 {
-	ptrFechaIngreso = &fI;
+	fIngreso = &fI;
 }
 
-void tiempoIndefinido::setFechaCulmina(Fecha& fC)
+void TiempoIndefinido::setFechaCese(Fecha& fC)
 {
-	ptrFechaCulminacion = &fC;
+	fCese = &fC;
 }
 
-Plaza* tiempoIndefinido::getPlaza()
+Plaza* TiempoIndefinido::getPlaza()
 {
 	return ptrPlaza;
 }
 
-Fecha* tiempoIndefinido::getFechaIngreso()
+Fecha* TiempoIndefinido::getFechaIngreso()
 {
-	return ptrFechaIngreso;
+	return fIngreso;
 }
 
-Fecha* tiempoIndefinido::getFechaCulmina()
+Fecha* TiempoIndefinido::getFechaCese()
 {
-	return ptrFechaCulminacion;
+	return fCese;
 }
 
-string tiempoIndefinido::toString()
+string TiempoIndefinido::toString()
 {
 	stringstream s;
-	s << "----TIEMPO INDEFINIDO----" << endl
-		/*<<"Informacion del contrato base: "<<endl<<descPuesto<<endl*/
-		<< "La informacion de la plaza es: " << endl << ptrPlaza->toString() << endl
-		<< "La fecha en la que ingreso fue: " << ptrFechaIngreso << endl
-		<< "La fecha en la que culmino fue: " << ptrFechaCulminacion << endl;
+
+	s << "-----INFORMACION DEL CONTRATO DE TIEMPO INDEFINIDO-----" << endl<<endl;
+	s << "Codigo del contrato: " << codContrato << endl;
+	s << "Descripcion del puesto: " << descPuesto << endl;
+	s << "Salario: " << salario << endl;
+	if (fIngreso != NULL)
+	{
+		s << "La fecha de ingreso es:" << fIngreso->toString()<<endl;
+	}
+	if (fCese != NULL)
+	{
+		s << "La fecha de cese de funciones es:" << fCese->toString() << endl;
+	}
+
+	if (ptrPlaza != NULL)
+	{
+		s << ptrPlaza->toString();
+	}
+
+	if (empleado != NULL)
+	{
+		s << empleado->toString();
+	}
+
+	if (avion != NULL)
+	{
+		s << avion->toString();
+	}
+
+
+
+
 	return s.str();
 }

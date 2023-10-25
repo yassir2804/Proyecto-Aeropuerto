@@ -6,9 +6,9 @@ NodoContratoBase::NodoContratoBase()
 	ptrSiguente = NULL;
 }
 
-NodoContratoBase::NodoContratoBase(contratoBase& ptrCon, NodoContratoBase* ptrNodo)
+NodoContratoBase::NodoContratoBase(ContratoBase& ptrCon, NodoContratoBase* ptrNodo)
 {
-	ptrContrato = (contratoBase*)&ptrCon;
+	ptrContrato = (ContratoBase*)&ptrCon;
 	ptrSiguente = ptrNodo;
 }
 
@@ -18,10 +18,10 @@ NodoContratoBase::~NodoContratoBase()
 		delete ptrContrato;
 }
 
-void NodoContratoBase::setContratoBase(contratoBase& ptrCon)
+void NodoContratoBase::setContratoBase(ContratoBase& ptrCon)
 {
 
-	ptrContrato = (contratoBase*)&ptrCon;
+	ptrContrato = (ContratoBase*)&ptrCon;
 }
 
 void NodoContratoBase::setNodoContratoBase(NodoContratoBase* ptrNodo)
@@ -29,7 +29,7 @@ void NodoContratoBase::setNodoContratoBase(NodoContratoBase* ptrNodo)
 	ptrSiguente = ptrNodo;
 }
 
-contratoBase* NodoContratoBase::getContratoBase()
+ContratoBase* NodoContratoBase::getContratoBase()
 {
 	return ptrContrato;
 }

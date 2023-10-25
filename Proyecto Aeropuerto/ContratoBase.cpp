@@ -1,43 +1,66 @@
 #include "ContratoBase.h"
 
-contratoBase::contratoBase() :codContrato(""), descPuesto(""), salario(0.0)
+ContratoBase::ContratoBase() :codContrato(""), descPuesto(""), salario(0.0)
 {
 }
 
-contratoBase::contratoBase(string desc, string cod, double sala) :descPuesto(desc), codContrato(cod), salario(sala)
+ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp) :descPuesto(desc), codContrato(cod), salario(sala), avion((Avion*)&av), empleado((Empleado*)&emp)
 {
 }
 
-contratoBase::~contratoBase()
+ContratoBase::~ContratoBase()
 {
+	if (empleado != NULL) delete empleado;
+	if (avion != NULL) delete empleado;
 }
 
-string contratoBase::getDescPuesto()
+string ContratoBase::getDescPuesto()
 {
 	return descPuesto;
 }
 
-string contratoBase::getCodContrato()
+string ContratoBase::getCodContrato()
 {
 	return codContrato;
 }
 
-double contratoBase::getSalario()
+double ContratoBase::getSalario()
 {
 	return salario;
 }
 
-void contratoBase::setDescPuesto(string desc)
+Empleado* ContratoBase::getEmpleado()
+{
+	return empleado;
+}
+
+Avion* ContratoBase::getAvion()
+{
+	return avion;
+}
+
+void ContratoBase::setDescPuesto(string desc)
 {
 	descPuesto = desc;
 }
 
-void contratoBase::setCodContrato(string cod)
+void ContratoBase::setCodContrato(string cod)
 {
 	codContrato = cod;
 }
 
-void contratoBase::setSalario(double sal)
+void ContratoBase::setSalario(double sal)
 {
 	salario = sal;
+}
+
+void ContratoBase::setEmpleado(Empleado& emp)
+{
+	empleado = (Empleado*)&emp;
+
+}
+
+void ContratoBase::getAvion(Avion& av)
+{
+	avion = (Avion*)&av;
 }

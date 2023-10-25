@@ -2,21 +2,21 @@
 #include"ContratoBase.h"
 class NodoContratoBase {
 private:
-	contratoBase* ptrContrato;
+	ContratoBase* ptrContrato;
 	NodoContratoBase* ptrSiguente;
 public:
 	//Constructor
 	NodoContratoBase();
-	NodoContratoBase(contratoBase& ptrCon, NodoContratoBase* ptrNodo);
+	NodoContratoBase(ContratoBase& ptrCon, NodoContratoBase* ptrNodo);
 
 	//Destructor
 	virtual ~NodoContratoBase();
 
 	//Set's
-	void setContratoBase(contratoBase& ptrCon);
+	void setContratoBase(ContratoBase& ptrCon);
 	void setNodoContratoBase(NodoContratoBase* ptrNodo);
 
 	//Get's
-	contratoBase* getContratoBase();
+	ContratoBase* getContratoBase();
 	NodoContratoBase* getNodoContratoBase();
 }; 
