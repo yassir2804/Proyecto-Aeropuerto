@@ -134,12 +134,19 @@
     <ClCompile Include="..\..\Respaldo\AvionMilitar.cpp" />
     <ClCompile Include="..\..\Respaldo\ContratoBase.cpp" />
     <ClCompile Include="..\..\Respaldo\Fecha.cpp" />
+    <ClCompile Include="..\..\Respaldo\ListaAvion.cpp" />
     <ClCompile Include="..\..\Respaldo\ListaNodoContrato.cpp" />
     <ClCompile Include="..\..\Respaldo\Main.cpp" />
+    <ClCompile Include="..\..\Respaldo\NodoAvion.cpp" />
     <ClCompile Include="..\..\Respaldo\NodoContrato.cpp" />
     <ClCompile Include="..\..\Respaldo\Plaza.cpp" />
     <ClCompile Include="..\..\Respaldo\PlazoFijo.cpp" />
     <ClCompile Include="..\..\Respaldo\TiempoIndefinido.cpp" />
+    <ClCompile Include="Empleado.cpp" />
+    <ClCompile Include="EmpPlanta.cpp" />
+    <ClCompile Include="EmpTripulacion.cpp" />
+    <ClCompile Include="Persona.cpp" />
+    <ClCompile Include="Piloto.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Respaldo\Avion.h" />
@@ -156,6 +163,11 @@
     <ClInclude Include="..\..\Respaldo\Plaza.h" />
     <ClInclude Include="..\..\Respaldo\PlazoFijo.h" />
     <ClInclude Include="..\..\Respaldo\TiempoIndefinido.h" />
+    <ClInclude Include="Empleado.h" />
+    <ClInclude Include="EmpPlanta.h" />
+    <ClInclude Include="EmpTripulacion.h" />
+    <ClInclude Include="Persona.h" />
+    <ClInclude Include="Piloto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
