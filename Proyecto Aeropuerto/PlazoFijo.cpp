@@ -49,7 +49,7 @@ string PlazoFijo::toString()
 	}
 	if (fCulminacion != NULL)
 	{
-		s << "La fecha de culimnacion es:" << fCulminacion->toString()<<endl;
+		s << "La fecha de culminacion es:" << fCulminacion->toString()<<endl;
 	}
 
 	if (empleado != NULL)

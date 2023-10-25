@@ -10,8 +10,7 @@ ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empl
 
 ContratoBase::~ContratoBase()
 {
-	if (empleado != NULL) delete empleado;
-	if (avion != NULL) delete empleado;
+
 }
 
 string ContratoBase::getDescPuesto()

@@ -74,6 +74,8 @@ string ListaNodoContrato::toString()
 	stringstream s;
 
 	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS--------" << endl << endl;
+
 	while (aux != NULL) {
 		s << aux->getContratoBase()->toString();
 		aux = aux->getNodoContratoBase();

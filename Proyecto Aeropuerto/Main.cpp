@@ -1,7 +1,6 @@
 #include "ListaAvion.h"
 #include "ListaEmpleado.h"
-#include "TiempoIndefinido.h"
-#include "PlazoFijo.h"
+#include "ListaNodoContrato.h"
 
 int main() {
 
@@ -14,14 +13,29 @@ int main() {
 	Plaza* pla = new Plaza("1234", "Aviador");
 	ContratoBase* tiem = new TiempoIndefinido("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil, *pla, *fech1, *fech2);
 	ContratoBase* plFij = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil, *fech1, *fech2);
+	ContratoBase* ser = new ServiciosProfesionales("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil,"Servicio de limpieza","Lunesa a viernes", * fech1, *fech2);
 
 
 	cout << tiem->toString()<<endl;
 	cout << plFij->toString() << endl;
+	cout << ser->toString() << endl;
 
 	//delete listE;
 
+	system("pause");
+	system("cls");
+
+	ListaNodoContrato* listC = new ListaNodoContrato();
+
+	listC->ingresaContrato(tiem);
+	listC->ingresaContrato(plFij);
+	listC->ingresaContrato(ser);
+
+	cout << listC->toString() << endl;
+
+
 
 	//delete listAv;
+	delete listC;
 	system("pause");
 }

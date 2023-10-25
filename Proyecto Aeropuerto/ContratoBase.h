@@ -1,10 +1,8 @@
 #pragma once
 #include"Empleado.h"
 #include"Avion.h"
-#include<iostream>
-#include<sstream>
+#include"Fecha.h"
 
-using namespace std;
 
 class ContratoBase {
 protected:

@@ -1,6 +1,5 @@
 #pragma once
 #include"ContratoBase.h"
-#include"Fecha.h"
 #include"Plaza.h"
 
 class TiempoIndefinido : public ContratoBase {

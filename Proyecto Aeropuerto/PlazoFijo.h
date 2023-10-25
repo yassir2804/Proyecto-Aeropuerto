@@ -1,6 +1,6 @@
 #pragma once
 #include"ContratoBase.h"
-#include"Fecha.h"
+
 
 class PlazoFijo : public ContratoBase {
 private:
@@ -25,4 +25,4 @@ public:
 
 
 };
-#pragma once
+
