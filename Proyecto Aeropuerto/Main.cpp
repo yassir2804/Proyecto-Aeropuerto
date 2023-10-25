@@ -34,7 +34,7 @@ int main() {
 
 	Empleado* pil = new Piloto("Carlos","4000",33,"Supervisor",10);
 
-	cout << pil->toString() << endl << endl;
+	cout << pil->toString() << endl;
 
 	system("pause");
 
