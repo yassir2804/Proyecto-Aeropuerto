@@ -24,7 +24,7 @@ string Administrativo::toString()
 
 	s << "-----INFORMACION DEL ADMINISTRATIVO-----" << endl;
 	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula << " Kilometros" << endl;
+	s << "Cedula: " << cedula << endl;
 	s << "Edad: " << edad << endl;
 	s << "Puesto: " << puesto << endl;
 	s << "Titulo: " << titulo << endl;

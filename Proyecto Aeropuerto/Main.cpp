@@ -3,6 +3,7 @@
 #include "Copiloto.h"
 #include "Azafata.h"
 #include "Administrativo.h"
+#include "Miscelaneo.h"
 
 int main() {
 
@@ -39,11 +40,13 @@ int main() {
 	Empleado* copil = new Copiloto("Carlos", "4000", 33, "Supervisor","625464");
 	Empleado* aza = new Azafata("Carlos", "4000", 33, "Supervisor", "China");
 	Empleado* admin = new Administrativo("Carlos", "4000", 33, "Supervisor", "Licenciatura");
+	Empleado* mis = new Miscelaneo("Carlos", "4000", 33, "Supervisor", "Noveno Grado");
 
 	cout << pil->toString() << endl;
 	cout << copil->toString() << endl;
 	cout << aza->toString() << endl;
 	cout << admin->toString() << endl;
+	cout << mis->toString() << endl;
 
 	system("pause");
 
