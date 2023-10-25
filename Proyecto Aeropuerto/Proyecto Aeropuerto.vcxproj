@@ -133,6 +133,7 @@
     <ClCompile Include="AvionComercial.cpp" />
     <ClCompile Include="AvionMilitar.cpp" />
     <ClCompile Include="ContratoBase.cpp" />
+    <ClCompile Include="Copiloto.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="EmpPlanta.cpp" />
     <ClCompile Include="EmpTripulacion.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="AvionComercial.h" />
     <ClInclude Include="AvionMilitar.h" />
     <ClInclude Include="ContratoBase.h" />
+    <ClInclude Include="Copiloto.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="EmpPlanta.h" />
     <ClInclude Include="EmpTripulacion.h" />
