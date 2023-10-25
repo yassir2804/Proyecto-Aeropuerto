@@ -1,9 +1,5 @@
 #include "ListaAvion.h"
-#include "Piloto.h"
-#include "Copiloto.h"
-#include "Azafata.h"
-#include "Administrativo.h"
-#include "Miscelaneo.h"
+#include "ListaEmpleado.h"
 
 int main() {
 
@@ -48,6 +44,25 @@ int main() {
 	cout << admin->toString() << endl;
 	cout << mis->toString() << endl;
 
+	system("pause");
+	system("cls");
+
+	ListaEmpleado* listE = new ListaEmpleado();
+
+	listE->ingresaEmpleado(*pil);
+
+	listE->ingresaEmpleado(*copil);
+
+	listE->ingresaEmpleado(*aza);
+
+	listE->ingresaEmpleado(*admin);
+
+	listE->ingresaEmpleado(*mis);
+
+
+	cout << listE->toString() << endl;
+
+	delete listE;
 	system("pause");
 
 	//delete listAv;

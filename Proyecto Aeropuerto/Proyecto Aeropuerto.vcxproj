@@ -141,11 +141,13 @@
     <ClCompile Include="EmpTripulacion.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="ListaAvion.cpp" />
+    <ClCompile Include="ListaEmpleado.cpp" />
     <ClCompile Include="ListaNodoContrato.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Miscelaneo.cpp" />
     <ClCompile Include="NodoAvion.cpp" />
     <ClCompile Include="NodoContrato.cpp" />
+    <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Plaza.cpp" />
@@ -167,10 +169,12 @@
     <ClInclude Include="EmpTripulacion.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="ListaAvion.h" />
+    <ClInclude Include="ListaEmpleado.h" />
     <ClInclude Include="ListaNodoContrato.h" />
     <ClInclude Include="Miscelaneo.h" />
     <ClInclude Include="NodoAvion.h" />
     <ClInclude Include="NodoContrato.h" />
+    <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Plaza.h" />
