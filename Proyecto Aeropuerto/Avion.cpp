@@ -16,6 +16,11 @@ Avion::~Avion()
 		delete fCreado;
 }
 
+void Avion::setTipo(string tip)
+{
+	tipo = tip;
+}
+
 void Avion::setCategoria(string cat)
 {
 	categoria = cat;
@@ -29,6 +34,11 @@ void Avion::setFechaCreacion(Fecha& fC)
 void Avion::setDistanciaRecorrida(double dist)
 {
 	distanciaRecorrida = dist;
+}
+
+string Avion::getTipo()
+{
+	return tipo;
 }
 
 string Avion::getCategoria()

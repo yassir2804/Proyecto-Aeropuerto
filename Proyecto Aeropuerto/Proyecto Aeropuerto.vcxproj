@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Administrativo.cpp" />
+    <ClCompile Include="Aeropuerto.cpp" />
     <ClCompile Include="Avion.cpp" />
     <ClCompile Include="AvionCarga.cpp" />
     <ClCompile Include="AvionCivil.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administrativo.h" />
+    <ClInclude Include="Aeropuerto.h" />
     <ClInclude Include="Avion.h" />
     <ClInclude Include="AvionCarga.h" />
     <ClInclude Include="AvionCivil.h" />

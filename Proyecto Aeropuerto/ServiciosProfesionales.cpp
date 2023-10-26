@@ -1,17 +1,14 @@
 #include "ServiciosProfesionales.h"
 
 
-ServiciosProfesionales::ServiciosProfesionales(string desc, string cod, double sala, Avion& av, Empleado& emp,string tSer, string hor, Fecha& fIni, Fecha& fCul) :ContratoBase(desc, cod, sala, av, emp),tipoServicio(tSer),horario(hor), fInicio(new Fecha(fIni)), fCulminacion(new Fecha(fCul))
+ServiciosProfesionales::ServiciosProfesionales(string desc, string cod, double sala, Avion& av, Empleado& emp,string tSer, string hor, Fecha& fIni, Fecha& fCul) :ContratoBase(desc, cod, sala, av, emp,fIni,fCul),tipoServicio(tSer),horario(hor)
 {
 }
 
 
 ServiciosProfesionales::~ServiciosProfesionales()
 {
-	if (fInicio != NULL)
-		delete fInicio;
-	if (fCulminacion != NULL)
-		delete fCulminacion;
+
 }
 
 void ServiciosProfesionales::setTipoServicio(string tSer)
@@ -24,17 +21,6 @@ void ServiciosProfesionales::setHorario(string hor)
 	horario = hor;
 }
 
-void ServiciosProfesionales::setFechaIngreso(Fecha& fIng)
-{
-	fInicio = &fIng;
-}
-
-void ServiciosProfesionales::setFechaCulminacion(Fecha& fCulm)
-{
-	fCulminacion = &fCulm;
-}
-
-
 string ServiciosProfesionales::getTipoServicio()
 {
 	return tipoServicio;
@@ -43,16 +29,6 @@ string ServiciosProfesionales::getTipoServicio()
 string ServiciosProfesionales::getHorario()
 {
 	return horario;
-}
-
-Fecha* ServiciosProfesionales::getFechaIngreso()
-{
-	return fInicio;
-}
-
-Fecha* ServiciosProfesionales::getFechaCulminacion()
-{
-	return fCulminacion;
 }
 
 string ServiciosProfesionales::toString()
@@ -66,9 +42,9 @@ string ServiciosProfesionales::toString()
 	s << "Tipo de servicio: " << tipoServicio << endl;
 	s << "Horario: " << horario << endl;
 
-	if (fInicio != NULL)
+	if (fIngreso != NULL)
 	{
-		s << "La fecha de ingreso es:" << fInicio->toString() << endl;
+		s << "La fecha de ingreso es:" << fIngreso->toString() << endl;
 	}
 	if (fCulminacion != NULL)
 	{

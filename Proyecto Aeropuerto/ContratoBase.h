@@ -9,13 +9,14 @@ protected:
 	string descPuesto;
 	string codContrato;
 	double salario;
+	Fecha* fIngreso;
+	Fecha* fCulminacion;
 	Empleado* empleado;
 	Avion* avion;
 
 public:
-	//Constructores
-	ContratoBase();
-	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp );
+	//Constructor
+	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp,Fecha& fIng, Fecha& fCul);
 
 	//Destructor
 	virtual ~ContratoBase();

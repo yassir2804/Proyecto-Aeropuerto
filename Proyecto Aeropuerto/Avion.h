@@ -18,11 +18,13 @@ public:
 	virtual ~Avion();
 
 	//Set's
+	void setTipo(string tip);
 	void setCategoria(string cat);
 	void setFechaCreacion(Fecha& fC);
 	void setDistanciaRecorrida(double dist);
 
 	//Get's
+	string getTipo();
 	string getCategoria();
 	Fecha* getFechaCreacion();
 	double getDistanciaRecorrida();

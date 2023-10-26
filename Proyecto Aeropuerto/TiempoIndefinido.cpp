@@ -2,7 +2,7 @@
 
 
 
-TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes) :ContratoBase(desc, cod, sala,av,emp), ptrPlaza((Plaza*)&plaza), fIngreso((Fecha*)&fIng), fCese((Fecha*)&fCes)
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes) :ContratoBase(desc, cod, sala,av,emp, fIng, fCes), ptrPlaza((Plaza*)&plaza)
 {
 }
 
@@ -10,10 +10,6 @@ TiempoIndefinido::~TiempoIndefinido()
 {
 	if (ptrPlaza != NULL)
 		delete ptrPlaza;
-	if (fIngreso != NULL)
-		delete fIngreso;
-	if (fCese != NULL)
-		delete fCese;
 }
 
 void TiempoIndefinido::setPlaza(Plaza& plaza)
@@ -21,29 +17,9 @@ void TiempoIndefinido::setPlaza(Plaza& plaza)
 	ptrPlaza = &plaza;
 }
 
-void TiempoIndefinido::setFechaIngreso(Fecha& fI)
-{
-	fIngreso = &fI;
-}
-
-void TiempoIndefinido::setFechaCese(Fecha& fC)
-{
-	fCese = &fC;
-}
-
 Plaza* TiempoIndefinido::getPlaza()
 {
 	return ptrPlaza;
-}
-
-Fecha* TiempoIndefinido::getFechaIngreso()
-{
-	return fIngreso;
-}
-
-Fecha* TiempoIndefinido::getFechaCese()
-{
-	return fCese;
 }
 
 string TiempoIndefinido::toString()
@@ -58,9 +34,9 @@ string TiempoIndefinido::toString()
 	{
 		s << "La fecha de ingreso es:" << fIngreso->toString()<<endl;
 	}
-	if (fCese != NULL)
+	if (fCulminacion != NULL)
 	{
-		s << "La fecha de cese de funciones es:" << fCese->toString() << endl;
+		s << "La fecha de cese de funciones es:" << fCulminacion->toString() << endl;
 	}
 
 	if (ptrPlaza != NULL)
@@ -77,9 +53,6 @@ string TiempoIndefinido::toString()
 	{
 		s << avion->toString();
 	}
-
-
-
 
 	return s.str();
 }

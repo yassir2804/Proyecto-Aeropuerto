@@ -2,7 +2,6 @@
 #include"AvionCivil.h"
 
 class AvionComercial : public AvionCivil {
-private:
 
 public:
 	//Constructor

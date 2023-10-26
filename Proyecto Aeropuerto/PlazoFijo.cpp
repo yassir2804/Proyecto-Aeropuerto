@@ -1,37 +1,14 @@
 #include "PlazoFijo.h"
 
 
-PlazoFijo::PlazoFijo(string desc, string cod, double sala, Avion& av, Empleado& emp, Fecha& fIng, Fecha& fCul):ContratoBase(desc, cod, sala,av,emp),fIngreso(new Fecha(fIng)), fCulminacion(new Fecha(fCul))
+PlazoFijo::PlazoFijo(string desc, string cod, double sala, Avion& av, Empleado& emp, Fecha& fIng, Fecha& fCul):ContratoBase(desc, cod, sala,av,emp,fIng,fCul)
 	{
 	}
 
 
 PlazoFijo::~PlazoFijo()
 {
-	if (fIngreso != NULL)
-		delete fIngreso;
-	if (fCulminacion != NULL)
-		delete fCulminacion;
-}
 
-void PlazoFijo::setFechaIngreso(Fecha& fIng)
-{
-	fIngreso = &fIng;
-}
-
-void PlazoFijo::setFechaCulminacion(Fecha& fCulm)
-{
-	fCulminacion = &fCulm;
-}
-
-Fecha* PlazoFijo::getFechaIngreso()
-{
-	return fIngreso;
-}
-
-Fecha* PlazoFijo::getFechaCulminacion()
-{
-	return fCulminacion;
 }
 
 string PlazoFijo::toString()

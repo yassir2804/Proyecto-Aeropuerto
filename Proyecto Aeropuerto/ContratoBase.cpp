@@ -1,10 +1,8 @@
 #include "ContratoBase.h"
 
-ContratoBase::ContratoBase() :codContrato(""), descPuesto(""), salario(0.0)
-{
-}
 
-ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp) :descPuesto(desc), codContrato(cod), salario(sala), avion((Avion*)&av), empleado((Empleado*)&emp)
+
+ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp, Fecha& fIng, Fecha& fCul) :descPuesto(desc), codContrato(cod), salario(sala), avion((Avion*)&av), empleado((Empleado*)&emp), fIngreso(new Fecha(fIng)), fCulminacion(new Fecha(fCul))
 {
 }
 
