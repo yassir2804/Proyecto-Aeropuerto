@@ -153,6 +153,7 @@
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Plaza.cpp" />
     <ClCompile Include="PlazoFijo.cpp" />
+    <ClCompile Include="ServicioAvionComercial.cpp" />
     <ClCompile Include="ServiciosProfesionales.cpp" />
     <ClCompile Include="TiempoIndefinido.cpp" />
   </ItemGroup>
@@ -182,6 +183,7 @@
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Plaza.h" />
     <ClInclude Include="PlazoFijo.h" />
+    <ClInclude Include="ServicioAvionComercial.h" />
     <ClInclude Include="ServiciosProfesionales.h" />
     <ClInclude Include="TiempoIndefinido.h" />
   </ItemGroup>
