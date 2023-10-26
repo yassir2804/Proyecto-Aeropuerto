@@ -26,7 +26,7 @@ string Piloto::toString()
 	s << "Nombre: " << nombre << endl;
 	s << "Cedula: " << cedula<< endl;
 	s << "Edad: " << edad<< endl;
-	s << "Puesto: " << puesto << endl;
+	s << "Ocupacion: " << ocupacion << endl;
 	s << "Anios Experiencia: " << aniosExp << endl;
 
 	return s.str();

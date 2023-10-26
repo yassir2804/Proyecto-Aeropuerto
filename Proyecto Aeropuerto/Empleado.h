@@ -3,16 +3,15 @@
 
 class Empleado :public Persona {
 protected:
-	string puesto;
-	double salarioBase;
+	string ocupacion;
 public:
 	Empleado(); 
-	Empleado(string no, string ce, int ed, string pues);
+	Empleado(string no, string ce, int ed, string ocu);
 	virtual ~Empleado();
 		
-	string getPuesto();
+	string getOcupacion();
 
-	void setPuesto(string pues);
+	void setOcupacion(string ocu);
 
 	virtual string toString();
 

@@ -4,7 +4,7 @@
 #include "ListaNodoContrato.h"
 
 
-class Aeropueto {
+class Aeropuerto {
 
 private:
 
@@ -15,8 +15,16 @@ private:
 	ListaEmpleado* listE;
 	ListaNodoContrato* listC;
 
-	Aeropueto(string nom, string ced, string tel, ListaAvion& lA, ListaEmpleado& lE, ListaNodoContrato& lNC );
+public:
 
+	Aeropuerto(string nom, string ced, string tel);
 
+	ListaEmpleado* getListaEmpleado();
+	ListaAvion* getListaAvion();
+	ListaNodoContrato* getListaNodoContrato();
+
+	bool ingresarEmpleado(Empleado& emp);
+	bool ingresarAvion(Avion& avi);
+	bool ingresarNodoContrato(ContratoBase& con);
 
 };

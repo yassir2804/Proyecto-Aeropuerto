@@ -1,10 +1,10 @@
 #include "Empleado.h"
 
-Empleado::Empleado() : Persona(), puesto(""), salarioBase(0.0)
+Empleado::Empleado() : Persona(), ocupacion("")
 {
 }
 
-Empleado::Empleado(string no, string ce, int ed, string pues) : Persona(no, ce, ed), puesto(pues)
+Empleado::Empleado(string no, string ce, int ed, string ocu) : Persona(no, ce, ed), ocupacion(ocu)
 {
 }
 
@@ -12,14 +12,14 @@ Empleado::~Empleado()
 {
 }
 
-string Empleado::getPuesto()
+string Empleado::getOcupacion()
 {
-	 return puesto; 
+	 return ocupacion; 
 }
 
-void Empleado::setPuesto(string pues)
+void Empleado::setOcupacion(string ocu)
 {
-	 puesto = pues; 
+	ocupacion = ocu;
 }
 
 string Empleado::toString()

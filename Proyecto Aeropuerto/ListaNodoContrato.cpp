@@ -25,19 +25,19 @@ bool ListaNodoContrato::estaVacio()
 	return (primero == NULL);
 }
 
-bool  ListaNodoContrato::ingresaContrato(ContratoBase* ptrContrato)
+bool  ListaNodoContrato::ingresaContrato(ContratoBase& ptrContrato)
 {
 	NodoContratoBase* nuevoNodo = primero;
 
 	if (estaVacio()) {
-		primero = new NodoContratoBase(*ptrContrato, NULL);
+		primero = new NodoContratoBase(ptrContrato, NULL);
 		return true;
 	}
 	else {
 		while (nuevoNodo->getNodoContratoBase() != nullptr) {
 			nuevoNodo = nuevoNodo->getNodoContratoBase();
 		}
-		nuevoNodo->setNodoContratoBase(new NodoContratoBase(*ptrContrato, NULL));
+		nuevoNodo->setNodoContratoBase(new NodoContratoBase(ptrContrato, NULL));
 		return true;
 	}
 	return false;

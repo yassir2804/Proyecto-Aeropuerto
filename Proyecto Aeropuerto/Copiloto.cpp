@@ -26,7 +26,7 @@ string Copiloto::toString()
 	s << "Nombre: " << nombre << endl;
 	s << "Cedula: " << cedula << endl;
 	s << "Edad: " << edad << endl;
-	s << "Puesto: " << puesto << endl;
+	s << "Ocupacion: " << ocupacion << endl;
 	s << "Telefono: " << numTele << endl;
 
 	return s.str();
