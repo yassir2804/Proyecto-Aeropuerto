@@ -5,6 +5,15 @@ Aeropuerto::Aeropuerto(string nom, string ced, string tel): nombreE(nom),cedulaJ
 	listA = new ListaAvion();
 	listE = new ListaEmpleado();
 	listC = new ListaNodoContrato();
+	listP = new ListaPlaza();
+}
+
+Aeropuerto::~Aeropuerto()
+{
+	if (listA != NULL)delete listA;
+	if (listE != NULL)delete listE;
+	if (listC != NULL)delete listC;
+	if (listP != NULL)delete listP;
 }
 
 ListaEmpleado* Aeropuerto::getListaEmpleado()
@@ -20,6 +29,11 @@ ListaAvion* Aeropuerto::getListaAvion()
 ListaNodoContrato* Aeropuerto::getListaNodoContrato()
 {
 	return listC;
+}
+
+ListaPlaza* Aeropuerto::getListaPlaza()
+{
+	return listP;
 }
 
 bool Aeropuerto::ingresarEmpleado(Empleado& emp)
@@ -38,6 +52,12 @@ bool Aeropuerto::ingresarAvion(Avion& avi)
 bool Aeropuerto::ingresarNodoContrato(ContratoBase& con)
 {
 	if (listC->ingresaContrato(con))return true;
+	else return false;
+}
+
+bool Aeropuerto::ingresarPlaza(Plaza& pla)
+{
+	if (listP->ingresaPlaza(pla))return true;
 	else return false;
 }
 

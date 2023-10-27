@@ -6,7 +6,7 @@ private:
 	NodoPlaza* ptrSiguente;
 public:
 	//Constructor
-	NodoPlaza();
+
 	NodoPlaza(Plaza& ptrPla, NodoPlaza* ptrNodo);
 
 	//Destructor

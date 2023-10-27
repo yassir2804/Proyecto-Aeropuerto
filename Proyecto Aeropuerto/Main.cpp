@@ -14,6 +14,7 @@ int main() {
 
 
 	Plaza* pla = new Plaza("1234", "Aviador");
+	Plaza* pla1 = new Plaza("432", "Huerfano");
 	ContratoBase* tiem = new TiempoIndefinido("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil, *pla, *fech1, *fech2);
 	ContratoBase* plFij = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil, *fech1, *fech2);
 	//ContratoBase* ser = new ServiciosProfesionales("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil,"Servicio de limpieza","Lunesa a viernes", * fech1, *fech2);
@@ -47,10 +48,13 @@ int main() {
 	ar->ingresarAvion(*av3);
 	ar->ingresarNodoContrato(*tiem);
 	ar->ingresarNodoContrato(*plFij);
-
+	ar->ingresarPlaza(*pla);
+	ar->ingresarPlaza(*pla1);
 
 	cout<<ar->getListaEmpleado()->toString();
 	cout << ar->getListaAvion()->toString();
 	cout << ar->getListaNodoContrato()->toString();
+	cout << ar->getListaPlaza()->toString();
 
+	delete ar;
 }

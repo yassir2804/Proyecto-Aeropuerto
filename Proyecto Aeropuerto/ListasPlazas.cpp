@@ -7,8 +7,8 @@ ListaPlaza::ListaPlaza()
 
 ListaPlaza::~ListaPlaza()
 {
-	NodoPlaza* aux = NULL;
-	aux = primero;
+	NodoPlaza* aux = primero;
+	
 	while (aux != NULL)
 	{
 		primero = primero->getSiguienteNodoPlaza();
@@ -24,17 +24,24 @@ bool ListaPlaza::estaVacio()
 
 bool ListaPlaza::ingresaPlaza(Plaza& pla) 
 {
+
 	NodoPlaza* aux = primero;
+
 	if (estaVacio()) {
+
 		primero = new NodoPlaza(pla, NULL);
 		return true;
 	}
 	else {
-		while (aux->getSiguienteNodoPlaza() != NULL) { 
-			aux = aux->getSiguienteNodoPlaza(); 
+
+		while (aux->getSiguienteNodoPlaza() != NULL) {
+
+			aux = aux->getSiguienteNodoPlaza();
+
 		}
+
 		aux->setSiguienteNodoPlaza(new NodoPlaza(pla, NULL));
-		return true;
+
 	}
 	return false;
 }

@@ -1,15 +1,9 @@
 #include "NodoPlaza.h"
 
-NodoPlaza::NodoPlaza()
-{
-	ptrPlaza = NULL;
-	ptrSiguente = NULL;
-}
 
-NodoPlaza::NodoPlaza(Plaza& ptrPla, NodoPlaza* ptrNodo)
+NodoPlaza::NodoPlaza(Plaza& ptrPla, NodoPlaza* ptrNodo) :ptrPlaza(new Plaza(ptrPla)), ptrSiguente(ptrNodo)
 {
-	ptrPlaza = (Plaza*)&ptrPla;
-	ptrSiguente = ptrNodo;
+
 }
 
 NodoPlaza::~NodoPlaza()
