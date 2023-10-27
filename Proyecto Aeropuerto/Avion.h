@@ -22,12 +22,14 @@ public:
 	void setCategoria(string cat);
 	void setFechaCreacion(Fecha& fC);
 	void setDistanciaRecorrida(double dist);
+	void setNumeroDePlaca(string numP);
 
 	//Get's
 	string getTipo();
 	string getCategoria();
 	Fecha* getFechaCreacion();
 	double getDistanciaRecorrida();
+	string getNumeroDePlaca();
 
 	//toString
 	virtual string toString() = 0;

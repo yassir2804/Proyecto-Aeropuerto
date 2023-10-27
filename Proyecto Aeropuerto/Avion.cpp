@@ -31,6 +31,11 @@ void Avion::setDistanciaRecorrida(double dist)
 	distanciaRecorrida = dist;
 }
 
+void Avion::setNumeroDePlaca(string numP)
+{
+	numPlaca = numP;
+}
+
 string Avion::getTipo()
 {
 	return tipo;
@@ -49,4 +54,9 @@ Fecha* Avion::getFechaCreacion()
 double Avion::getDistanciaRecorrida()
 {
 	return distanciaRecorrida;
+}
+
+string Avion::getNumeroDePlaca()
+{
+	return numPlaca;
 }
