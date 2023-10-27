@@ -1,15 +1,9 @@
 #include "AvionMilitar.h"
 
-AvionMilitar::AvionMilitar()
-	:velocidadMaxima(0.0), Avion()
+
+AvionMilitar::AvionMilitar(Fecha& fC, double dist, string cat, string tip, string numPla, double velMax ) :Avion(fC, dist, cat, tip, numPla), velocidadMaxima(velMax)
 {
 }
-
-AvionMilitar::AvionMilitar(Fecha& fC, double dist, string cat, double velMax, string tip) :Avion(fC, dist, cat, tip), velocidadMaxima(velMax)
-{
-}
-
-
 
 AvionMilitar::~AvionMilitar()
 {

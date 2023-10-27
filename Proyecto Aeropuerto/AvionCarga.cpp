@@ -37,7 +37,7 @@ string AvionCarga::toString()
 	s << "-----INFORMACION DEL AVION DE CARGA-----" << endl;
 	s << "Fecha de creacion del avion: " << fCreado->toString() << endl;
 	s << "Distancia recorrida: " << distanciaRecorrida << " Kilometros" << endl;
-	s << "Numero de Placa: " << numeroPlaca << endl;
+	s << "Numero de Placa: " << numPlaca << endl;
 	s << "Tipo de Avion: " << tipo << endl;
 	s << "Numero de Categoria: " << categoria << endl;
 

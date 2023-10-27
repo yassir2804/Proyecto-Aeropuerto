@@ -5,8 +5,8 @@ int main() {
 	Fecha* fech1 = new Fecha(12, 2, 2023);
 	Fecha* fech2 = new Fecha(30, 4, 2024);
 
-	Avion* av2 = new AvionCarga(*fech2, 4000, "a34", "1111", "Puerta lateral", 20, 20);
-	Avion* av3 = new AvionMilitar(*fech1, 4000, "a34", 200, "Caza");
+	Avion* av2 = new AvionCarga(*fech2, 4000, "a34", "1111", "Puerta lateral", 20,20);
+	Avion* av3 = new AvionMilitar(*fech2, 4000, "a34", "1111", "caza",200);
 
 	Empleado* pil = new Piloto("Carlos", "4000", 33, "Supervisor", 10);
 	Empleado* copil = new Copiloto("Carlos", "4000", 33, "Supervisor", "625464");
@@ -49,8 +49,8 @@ int main() {
 	ar->ingresarNodoContrato(*plFij);
 
 
-	//cout<<ar->getListaEmpleado()->toString();
-	//cout << ar->getListaAvion()->toString();
-	//cout << ar->getListaNodoContrato()->toString();
+	cout<<ar->getListaEmpleado()->toString();
+	cout << ar->getListaAvion()->toString();
+	cout << ar->getListaNodoContrato()->toString();
 
 }

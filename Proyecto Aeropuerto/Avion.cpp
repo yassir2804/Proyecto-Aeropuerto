@@ -1,7 +1,7 @@
 #include "Avion.h"
 
 
-Avion::Avion(Fecha& fC, double disRecorrida, string cat, string tip) :fCreado(new Fecha(fC)), distanciaRecorrida(disRecorrida), categoria(cat), tipo(tip)
+Avion::Avion(Fecha& fC, double disRecorrida, string cat, string tip, string numPla) :fCreado(new Fecha(fC)), distanciaRecorrida(disRecorrida), categoria(cat), tipo(tip), numPlaca(numPla)
 {
 }
 

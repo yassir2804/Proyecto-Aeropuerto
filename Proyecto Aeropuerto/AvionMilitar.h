@@ -7,8 +7,7 @@ private:
 
 public:
 	//Constructores
-	AvionMilitar();
-	AvionMilitar(Fecha& fC, double dist, string cat, double velMax, string tip);
+	AvionMilitar(Fecha& fC, double dist, string cat,  string tip, string numPla, double velMax);
 
 	//Destructores
 	virtual ~AvionMilitar();

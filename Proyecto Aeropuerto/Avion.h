@@ -12,7 +12,7 @@ protected:
 public:
 	//constructores
 
-	Avion(Fecha& fC, double disRecorrida, string cat, string tip);
+	Avion(Fecha& fC, double disRecorrida, string cat, string tip, string numPla);
 
 	//Destructor
 	virtual ~Avion();
