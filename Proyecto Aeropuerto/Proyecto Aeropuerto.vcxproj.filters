@@ -99,7 +99,10 @@
     <ClCompile Include="Aeropuerto.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ServicioAvionComercial.cpp">
+    <ClCompile Include="NodoPlaza.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ListasPlazas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -185,7 +188,10 @@
     <ClInclude Include="Aeropuerto.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ServicioAvionComercial.h">
+    <ClInclude Include="NodoPlaza.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ListasPlazas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ServicioAvionCarga.h">
