@@ -49,8 +49,8 @@ int main() {
 	ar->ingresarNodoContrato(*plFij);
 
 
-	cout<<ar->getListaEmpleado()->toString();
-	cout << ar->getListaAvion()->toString();
-	cout << ar->getListaNodoContrato()->toString();
+	//cout<<ar->getListaEmpleado()->toString();
+	//cout << ar->getListaAvion()->toString();
+	//cout << ar->getListaNodoContrato()->toString();
 
 }
