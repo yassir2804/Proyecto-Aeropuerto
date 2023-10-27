@@ -8,9 +8,11 @@ class Plaza {
 private:
 	string codigoPlaza;
 	string nombrePlaza;
+	bool ocupada;
+
 public:
 	//Constructor
-	Plaza(string codPlaza, string nomPlaza);
+	Plaza(string codPlaza, string nomPlaza,bool ocu);
 
 	//Destructor
 	virtual ~Plaza();
@@ -19,11 +21,13 @@ public:
 
 	void setCodigoPlaza(string codPla);
 	void setNombrePlaza(string nomPla);
+	void setOcupada(bool ocu);
 
 	//Get's
 
 	string getCodigoPlaza();
 	string getNombrePlaza();
+	bool getOcupada();
 
 	//toString
 	string toString();

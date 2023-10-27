@@ -1,6 +1,8 @@
 #include "Plaza.h"
 
-Plaza::Plaza(string codPlaza, string nomPlaza) : codigoPlaza(codPlaza), nombrePlaza(nomPlaza)
+
+
+Plaza::Plaza(string codPlaza, string nomPlaza, bool ocu) : codigoPlaza(codPlaza), nombrePlaza(nomPlaza),ocupada(ocu)
 {
 }
 
@@ -18,6 +20,11 @@ void Plaza::setNombrePlaza(string nomPla)
 	nombrePlaza = nomPla;
 }
 
+void Plaza::setOcupada(bool ocu)
+{
+	ocupada = ocu;
+}
+
 string Plaza::getCodigoPlaza()
 {
 	return codigoPlaza;
@@ -26,6 +33,11 @@ string Plaza::getCodigoPlaza()
 string Plaza::getNombrePlaza()
 {
 	return nombrePlaza;
+}
+
+bool Plaza::getOcupada()
+{
+	return ocupada;
 }
 
 string Plaza::toString()
