@@ -11,7 +11,7 @@ protected:
 
 public:
 	//constructores
-	Avion();
+
 	Avion(Fecha& fC, double disRecorrida, string cat, string tip);
 
 	//Destructor

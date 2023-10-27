@@ -1,10 +1,5 @@
 #include "Avion.h"
 
-Avion::Avion()
-{
-	fCreado = NULL;
-	distanciaRecorrida = 0.0;
-}
 
 Avion::Avion(Fecha& fC, double disRecorrida, string cat, string tip) :fCreado(new Fecha(fC)), distanciaRecorrida(disRecorrida), categoria(cat), tipo(tip)
 {
