@@ -8,7 +8,7 @@ protected:
 	double distanciaRecorrida;
 	string categoria;
 	string tipo;
-
+	string numPlaca;
 public:
 	//constructores
 	Avion();
