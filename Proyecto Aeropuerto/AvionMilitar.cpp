@@ -35,11 +35,11 @@ string AvionMilitar::toString()
 	stringstream s;
 
 	s << "-----INFORMACION DEL AVION MILITAR-----" << endl;
-	s << "Fecha de creacion del avion: " << fCreado->toString() << endl;
-	s << "Distancia recorrida: " << distanciaRecorrida << " Kilometros" << endl;
-	s << "Tipo de Avion: " << tipo << endl;
-	s << "Numero de Categoria: " << categoria << endl;
-	s << "Velocidad maxima: " << velocidadMaxima << " km/h" << endl;
+	s << "Fecha de creacion:	 " << fCreado->toString() << endl;
+	s << "Distancia recorrida:	 " << distanciaRecorrida << " Km" << endl;
+	s << "Tipo de Avion:		 " << tipo << endl;
+	s << "Numero de Categoria:	 " << categoria << endl;
+	s << "Velocidad maxima:	 " << velocidadMaxima << " km/h" << endl;
 
 	return s.str();
 }

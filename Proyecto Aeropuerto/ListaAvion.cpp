@@ -49,7 +49,7 @@ string ListaAvion::toString()
 	NodoAvion* aux = primero;
 	stringstream s;
 
-	s << "--------LISTA DE AVIONES--------" << endl << endl;
+	s << "\n--------LISTA DE AVIONES--------" << endl << endl;
 
 	while (aux != NULL) {
 

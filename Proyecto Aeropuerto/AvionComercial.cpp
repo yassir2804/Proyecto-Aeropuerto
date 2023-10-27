@@ -17,11 +17,11 @@ string AvionComercial::toString()
 	stringstream s;
 
 	s << "-----INFORMACION DEL AVION COMERCIAL-----" << endl;
-	s << "Fecha de creacion del avion: " << fCreado->toString() << endl;
-	s << "Distancia recorrida: " << distanciaRecorrida << " Kilometros" << endl;
-	s << "Numero de Placa: " << numPlaca << endl;
-	s << "Tipo de Avion: " << tipo << endl;
-	s << "Numero de Categoria: " << categoria << endl;
+	s << "Fecha de creacion:	" << fCreado->toString() << endl;
+	s << "Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
+	s << "Numero de Placa:	" << numPlaca << endl;
+	s << "Tipo de Avion:		" << tipo << endl;
+	s << "Numero de Categoria:	" << categoria << endl;
 
 	return s.str();
 

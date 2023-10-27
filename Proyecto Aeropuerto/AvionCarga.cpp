@@ -35,13 +35,13 @@ string AvionCarga::toString()
 {
 	stringstream s;
 	s << "-----INFORMACION DEL AVION DE CARGA-----" << endl;
-	s << "Fecha de creacion del avion: " << fCreado->toString() << endl;
-	s << "Distancia recorrida: " << distanciaRecorrida << " Kilometros" << endl;
-	s << "Numero de Placa: " << numPlaca << endl;
-	s << "Tipo de Avion: " << tipo << endl;
-	s << "Numero de Categoria: " << categoria << endl;
-
-	s << "El ancho de la puerta de carga es de: " << anchoPuerta << " metros" << endl;
-	s << "La altura de la puerta de carga es de: " << alturaPuerta << " metros" << endl;
+	s << "Fecha de creacion:	" << fCreado->toString() << endl;
+	s << "Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
+	s << "Numero de Placa:	" << numPlaca << endl;
+	s << "Tipo de Avion:		" << tipo << endl;
+	s << "Numero de Categoria:	" << categoria << endl << endl;
+	s << "*Informacion puerta del avion de carga*" << endl;
+	s << "Ancho de la puerta de carga: " << anchoPuerta << " mts" << endl;
+	s << "Altura de la puerta de carga: " << alturaPuerta << " mts" << endl;
 	return s.str();
 }

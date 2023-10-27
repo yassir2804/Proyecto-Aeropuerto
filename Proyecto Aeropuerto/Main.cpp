@@ -7,6 +7,7 @@ int main() {
 
 	Avion* av2 = new AvionCarga(*fech2, 4000, "a34", "1111", "Puerta lateral", 20,20);
 	Avion* av3 = new AvionMilitar(*fech2, 4000, "a34", "1111", "caza",200);
+	Avion* av1 = new AvionComercial(*fech1, 4000, "a34", "11111", "Pasillo Unico");
 
 	Empleado* pil = new Piloto("Carlos", "4000", 33, "Supervisor", 10);
 	Empleado* copil = new Copiloto("Carlos", "4000", 33, "Supervisor", "625464");
@@ -46,6 +47,7 @@ int main() {
 	ar->ingresarEmpleado(*copil);
 	ar->ingresarAvion(*av2);
 	ar->ingresarAvion(*av3);
+	ar->ingresarAvion(*av1);
 	ar->ingresarNodoContrato(*tiem);
 	ar->ingresarNodoContrato(*plFij);
 	ar->ingresarPlaza(*pla);
