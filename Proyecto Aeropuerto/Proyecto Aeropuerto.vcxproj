@@ -189,6 +189,7 @@
     <ClInclude Include="PlazoFijo.h" />
     <ClInclude Include="ServicioAvionCarga.h" />
     <ClInclude Include="ServicioAvionComercial.h" />
+    <ClInclude Include="ServicionAvionMilitar.h" />
     <ClInclude Include="ServiciosProfesionales.h" />
     <ClInclude Include="TiempoIndefinido.h" />
   </ItemGroup>

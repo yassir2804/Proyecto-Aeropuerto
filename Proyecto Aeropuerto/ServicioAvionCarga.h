@@ -17,35 +17,24 @@ public:
 		if (codigo == "B737") { return "AIRBUS 737"; }
 		if (codigo == "B777") { return "AIRBUS 777"; }
 	}
-	static int avionPasajeros(string codigo) {
-		if (codigo == "A319") { return 156; }
-		if (codigo == "A320") { return 220; }
-		if (codigo == "A321") { return 220; }
-		if (codigo == "A330") { return 293;  return 335; }
-		if (codigo == "A340") { return 261; return 419; }
-		if (codigo == "B737") { return 215; }
-		if (codigo == "B777") { return 550; }
-
+	static string avionPasajeros(string codigo) {
+		if (codigo == "A319") { return "156"; }
+		if (codigo == "A320") { return "220"; }
+		if (codigo == "A321") { return "220"; }
+		if (codigo == "A330") { return "293-335"; }
+		if (codigo == "A340") { return "261-419"; }
+		if (codigo == "B737") { return "215"; }
+		if (codigo == "B777") { return "550"; }
 	}
 
-	static double avionCarga(string codigo) {
-		if (codigo == "A319") { return 27, 7; }
-		if (codigo == "A320") { return 37, 40; }
-		if (codigo == "A321") { return 51, 70; }
-		if (codigo == "A330") { return 132, 4; return 158, 4; }
-		if (codigo == "A340") { return 168, 4; return 207, 6; }
-		if (codigo == "B737") { return 52.5; }
-		if (codigo == "B777") { return 162, 0; return 653, 0; }
-
-	}
-	static double avionRango(string codigo) {
-		if (codigo == "A319") { return 27, 7; }
-		if (codigo == "A320") { return 37, 40; }
-		if (codigo == "A321") { return 51, 70; }
-		if (codigo == "A330") { return 132, 4; return 158, 4; }
-		if (codigo == "A340") { return 168, 4; return 207, 6; }
-		if (codigo == "B737") { return 52.5; }
-		if (codigo == "B777") { return 162, 0; return 653, 0; }
-
+	static string avionCarga(string codigo) {
+		if (codigo == "A319") { return "27.7"; }
+		if (codigo == "A320") { return "37.40"; }
+		if (codigo == "A321") { return "51.70"; }
+		if (codigo == "A330") { return "132.4-158.4"; }
+		if (codigo == "A340") { return "168.4-207.6"; }
+		if (codigo == "B737") { return "52.5"; }
+		if (codigo == "B777") { return "162.0-653.0"; }
+		
 	}
 };
