@@ -33,7 +33,7 @@ void Controladora::control1() {
     do {
         op = Interfaz::menuIngresar();
         switch (op) {
-            //case 1: control1(); break;
+            case 1: control1_1(); break;
             //case 2: control2(); break;
             //case 3: control3(); break;
             //case 4: control4(); break;
@@ -43,4 +43,27 @@ void Controladora::control1() {
         // system("pause");
     } while (op != 5);
 
+}
+
+void Controladora::control1_1()
+{
+    int op;
+    do {
+        op = Interfaz::menuImngresarEmpleado();
+        switch (op) {
+            case 1: controlPiloto(); break;
+            //case 2: control2(); break;
+            //case 3: control3(); break;
+            //case 4: control4(); break;
+            //case 5: control5(); break;
+            //case 6: control6(); break;
+        }
+        // Elimina o mueve la pausa si es necesario.
+        // system("pause");
+    } while (op != 6);
+}
+
+void Controladora::controlPiloto()
+{
+    Interfaz::ingresarPiloto(aeropuerto);
 }

@@ -15,5 +15,7 @@ public:
 	void control0();
 	int controlMenu();
 	void control1();
+	void control1_1();
+	void controlPiloto();
 
 };
