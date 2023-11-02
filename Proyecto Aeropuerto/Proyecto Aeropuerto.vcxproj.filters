@@ -206,7 +206,7 @@
     <ClInclude Include="ListasPlazas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ServicioAvionCarga.h">
+    <ClInclude Include="Clase-Servicios.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ServicioAvionComercial.h">
