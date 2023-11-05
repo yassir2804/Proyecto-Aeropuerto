@@ -156,5 +156,5 @@ void Controladora::controlPlazoFijo()
 
 void Controladora::controlTiempoIndefinido()
 {
-    Interfaz::ingresarTiempoIndefinido(aeropuerto);
+    Interfaz::renovarTiempoIndefinido(aeropuerto);
 }

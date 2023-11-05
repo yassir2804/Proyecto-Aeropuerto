@@ -124,7 +124,7 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	}else msjErorrIngresar();
 
 
-	cout<<"\t"<<ar->getListaEmpleado()->toString();
+	cout<<ar->getListaEmpleado()->toString();
 
 
 	system("pause");
@@ -141,12 +141,12 @@ void Interfaz::ingresarCopiloto(Aeropuerto* ar)
 	cout << endl;
 	cout << "--------------CREACION DE UN COPILOTO-------------" << endl;
 	cout << "------------------------------------------------" << endl;
-	cout << "   Ingrese la cedula: ";
-	cin >> ced;
-	cout << "   Ingrese el nombre: ";
-	cin >> nom;
+	cout << "   Cedula: ";
+	cin >> ced; cout << endl;
+	cout << "   Nombre: ";
+	cin >> nom; cout << endl;
 	cout << "   Ingrese la edad: ";
-	cin >> ed;
+	cin >> ed; cout << endl;
 	cout << "   Ingrese el puesto: ";
 	cin >> pues;
 	cout << "   Ingrese el numero de telefono: ";
@@ -802,7 +802,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	}
 	system("pause");
 }
-void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
+void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 {
 	ContratoBase* tiem = NULL;
 	ContratoBase* plazo = NULL;
@@ -842,12 +842,14 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 		{
 			plazo = ar->getListaNodoContrato()->buscarContratoPorCod(cod);
 
-			cout << "---------------INGRESANDO DATOS NUEVOS--------------" << endl;
-			cout << "----------------------------------------------------" << endl;
+
 
 			if(ar->getListaPlaza()->existePlazaParaPuesto(plazo->getEmpleado()->getOcupacion())== false)cout << "\n   No existen plazas\n";
 			else
+
 			{
+				cout << "---------------INGRESANDO DATOS NUEVOS--------------" << endl;
+				cout << "----------------------------------------------------" << endl;
 				cout << ar->getListaPlaza()->imprimirPlazasDisponibles(plazo->getEmpleado()->getOcupacion());
 
 				cout << "   Ingrese el codigo de la plaza que desea seleccionar: ";
