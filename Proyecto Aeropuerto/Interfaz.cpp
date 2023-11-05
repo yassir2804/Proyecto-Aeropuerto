@@ -68,8 +68,8 @@ int Interfaz::menuIngresarAvion()
 	cout << "   <1>  Avion Comercial.                    " << endl;
 	cout << "   <2>  Avion de Carga.                     " << endl;
 	cout << "   <3>  Avion Militar.                      " << endl;
-	cout << "   <4>  Regresar.                           " << endl;
-	cout << "*--------------------------------------------*" << endl << endl;
+	cout << "   <4>  Regresar.                           " << endl<< endl;
+	cout << "*--------------------------------------------*" << endl ;
 	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
@@ -87,6 +87,22 @@ int Interfaz::menuIngresaContrato()
 	cout << "   <3>  Contrato de Tiempo Indefinido.         " << endl;
 	cout << "   <4>  Regresar.                              " << endl << endl;
 	cout << "*-----------------------------------------------*" << endl;
+	cout << "   Digite la opcion: ";
+	cin >> op;
+	return op;
+}
+
+int Interfaz::menuTiempoIndefinido()
+{
+	int op;
+	system("cls");
+	cout << endl;
+	cout << "--------------MENU DE CONTRATOS DE TIEMPO INDEFINIDO--------------" << endl;
+	cout << "*----------------------------------------------------------------*" << endl << endl;
+	cout << "   <1>  Renovar contrato vencido.   " << endl;
+	cout << "   <2>  Cesar contrato vencido.                " << endl;
+	cout << "   <3>  Regresar.                              " << endl << endl;
+	cout << "*----------------------------------------------------------------*" << endl;
 	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
@@ -124,7 +140,7 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	}else msjErorrIngresar();
 
 
-	cout<<"\t"<<ar->getListaEmpleado()->toString();
+	cout<<ar->getListaEmpleado()->toString();
 
 
 	system("pause");
@@ -672,7 +688,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 		cout << "   Digite la cedula del empleado que desea ligar a este contrato: ";
 		cin >> ced; cout << endl;
 
-		if (ar->getListaEmpleado()->existeEmpleado(ced) == false) cout << "   \n No exite ningun empleado con esa cedula\n";
+		if (ar->getListaEmpleado()->existeEmpleado(ced) == false)msjNoExisteCedula();
 		else
 		{
 			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) cout << "   \n El empleado ya esta asociado a un contrato\n";
@@ -802,7 +818,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	}
 	system("pause");
 }
-void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
+void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 {
 	ContratoBase* tiem = NULL;
 	ContratoBase* plazo = NULL;
@@ -847,7 +863,10 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 
 			if(ar->getListaPlaza()->existePlazaParaPuesto(plazo->getEmpleado()->getOcupacion())== false)cout << "\n   No existen plazas\n";
 			else
+
 			{
+				cout << "---------------INGRESANDO DATOS NUEVOS--------------" << endl;
+				cout << "----------------------------------------------------" << endl;
 				cout << ar->getListaPlaza()->imprimirPlazasDisponibles(plazo->getEmpleado()->getOcupacion());
 
 				cout << "   Digite el codigo de la plaza que desea seleccionar: ";
@@ -918,7 +937,12 @@ void Interfaz::msjExitoIngresar()
 void Interfaz::msjSinEmpleados()
 {
 
-	cout << "\n No se puede crear el contrato debido a que no hay ningun empleado registrado" << endl;
+	cout << " No se puede crear el contrato debido a que no hay ningun empleado registrado" << endl<<endl;
+}
+
+void Interfaz::msjNoExisteCedula()
+{
+	cout << " No existe ningun empleado con esa cedula" << endl << endl;
 }
 
 
