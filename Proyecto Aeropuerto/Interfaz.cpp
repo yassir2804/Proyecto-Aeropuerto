@@ -8,12 +8,12 @@ int Interfaz::menuPrincipal()
 		cout << "------------GESTION DE AEROPUERTO----------" << endl;
 		cout << "-------------------------------------------" << endl;
 		cout << "*--------------------MENU-----------------*" << endl;
-		cout << "|	<1>  Ingresar.                         |" << endl;
-		cout << "|	<2>  Mantenimiento.                    |" << endl;
-		cout << "|	<3>  Reportes.                         |" << endl;
-		cout << "|	<4>  Consultar.                        |" << endl;
-		cout << "|	<5>  Gestion de Contratos.             |" << endl;
-		cout << "|	<6>  Salir.                            |" << endl;
+		cout << "|  <1>  Ingresar.                         |" << endl;
+		cout << "|  <2>  Mantenimiento.                    |" << endl;
+		cout << "|  <3>  Reportes.                         |" << endl;
+		cout << "|  <4>  Consultar.                        |" << endl;
+		cout << "|  <5>  Gestion de Contratos.             |" << endl;
+		cout << "|  <6>  Salir.                            |" << endl;
 		cout << "*-----------------------------------------*" << endl;
 		cout << "   Digite la opcion: ";
 		cin >> op;

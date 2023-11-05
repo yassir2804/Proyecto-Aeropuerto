@@ -4,7 +4,7 @@ int main() {
 
 	Fecha* fech1 = new Fecha(12, 2, 2023);
 	Fecha* fech2 = new Fecha(30, 4, 2024);
-
+	 
 	Avion* av2 = new AvionCarga(*fech2, 4000, "A319", "1111", "Puerta lateral", 20, 20);
 	Avion* av3 = new AvionMilitar(*fech2, 4000, "M300", "1111", "caza", 200);
 	Avion* av1 = new AvionComercial(*fech1, 4000, "310", "11111", "Pasillo Unico");
@@ -69,6 +69,7 @@ int main() {
 	if (ar->getListaNodoContrato()->existeContratoConEmpleado("4000"))cout << "si existe" << endl;
 	else cout << "no existe" << endl;
 
+	cout<<"Hola Mundo";
 	delete ar;
 	system("pause");
 
