@@ -55,25 +55,42 @@ int servicio::avionComercialPasajeros(string codigo)
 
 double servicio::avionComercialRango(string codigo)
 {
-	return 0.0;
+	if (codigo == "310") { return 8300; }
+	if (codigo == "747") { return 6700; }
+	if (codigo == "767") { return 123000; }
+	if (codigo == "777") { return 7450; }
+	if (codigo == "130") { return 6400; }
+	if (codigo == "850") { return 14000; }
 }
 
 double servicio::avionComercialVelocidad(string codigo)
 {
-	return 0.0;
+	if (codigo == "310") { return 895; }
+	if (codigo == "747") { return 980; }
+	if (codigo == "767") { return 885; }
+	if (codigo == "777") { return 980; }
+	if (codigo == "130") { return 2200; }
+	if (codigo == "850") { return 875; }
 }
 
 int servicio::avionComercialPrecio(string codigo)
 {
-	return 0;
+	if (codigo == "310") { return 120; }
+	if (codigo == "747") { return 200; }
+	if (codigo == "767") { return 120; }
+	if (codigo == "777") { return 180; }
+	if (codigo == "130") { return 350; }
+	if (codigo == "850") { return 80; }
 }
 
 string servicio::avionMilitarCategoria(string codigo)
 {
-	return string();
+	if (codigo == "M300") { return "AIRBUS 300-600"; }
+	if (codigo == "M130") { return "ANTONOV"; }
 }
 
 double servicio::avionMilitarVelocidad(string codigo)
 {
-	return 0.0;
+	if (codigo == "M300") { return 4630; }
+	if (codigo == "M130") { return 4000; }
 }
