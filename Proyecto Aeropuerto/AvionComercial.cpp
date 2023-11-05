@@ -18,8 +18,8 @@ string AvionComercial::toString()
 
 	s << "*-----INFORMACION DEL AVION COMERCIAL-----*" << endl;
 	s << "|Numero de Placa:	" << numPlaca << "		  |" << endl;
-	s << "|Fecha de creacion:	" << fCreado->toString() <<"|" << endl;
-	s << "|Distancia recorrida:	" << distanciaRecorrida << " Km		  |" << endl;
+	s << "|Fecha de creacion:	" << fCreado->toString() <<" |" << endl;
+	s << "|Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
 	s << "|Tipo de Avion:		" << tipo << "	  |" << endl;
 	s << "|Numero de Categoria:	" << categoria << "		  |" << endl;
 	s << "|Categoria del avion:	" << Servicio::avionComercial(categoria) << "	  |" << endl;
