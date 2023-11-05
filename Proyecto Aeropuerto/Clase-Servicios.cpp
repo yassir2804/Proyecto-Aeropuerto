@@ -1,6 +1,6 @@
 #include "Clase-Servicios.h"
 
-string servicio::avionCarga(string codigo)
+string Servicio::avionCarga(string codigo)
 {
 	if (codigo == "A319") { return "AIRBUS 319"; }
 	if (codigo == "A320") { return "AIRBUS 320"; }
@@ -11,7 +11,7 @@ string servicio::avionCarga(string codigo)
 	if (codigo == "B777") { return "AIRBUS 777"; }
 }
 
-string servicio::avionCargaPasajeros(string codigo)
+string Servicio::avionCargaPasajeros(string codigo)
 {
 	if (codigo == "A319") { return "156"; }
 	if (codigo == "A320") { return "220"; }
@@ -22,7 +22,7 @@ string servicio::avionCargaPasajeros(string codigo)
 	if (codigo == "B777") { return "550"; }
 }
 
-string servicio::avionCargaVelocidades(string codigo)
+string Servicio::avionCargaVelocidades(string codigo)
 {
 	if (codigo == "A319") { return "27.7"; }
 	if (codigo == "A320") { return "37.40"; }
@@ -33,7 +33,7 @@ string servicio::avionCargaVelocidades(string codigo)
 	if (codigo == "B777") { return "162.0-653.0"; }
 }
 
-string servicio::avionComercial(string codigo)
+string Servicio::avionComercial(string codigo)
 {
 	if (codigo == "310") { return "Airbus A310"; }
 	if (codigo == "747") { return "Boeing 747"; }
@@ -43,7 +43,7 @@ string servicio::avionComercial(string codigo)
 	if (codigo == "850") { return "DC-8-50"; }
 }
 
-int servicio::avionComercialPasajeros(string codigo)
+int Servicio::avionComercialPasajeros(string codigo)
 {
 	if (codigo == "310") { return 250; }
 	if (codigo == "747") { return 470; }
@@ -53,7 +53,7 @@ int servicio::avionComercialPasajeros(string codigo)
 	if (codigo == "850") { return 145; }
 }
 
-double servicio::avionComercialRango(string codigo)
+double Servicio::avionComercialRango(string codigo)
 {
 	if (codigo == "310") { return 8300; }
 	if (codigo == "747") { return 6700; }
@@ -63,7 +63,7 @@ double servicio::avionComercialRango(string codigo)
 	if (codigo == "850") { return 14000; }
 }
 
-double servicio::avionComercialVelocidad(string codigo)
+double Servicio::avionComercialVelocidad(string codigo)
 {
 	if (codigo == "310") { return 895; }
 	if (codigo == "747") { return 980; }
@@ -73,7 +73,7 @@ double servicio::avionComercialVelocidad(string codigo)
 	if (codigo == "850") { return 875; }
 }
 
-int servicio::avionComercialPrecio(string codigo)
+int Servicio::avionComercialPrecio(string codigo)
 {
 	if (codigo == "310") { return 120; }
 	if (codigo == "747") { return 200; }
@@ -83,13 +83,13 @@ int servicio::avionComercialPrecio(string codigo)
 	if (codigo == "850") { return 80; }
 }
 
-string servicio::avionMilitarCategoria(string codigo)
+string Servicio::avionMilitarCategoria(string codigo)
 {
 	if (codigo == "M300") { return "AIRBUS 300-600"; }
 	if (codigo == "M130") { return "ANTONOV"; }
 }
 
-double servicio::avionMilitarVelocidad(string codigo)
+double Servicio::avionMilitarVelocidad(string codigo)
 {
 	if (codigo == "M300") { return 4630; }
 	if (codigo == "M130") { return 4000; }

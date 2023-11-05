@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class servicio {
+class Servicio {
 public:
 
 	static string avionCarga(string codigo);

@@ -40,6 +40,8 @@ string AvionMilitar::toString()
 	s << "Distancia recorrida:	 " << distanciaRecorrida << " Km" << endl;
 	s << "Tipo de Avion:		 " << tipo << endl;
 	s << "Numero de Categoria:	 " << categoria << endl;
+	s << "Categoria del avion:	" << Servicio::avionMilitarCategoria(categoria) << endl;
+	s << "Velocidad promedio del avion: " << Servicio::avionMilitarVelocidad(categoria) << endl;
 	s << "Velocidad maxima:	 " << velocidadMaxima << " km/h" << endl;
 
 	return s.str();

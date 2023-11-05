@@ -22,6 +22,11 @@ string AvionComercial::toString()
 	s << "Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
 	s << "Tipo de Avion:		" << tipo << endl;
 	s << "Numero de Categoria:	" << categoria << endl;
+	s << "Categoria del avion: " << Servicio::avionComercial(categoria) << endl;
+	s << "Cantidad de pasajeros: " << Servicio::avionComercialPasajeros(categoria) << endl;
+	s << "Rango del avion: " << Servicio::avionComercialRango(categoria) << " kms" << endl;
+	s << "Velocidad del avion: " << Servicio::avionComercialVelocidad(categoria) << " kms/h" << endl;
+	s << "Precion de cada avion: " << Servicio::avionComercialPrecio(categoria) << ".000.000$" << endl;
 
 	return s.str();
 
