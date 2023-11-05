@@ -61,6 +61,66 @@ bool ListaPlaza::existePlaza(string cod)
 	return false;
 }
 
+bool ListaPlaza::existePlazaParaPuesto(string pues)
+{
+	NodoPlaza* aux = primero;
+
+	while (aux != NULL) {
+		if (aux->getPlaza()->getNombrePlaza() == pues && aux->getPlaza()->getOcupada()== false) {
+			return true;
+		}
+		aux = aux->getSiguienteNodoPlaza();
+	}
+
+	return false;
+}
+
+bool ListaPlaza::existePlazaDisponible(string cod, string pues)
+{
+	NodoPlaza* aux = primero;
+
+	while (aux != NULL) {
+		if (aux->getPlaza()->getCodigoPlaza() == cod && aux->getPlaza()->getOcupada() == false && aux->getPlaza()->getNombrePlaza() == pues) {
+			return true;
+		}
+		aux = aux->getSiguienteNodoPlaza();
+	}
+
+	return false;
+}
+
+Plaza* ListaPlaza::buscarPlazaPorCodigo(string cod)
+{
+	NodoPlaza* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getPlaza()->getCodigoPlaza() == cod) {
+			return  aux->getPlaza();
+		}
+		aux = aux->getSiguienteNodoPlaza();
+
+	}
+
+	return NULL;
+}
+
+string ListaPlaza::imprimirPlazasDisponibles(string pues)
+{
+	NodoPlaza* aux = primero;
+	stringstream s;
+	s << "--------LISTA DE PLAZAS DISPONIBLES--------" << endl << endl;
+
+	while (aux != NULL) {
+		
+		if(aux->getPlaza()->getNombrePlaza() == pues && aux->getPlaza()->getOcupada()== false)s << aux->getPlaza()->toString() << endl;
+		aux = aux->getSiguienteNodoPlaza();
+
+	}
+	return s.str();
+}
+
 string ListaPlaza::toString()
 {
 	NodoPlaza* aux = primero;

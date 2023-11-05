@@ -89,7 +89,7 @@ string Servicio::avionMilitarCategoria(string codigo)
 	if (codigo == "M130") { return "ANTONOV"; }
 }
 
-double Servicio::avionMilitarVelocidad(string codigo)
+double Servicio::avionMilitarAlcance(string codigo)
 {
 	if (codigo == "M300") { return 4630; }
 	if (codigo == "M130") { return 4000; }

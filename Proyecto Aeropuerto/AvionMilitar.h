@@ -23,5 +23,7 @@ public:
 
 	//toString
 	string toString();
+
+	Avion* copia();
 };
 #pragma once

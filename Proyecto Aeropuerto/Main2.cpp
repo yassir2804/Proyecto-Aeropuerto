@@ -13,12 +13,13 @@ int main() {
 	Empleado* copil = new Copiloto("Carlos", "4000", 33, "Supervisor", "625464");
 	Empleado* aza = new Azafata("Carlos", "4000", 33, "Supervisor", "caca");
 	Empleado* admi = new Administrativo("Carlos", "4000", 33, "Supervisor", "Licenciatura");
+	Empleado* mis = new Miscelaneo("Carlos", "4000", 33, "Supervisor", "Licenciatura");
 
 
 
 	Plaza* pla = new Plaza("1234", "Aviador", true);
 	Plaza* pla1 = new Plaza("432", "Huerfano", false);
-	ContratoBase* tiem = new TiempoIndefinido("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil, *pla, *fech1, *fech2);
+	ContratoBase* tiem = new TiempoIndefinido("Contratacion en el puesto de aviador", "1111", 4500, *av3, *pil, *pla, *fech1);
 	ContratoBase* plFij = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *admi, *fech1, *fech2);
 	//ContratoBase* ser = new ServiciosProfesionales("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil,"Servicio de limpieza","Lunesa a viernes", * fech1, *fech2);
 
@@ -48,11 +49,13 @@ int main() {
 	ar->ingresarEmpleado(*pil);
 	ar->ingresarEmpleado(*copil);
 	ar->ingresarEmpleado(*aza);
+	ar->ingresarEmpleado(*admi);
+	ar->ingresarEmpleado(*mis);
 	ar->ingresarAvion(*av2);
 	ar->ingresarAvion(*av3);
 	ar->ingresarAvion(*av1);
-	//ar->ingresarNodoContrato(*tiem);
-	//ar->ingresarNodoContrato(*plFij);
+	ar->ingresarContrato(*tiem);
+	ar->ingresarContrato(*plFij);
 	ar->ingresarPlaza(*pla);
 	ar->ingresarPlaza(*pla1);
 
@@ -61,16 +64,28 @@ int main() {
 	cout << ar->getListaNodoContrato()->toString();
 	cout << ar->getListaPlaza()->toString();
 
+	ar->getListaNodoContrato()->eliminaContratoPorCodigo("1111");
 
-	if (ar->getListaNodoContrato()->estaVacio())cout << "Esta vacio" << endl;
-	else cout << "No esta vacio" << endl;
+	cout << ar->getListaEmpleado()->toString();
+	cout << ar->getListaAvion()->toString();
+	cout << ar->getListaNodoContrato()->toString();
+	cout << ar->getListaPlaza()->toString();
 
 
-	if (ar->getListaNodoContrato()->existeContratoConEmpleado("4000"))cout << "si existe" << endl;
-	else cout << "no existe" << endl;
-
-	cout<<"Hola Mundo";
 	delete ar;
+	//Avion* av1 = new AvionMilitar(*fech2, 4000, "M300", "1111", "caza", 200);
+	//Avion* av2 = av1->copia();
+
+	//cout << av1->toString() << endl;
+	//cout << av2->toString() << endl;
+
+	//av1->setDistanciaRecorrida(3);
+
+
+	//cout << av1->toString() << endl;
+	//cout << av2->toString() << endl;
+
+
 	system("pause");
 
 }

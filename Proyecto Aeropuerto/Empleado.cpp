@@ -21,8 +21,3 @@ void Empleado::setOcupacion(string ocu)
 {
 	ocupacion = ocu;
 }
-
-string Empleado::toString()
-{
-	return string();
-}

@@ -22,13 +22,19 @@ string Administrativo::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL ADMINISTRATIVO-----" << endl;
-	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula << endl;
-	s << "Edad: " << edad << endl;
-	s << "Ocupacion: " << ocupacion << endl;
-	s << "Titulo: " << titulo << endl;
+	s << "*-----INFORMACION DEL EMPLEADO-----*" << endl << endl;
+	s << "   Nombre: " << nombre << endl;
+	s << "   Cedula: " << cedula << endl;
+	s << "   Edad: " << edad << endl;
+	s << "   Ocupacion: " << ocupacion << endl;
+	s << "   Titulo: " << titulo << endl << endl;
+	s << "*----------------------------------*" << endl;
 
 	return s.str();
+}
+
+Empleado* Administrativo::copia()
+{
+	return new Administrativo(nombre, cedula, edad, ocupacion, titulo);
 }
 

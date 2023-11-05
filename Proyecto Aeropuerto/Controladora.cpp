@@ -94,7 +94,7 @@ void Controladora::control1_4()
         switch (op) {
         case 1: controlServiciosProfesionales(); break;
         case 2: controlPlazoFijo(); break;
-        //case 3: contolAvionMilitar(); break;
+        case 3: controlTiempoIndefinido(); break;
             //case 4: controlAdministrativo(); break;
             //case 5: controlMiscelaneo(); break;
             //case 6: control6(); break;
@@ -152,4 +152,9 @@ void Controladora::controlServiciosProfesionales()
 void Controladora::controlPlazoFijo()
 {
     Interfaz::ingresarPlazoFijo(aeropuerto);
+}
+
+void Controladora::controlTiempoIndefinido()
+{
+    Interfaz::ingresarTiempoIndefinido(aeropuerto);
 }

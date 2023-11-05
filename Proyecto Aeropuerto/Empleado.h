@@ -13,6 +13,7 @@ public:
 
 	void setOcupacion(string ocu);
 
-	virtual string toString();
+	virtual string toString() = 0;
+	virtual Empleado* copia() = 0;
 
 };

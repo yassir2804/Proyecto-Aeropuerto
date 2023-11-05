@@ -48,3 +48,8 @@ string Fecha::toString()
 	s << dia << "/" << mes << "/" << anio;
 	return s.str();
 }
+
+Fecha* Fecha::copia()
+{
+	return   new Fecha(dia, mes, anio);
+}

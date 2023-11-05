@@ -31,4 +31,7 @@ public:
 
 	//toString
 	string toString();
+
+
+	Plaza* copia();
 };

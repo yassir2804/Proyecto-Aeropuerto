@@ -7,13 +7,13 @@ int Interfaz::menuPrincipal()
 		cout << endl;
 		cout << "------------GESTION DE AEROPUERTO----------" << endl;
 		cout << "-------------------------------------------" << endl;
-		cout << "*--------------------MENU-----------------*" << endl;
-		cout << "|  <1>  Ingresar.                         |" << endl;
-		cout << "|  <2>  Mantenimiento.                    |" << endl;
-		cout << "|  <3>  Reportes.                         |" << endl;
-		cout << "|  <4>  Consultar.                        |" << endl;
-		cout << "|  <5>  Gestion de Contratos.             |" << endl;
-		cout << "|  <6>  Salir.                            |" << endl;
+		cout << "*-------------------MENU------------------*" << endl<<endl;
+		cout << "	<1>  Ingresar.                         " << endl;
+		cout << "	<2>  Mantenimiento.                    " << endl;
+		cout << "	<3>  Reportes.                         " << endl;
+		cout << "	<4>  Consultar.                        " << endl;
+		cout << "	<5>  Gestion de Contratos.             " << endl;
+		cout << "	<6>  Salir.                            " << endl<<endl;
 		cout << "*-----------------------------------------*" << endl;
 		cout << "   Digite la opcion: ";
 		cin >> op;
@@ -26,12 +26,12 @@ int Interfaz::menuIngresar()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU DE INGRESOS-------------" << endl;
-	cout << "*-----------------------------------------*" << endl;
-	cout << "|   <1>  Ingresar Empleado.               |" << endl;
-	cout << "|   <2>  Ingresar Avion.                  |" << endl;
-	cout << "|   <3>  Ingresar Plaza.                  |" << endl;
-	cout << "|   <4>  Ingresar Contrato.               |" << endl;
-	cout << "|   <5>  Regresar.                        |" << endl;
+	cout << "*-----------------------------------------*" <<endl<< endl;
+	cout << "   <1>  Ingresar Empleado.               " << endl;
+	cout << "   <2>  Ingresar Avion.                  " << endl;
+	cout << "   <3>  Ingresar Plaza.                  " << endl;
+	cout << "   <4>  Ingresar Contrato.               " << endl;
+	cout << "   <5>  Regresar.                        " << endl << endl;
 	cout << "*-----------------------------------------*" << endl;
 	cout << "   Digite la opcion: ";
 	cin >> op;
@@ -44,15 +44,15 @@ int Interfaz::menuIngresarEmpleado()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR EMPLEADO-------------" << endl;
+	cout << "*-----------------------------------------------*" << endl << endl;
+	cout << "   <1>  Piloto.                                " << endl;
+	cout << "   <2>  Copiloto.                              " << endl;
+	cout << "   <3>  Azafata.                               " << endl;
+	cout << "   <4>  Administrativo.                        " << endl;
+	cout << "   <5>  Miscelaneo.                            " << endl;
+	cout << "   <6>  Regresar.                              " << endl << endl;
 	cout << "*-----------------------------------------------*" << endl;
-	cout << "|   <1>  Piloto.                                |" << endl;
-	cout << "|   <2>  Copiloto.                              |" << endl;
-	cout << "|   <3>  Azafata.                               |" << endl;
-	cout << "|   <4>  Administrativo.                        |" << endl;
-	cout << "|   <5>  Miscelaneo.                            |" << endl;
-	cout << "|   <6>  Regresar.                              |" << endl;
-	cout << "*-----------------------------------------------*" << endl;
-	cout << "   Ingrese el tipo de empleado a crear: ";
+	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
 
@@ -64,13 +64,13 @@ int Interfaz::menuIngresarAvion()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR AVION-------------" << endl;
-	cout << "*--------------------------------------------*" << endl;
-	cout << "|   <1>  Avion Comercial.                    |" << endl;
-	cout << "|   <2>  Avion de Carga.                     |" << endl;
-	cout << "|   <3>  Avion Militar.                      |" << endl;
-	cout << "|   <4>  Regresar.                           |" << endl;
-	cout << "*--------------------------------------------*" << endl;
-	cout << "   Ingrese el tipo de avion a crear: ";
+	cout << "*--------------------------------------------*" << endl << endl;
+	cout << "   <1>  Avion Comercial.                    " << endl;
+	cout << "   <2>  Avion de Carga.                     " << endl;
+	cout << "   <3>  Avion Militar.                      " << endl;
+	cout << "   <4>  Regresar.                           " << endl;
+	cout << "*--------------------------------------------*" << endl << endl;
+	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
 }
@@ -81,13 +81,13 @@ int Interfaz::menuIngresaContrato()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR CONTRATO-------------" << endl;
+	cout << "*-----------------------------------------------*" << endl << endl;
+	cout << "   <1>  Contrato de Servicios Profesionales.   " << endl;
+	cout << "   <2>  Contrato de Plazo Fijo.                " << endl;
+	cout << "   <3>  Contrato de Tiempo Indefinido.         " << endl;
+	cout << "   <4>  Regresar.                              " << endl << endl;
 	cout << "*-----------------------------------------------*" << endl;
-	cout << "|   <1>  Contrato de Servicios Profesionales.   |" << endl;
-	cout << "|   <2>  Contrato de Plazo Fijo.                |" << endl;
-	cout << "|   <3>  Contrato de Tiempo Indefinido.         |" << endl;
-	cout << "|   <4>  Regresar.                              |" << endl;
-	cout << "*-----------------------------------------------*" << endl;
-	cout << "   Ingrese el tipo de contrato que desea crear: ";
+	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
 }
@@ -103,16 +103,16 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN PILOTO-------------" << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   Digite la cedula: ";
-	cin >> ced;
-	cout << "   Digite el nombre: ";
-	cin >> nom;
-	cout << "   Digite la edad: ";
-	cin >> ed;
-	cout << "   Digite el puesto: ";
-	cin >> pues;
-	cout << "   Digite los anios de experiencia: ";
+	cout << "------------------------------------------------" << endl<<endl;
+	cout << "   Cedula: ";
+	cin >> ced;	cout << endl;
+	cout << "   Nombre: ";
+	cin >> nom;	cout << endl;
+	cout << "   Edad: ";
+	cin >> ed;	cout << endl;
+	cout << "   Puesto: ";
+	cin >> pues;	cout << endl;
+	cout << "   Anios de experiencia: ";
 	cin >> exp; cout << endl;
 
 
@@ -124,7 +124,7 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	}else msjErorrIngresar();
 
 
-	cout<<ar->getListaEmpleado()->toString();
+	cout<<"\t"<<ar->getListaEmpleado()->toString();
 
 
 	system("pause");
@@ -533,7 +533,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 							cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
 
-							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No exite ningun avion con esa placa\n";
+							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No existe ningun avion con esa placa\n";
 							else
 							{
 								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) cout << "   \n Este avion ya posee un Piloto\n";
@@ -559,14 +559,14 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 
 						if (typeid(*emp) == typeid(Copiloto)) {
 
-							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No exite ningun avion civil\n";
+							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No existe ningun avion civil\n";
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesCiviles();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No exite ningun avion civil con esa placa\n";
+								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No existe ningun avion civil con esa placa\n";
 								else
 								{
 									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) cout << " Este avion ya posee un Copiloto\n";
@@ -591,14 +591,14 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 						}
 						if (typeid(*emp) == typeid(Azafata)) {
 
-							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No exite ningun avion comercial\n";
+							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No existe ningun avion comercial\n";
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesComerciales();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No exite ningun avion comercial con esa placa\n";
+								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No existe ningun avion comercial con esa placa\n";
 								else
 								{
 									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) cout << " Este avion ya posee una azafata\n";
@@ -635,7 +635,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 
 void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 {
-	ContratoBase* plaza = NULL;
+	ContratoBase* plazo = NULL;
 	Empleado* emp = NULL;
 	Avion* avi = NULL;
 	Fecha* fIng = NULL;
@@ -647,7 +647,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE CONTRATO DE PLAZO FIJO--------------" << endl;
-	cout << "----------------------------------------------------------------------------" << endl;
+	cout << "---------------------------------------------------------------" << endl;
 
 	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
 	else
@@ -682,10 +682,10 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 
 				if (typeid(*emp) == typeid(Administrativo) || typeid(*emp) == typeid(Miscelaneo))
 				{
-					plaza = new  PlazoFijo(desc, cod, sala, *emp, *fIng, *fCul);
+					plazo = new  PlazoFijo(desc, cod, sala, *emp, *fIng, *fCul);
 
 					if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
-						if (ar->ingresarContrato(*plaza))msjExitoIngresar();
+						if (ar->ingresarContrato(*plazo))msjExitoIngresar();
 						else msjErorrIngresar();
 					}
 					else msjErorrIngresar();
@@ -711,10 +711,10 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 								{
 									avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
 
-									plaza = new  PlazoFijo(desc, cod, sala, *avi, *emp,*fIng, *fCul);
+									plazo = new  PlazoFijo(desc, cod, sala, *avi, *emp,*fIng, *fCul);
 
 									if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
-										if (ar->ingresarContrato(*plaza))msjExitoIngresar();
+										if (ar->ingresarContrato(*plazo))msjExitoIngresar();
 										else msjErorrIngresar();
 									}
 									else msjErorrIngresar();
@@ -744,10 +744,10 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
 
-										plaza = new  PlazoFijo(desc, cod, sala, *avi, *emp, *fIng, *fCul);
+										plazo = new  PlazoFijo(desc, cod, sala, *avi, *emp, *fIng, *fCul);
 
 										if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
-											if (ar->ingresarContrato(*plaza))msjExitoIngresar();
+											if (ar->ingresarContrato(*plazo))msjExitoIngresar();
 											else msjErorrIngresar();
 										}
 										else msjErorrIngresar();
@@ -776,10 +776,10 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
 
-										plaza = new  PlazoFijo(desc, cod, sala, *avi, *emp, *fIng, *fCul);
+										plazo = new  PlazoFijo(desc, cod, sala, *avi, *emp, *fIng, *fCul);
 
 										if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
-											if (ar->ingresarContrato(*plaza))msjExitoIngresar();
+											if (ar->ingresarContrato(*plazo))msjExitoIngresar();
 											else msjErorrIngresar();
 										}
 										else msjErorrIngresar();
@@ -802,15 +802,117 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	}
 	system("pause");
 }
+void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
+{
+	ContratoBase* tiem = NULL;
+	ContratoBase* plazo = NULL;
+	Plaza* pla = NULL;
+	Fecha* act = NULL;
+	Fecha* fIng = NULL;
+	string cod;
+	int  dd, mm, yy;
+	double sala;
+
+	system("cls");
+	cout << endl;
+	cout << "---------------CREACION DE CONTRATO DE TIEMPO INDEFINIDO--------------" << endl;
+	cout << "----------------------------------------------------------------------" << endl;
+
+	cout << "   Ingrese la fecha actual: " << endl << endl;
+	cout << "   Ingrese el dia: ";
+	cin >> dd;
+	cout << "   Ingrese el mes: ";
+	cin >> mm;
+	cout << "   Ingrese el anio: ";
+	cin >> yy;
+
+	act = new Fecha(dd, mm, yy);
+
+
+	if (ar->getListaNodoContrato()->existenContratosVencidos(*act)== false)cout << "\n   No hay contratos vencidos disponibles\n";
+	else
+	{
+
+		cout << ar->getListaNodoContrato()->imprimirContratosVencidos(*act);
+		cout << "   Ingrese el codigo del contrato que desea seleccionar: ";
+		cin >> cod; cout << endl;
+
+		if (ar->getListaNodoContrato()->existeContratoVencidoConCod(*act,cod) == false) cout << "   No existe nigun contrato para renovar con ese codigo\n";
+		else
+		{
+			plazo = ar->getListaNodoContrato()->buscarContratoPorCod(cod);
+
+			cout << "---------------INGRESANDO DATOS NUEVOS--------------" << endl;
+			cout << "----------------------------------------------------" << endl;
+
+			if(ar->getListaPlaza()->existePlazaParaPuesto(plazo->getEmpleado()->getOcupacion())== false)cout << "\n   No existen plazas\n";
+			else
+			{
+				cout << ar->getListaPlaza()->imprimirPlazasDisponibles(plazo->getEmpleado()->getOcupacion());
+
+				cout << "   Ingrese el codigo de la plaza que desea seleccionar: ";
+				cin >> cod;
+
+				if (ar->getListaPlaza()->existePlazaDisponible(cod, plazo->getEmpleado()->getOcupacion()) == false) cout << "\n   No hay plazas disponibles con ese codigo\n";
+				else 
+				{
+
+					pla = ar->getListaPlaza()->buscarPlazaPorCodigo(cod);
+
+
+					cout << "   Ingrese el codigo del contrato: ";
+					cin >> cod;
+
+					cout << "   Ingrese el salario: ";
+					cin >> sala;
+
+					cout << "   Ingrese la fecha de Ingreso: " << endl;
+					cout << "   Ingrese el dia: ";
+					cin >> dd;
+					cout << "   Ingrese el mes: ";
+					cin >> mm;
+					cout << "   Ingrese el anio: ";
+					cin >> yy;  cout<<endl;
+
+					fIng = new Fecha(dd, mm, yy);
+
+					if(typeid(*plazo->getEmpleado()) == typeid(Administrativo) || typeid(*plazo->getEmpleado()) == typeid(Miscelaneo))tiem = new TiempoIndefinido(plazo->getDescPuesto(), cod, plazo->getSalario(), *plazo->getAvion(), *plazo->getEmpleado(), *pla, *fIng);
+					else tiem = new TiempoIndefinido(plazo->getDescPuesto(), cod, plazo->getSalario(),*plazo->getAvion(), *plazo->getEmpleado(), *pla, *fIng);
+
+					if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
+						if (ar->ingresarContrato(*tiem)) {
+
+							pla->setOcupada(true);
+							msjExitoIngresar();
+							ar->getListaNodoContrato()->eliminaContratoPorCodigo(plazo->getCodContrato());
+
+						}
+					
+						else msjErorrIngresar();
+					}
+					else msjErorrIngresar();
+
+
+					cout << ar->getListaNodoContrato()->toString();
+				}
+
+			}
+
+		}
+		
+	}
+
+	system("pause");
+}
 
 void Interfaz::msjErorrIngresar()
 {
-	cout << "Fallo al ingresar" << endl;
+	cout << "   Fallo al ingresar" << endl<<endl;
 }
 
 void Interfaz::msjExitoIngresar()
 {
-	cout << "Se ingreso con exito" << endl;
+	cout << "   Se ingreso con exito" << endl<<endl;
 }
 
 void Interfaz::msjSinEmpleados()

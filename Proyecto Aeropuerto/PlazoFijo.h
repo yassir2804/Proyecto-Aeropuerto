@@ -20,6 +20,9 @@ public:
 
 	void setAceptado(bool ace);
 
+
+	bool estaVencido(Fecha &actual);
+
 	virtual string toString();
 
 

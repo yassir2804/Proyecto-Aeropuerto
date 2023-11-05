@@ -1,5 +1,6 @@
 #pragma once
 #include"Fecha.h"
+#include"Clase-Servicios.h"
 
 
 class Avion {
@@ -33,5 +34,6 @@ public:
 
 	//toString
 	virtual string toString() = 0;
+	virtual Avion* copia() = 0;
 
 };

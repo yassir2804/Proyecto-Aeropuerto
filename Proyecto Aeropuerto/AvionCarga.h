@@ -30,4 +30,5 @@ public:
 
 	//toString
 	string toString();
+	Avion* copia();
 }; 
