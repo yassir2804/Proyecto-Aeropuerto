@@ -647,7 +647,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE CONTRATO DE PLAZO FIJO--------------" << endl;
-	cout << "----------------------------------------------------------------------------" << endl;
+	cout << "---------------------------------------------------------------" << endl;
 
 	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
 	else
@@ -801,6 +801,65 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 
 	}
 	system("pause");
+}
+void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
+{
+	ContratoBase* plaza = NULL;
+	Empleado* emp = NULL;
+	Avion* avi = NULL;
+	Fecha* fIng = NULL;
+	Fecha* fCul = NULL;
+	string desc, cod, ced, pla;
+	int  dd, mm, yy;
+	double sala;
+
+	system("cls");
+	cout << endl;
+	cout << "---------------CREACION DE CONTRATO DE TIEMPO INDEFINIDO--------------" << endl;
+	cout << "----------------------------------------------------------------------" << endl;
+
+	cout << "   Ingrese la fecha actual: " << endl << endl;
+	cout << "   Ingrese el dia: ";
+	cin >> dd;
+	cout << "   Ingrese el mes: ";
+	cin >> mm;
+	cout << "   Ingrese el anio: ";
+	cin >> yy;
+
+
+	if (ar->getListaNodoContrato()->existenContratosVencidos())cout << "\n No hay contratos vencido disponibles\n";
+	else
+	{
+		if (typeid(*emp) == typeid(Piloto)) {
+
+			cout << ar->getListaAvion()->toString();
+			cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
+			cin >> pla; cout << endl;
+
+			if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No exite ningun avion con esa placa\n";
+			else
+			{
+				if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) cout << "   \n Este avion ya posee un Piloto\n";
+				else
+				{
+					avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
+
+					plaza = new  PlazoFijo(desc, cod, sala, *avi, *emp, *fIng, *fCul);
+
+					if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
+						if (ar->ingresarContrato(*plaza))msjExitoIngresar();
+						else msjErorrIngresar();
+					}
+					else msjErorrIngresar();
+
+					cout << ar->getListaNodoContrato()->toString();
+
+
+				}
+
+			}
+		}
+	}
 }
 
 void Interfaz::msjErorrIngresar()

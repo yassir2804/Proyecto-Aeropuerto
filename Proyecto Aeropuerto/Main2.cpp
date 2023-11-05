@@ -5,8 +5,8 @@
 //	Fecha* fech1 = new Fecha(12, 2, 2023);
 //	Fecha* fech2 = new Fecha(30, 4, 2024);
 //
-//	Avion* av2 = new AvionCarga(*fech2, 4000, "a34", "1111", "Puerta lateral", 20, 20);
-//	Avion* av3 = new AvionMilitar(*fech2, 4000, "a34", "1111", "caza", 200);
+//	Avion* av2 = new AvionCarga(*fech2, 4000, "M300", "1111", "Puerta lateral", 20, 20);
+//	Avion* av3 = new AvionMilitar(*fech2, 4000, "M300", "1111", "caza", 200);
 //	Avion* av1 = new AvionComercial(*fech1, 4000, "a34", "11111", "Pasillo Unico");
 //
 //	Empleado* pil = new Piloto("Carlos", "4000", 33, "Supervisor", 10);

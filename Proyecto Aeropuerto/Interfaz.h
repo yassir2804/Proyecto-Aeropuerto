@@ -31,6 +31,7 @@ public:
 
 	static void ingresarServiciosProfesionales(Aeropuerto* ar);
 	static void ingresarPlazoFijo(Aeropuerto* ar);
+	static void ingresarTiempoIndefinido(Aeropuerto* ar);
 
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();

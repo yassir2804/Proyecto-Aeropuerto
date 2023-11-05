@@ -25,6 +25,8 @@ public:
 	bool existeAvionConCopiloto(string pla);
 	bool existeAvionConAzafata(string pla);
 
+	bool existenContratosVencidos(Fecha & fech);
+
 	bool eliminaContratoPorCodigo(string cod);
 	string toString();
 }; 

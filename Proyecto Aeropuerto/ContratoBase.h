@@ -36,6 +36,8 @@ public:
 	void setEmpleado(Empleado& emp);
 	void getAvion(Avion& av);
 
+	virtual bool estaVencido(Fecha& actual);
+
 	//toString
 	virtual string toString() = 0;
 

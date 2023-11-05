@@ -25,6 +25,16 @@ void PlazoFijo::setAceptado(bool ace)
 	aceptado = ace;
 }
 
+bool PlazoFijo::estaVencido(Fecha& actual)
+{
+	if (fCulminacion->getAnio() < actual.getAnio()) return true;
+	if (fCulminacion->getAnio() == actual.getAnio() && fCulminacion->getMes() < actual.getMes()) return true;
+	if (fCulminacion->getAnio() == actual.getAnio() && fCulminacion->getMes() == actual.getMes() && fCulminacion->getDia() < actual.getDia()) return true;
+
+	return false;
+}
+
+
 string PlazoFijo::toString()
 {
 	stringstream s;

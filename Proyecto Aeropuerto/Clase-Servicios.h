@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class servicio {
+class Servicio {
 public:
 
 	static string avionCarga(string codigo);
@@ -15,5 +15,5 @@ public:
 	static double avionComercialVelocidad(string codigo); 
 	static int avionComercialPrecio(string codigo);
 	static string avionMilitarCategoria(string codigo); 
-	static double avionMilitarVelocidad(string codigo);
+	static double avionMilitarAlcance(string codigo);
 };

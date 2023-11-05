@@ -126,7 +126,22 @@ bool ListaNodoContrato::existeAvionConAzafata(string pla)
 	return false;
 }
 
+bool ListaNodoContrato::existenContratosVencidos(Fecha& fech)
+{
+	NodoContratoBase* aux = primero;
 
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->estaVencido(fech)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return false;
+}
 
 bool ListaNodoContrato::eliminaContratoPorCodigo(string cod)
 {
