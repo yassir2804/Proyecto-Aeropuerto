@@ -17,6 +17,6 @@ public:
 	string getTitulo();
 
 	string toString();
-
+	Empleado* copia();
 
 };

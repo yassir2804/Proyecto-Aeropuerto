@@ -53,3 +53,8 @@ string Plaza::toString()
 
 	return s.str();
 }
+
+Plaza* Plaza::copia()
+{
+	return new Plaza(codigoPlaza, nombrePlaza, ocupada);
+}

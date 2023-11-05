@@ -15,5 +15,5 @@ public:
 	int getAnioExp();
 
 	string toString();
-
+	Empleado* copia();
 };

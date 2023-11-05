@@ -22,12 +22,18 @@ string Azafata::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DE LA AZAFATA-----" << endl;
-	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula << endl;
-	s << "Edad: " << edad << endl;
-	s << "Ocupacion: " << ocupacion << endl;
-	s << "Nacionalidad: " << nacionalidad << endl;
+	s << "*-----INFORMACION DEL EMPLEADO-----*" << endl << endl;
+	s << "   Nombre: " << nombre << endl;
+	s << "   Cedula: " << cedula << endl;
+	s << "   Edad: " << edad << endl;
+	s << "   Ocupacion: " << ocupacion << endl;
+	s << "   Nacionalidad: " << nacionalidad << endl << endl;
+	s << "*----------------------------------*" << endl;
 
 	return s.str();
+}
+
+Empleado* Azafata::copia()
+{
+	return new Azafata(nombre, cedula, edad, ocupacion, nacionalidad);
 }

@@ -34,5 +34,6 @@ public:
 
 	//toString
 	virtual string toString() = 0;
+	virtual Avion* copia() = 0;
 
 };

@@ -9,8 +9,4 @@ Planta::~Planta()
 {
 }
 
-string Planta::toString()
-{
-	return string();
-}
 

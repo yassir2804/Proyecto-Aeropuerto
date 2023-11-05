@@ -7,8 +7,3 @@ Tripulacion::Tripulacion(string no, string ce, int ed, string pues) :Empleado(no
 Tripulacion::~Tripulacion()
 {
 }
-
-string Tripulacion::toString()
-{
-	return string();
-}

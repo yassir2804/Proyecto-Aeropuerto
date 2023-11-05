@@ -17,5 +17,7 @@ public:
 
 	string toString();
 
+	Empleado* copia();
+
 
 };

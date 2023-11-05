@@ -16,8 +16,13 @@ protected:
 
 public:
 	//Constructor
-	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp,Fecha& fIng, Fecha& fCul);
-	ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng, Fecha& fCul);
+	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp,Fecha& fIng, Fecha& fCul);//Constructor con avion para empleados de tripulacion
+	ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng, Fecha& fCul);//Constructuro sin avion para empleados de planta
+
+	//Cosntrctores sin fecha de cese para los contratos de tiempo indefinido
+
+	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp, Fecha& fIng);
+	ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng);
 
 	//Destructor
 	virtual ~ContratoBase();
@@ -37,6 +42,7 @@ public:
 	void getAvion(Avion& av);
 
 	virtual bool estaVencido(Fecha& actual);
+	virtual bool getAceptado();
 
 	//toString
 	virtual string toString() = 0;

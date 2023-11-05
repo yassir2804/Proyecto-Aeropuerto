@@ -22,12 +22,19 @@ string Miscelaneo::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL MISCELANEO-----" << endl;
-	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula << endl;
-	s << "Edad: " << edad << endl;
-	s << "Ocupacion: " << ocupacion << endl;
-	s << "Grado de Escolaridad: " << gradoEsc << endl;
+
+	s << "*-----INFORMACION DEL EMPLEADO-----*" << endl << endl;
+	s << "   Nombre: " << nombre << endl;
+	s << "   Cedula: " << cedula << endl;
+	s << "   Edad: " << edad << endl;
+	s << "   Ocupacion: " << ocupacion << endl;
+	s << "   Grado de escolaridad: " << gradoEsc << endl << endl;
+	s << "*----------------------------------*" << endl;
 
 	return s.str();
+}
+
+Empleado* Miscelaneo::copia()
+{
+	return new Miscelaneo(nombre, cedula, edad, ocupacion, gradoEsc);
 }

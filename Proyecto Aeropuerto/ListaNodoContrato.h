@@ -12,9 +12,6 @@ public:
 	//Destructor
 	virtual ~ListaNodoContrato();
 
-	
-	NodoContratoBase* getPrimero();
-
 	bool estaVacio();
 	bool ingresaContrato(ContratoBase& ptrContrato);
 
@@ -28,5 +25,12 @@ public:
 	bool existenContratosVencidos(Fecha & fech);
 
 	bool eliminaContratoPorCodigo(string cod);
+
+	bool existeContratoVencidoConCod(Fecha& fech, string cod);
+
+	ContratoBase* buscarContratoPorCod(string cod);
+
+
+	string imprimirContratosVencidos(Fecha &act);
 	string toString();
 }; 

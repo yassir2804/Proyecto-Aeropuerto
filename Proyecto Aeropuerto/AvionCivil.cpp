@@ -11,7 +11,5 @@ AvionCivil::~AvionCivil()
 {
 
 }
-string AvionCivil::toString()
-{
-	return string();
-}
+
+

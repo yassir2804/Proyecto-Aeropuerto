@@ -29,4 +29,7 @@ public:
     //toString
     string toString();
 
+
+    Fecha* copia();
+
 };

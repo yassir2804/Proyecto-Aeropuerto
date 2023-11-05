@@ -8,7 +8,8 @@ private:
 
 public:
 	//Constructor
-	TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes);
+	TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng);
+	TiempoIndefinido(string desc, string cod, double sala, Empleado& emp, Plaza& plaza, Fecha& fIng);
 
 	//Destructor
 	virtual ~TiempoIndefinido();

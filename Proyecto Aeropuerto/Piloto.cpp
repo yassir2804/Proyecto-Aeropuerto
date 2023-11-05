@@ -22,15 +22,23 @@ string Piloto::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL PILOTO-----" << endl;
-	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula<< endl;
-	s << "Edad: " << edad<< endl;
-	s << "Ocupacion: " << ocupacion << endl;
-	s << "Anios Experiencia: " << aniosExp << endl;
+	s << "*-----INFORMACION DEL EMPLEADO-----*" << endl<<endl;
+	s << "   Nombre: " << nombre << endl;
+	s << "   Cedula: " << cedula<< endl;
+	s << "   Edad: " << edad<< endl;
+	s << "   Ocupacion: " << ocupacion << endl;
+	s << "   Anios de experiencia: " << aniosExp << endl<<endl;
+	s << "*----------------------------------*" << endl;
 
 	return s.str();
 }
+
+Empleado* Piloto::copia()
+{
+	return new Piloto(nombre,cedula,edad,ocupacion,aniosExp);
+}
+
+
 
 
 

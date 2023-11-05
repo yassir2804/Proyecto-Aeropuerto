@@ -22,12 +22,17 @@ string Copiloto::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL COPILOTO-----" << endl;
-	s << "Nombre: " << nombre << endl;
-	s << "Cedula: " << cedula << endl;
-	s << "Edad: " << edad << endl;
-	s << "Ocupacion: " << ocupacion << endl;
-	s << "Telefono: " << numTele << endl;
-
+	s << "*-----INFORMACION DEL EMPLEADO-----*" << endl << endl;
+	s << "   Nombre: " << nombre << endl;
+	s << "   Cedula: " << cedula << endl;
+	s << "   Edad: " << edad << endl;
+	s << "   Ocupacion: " << ocupacion << endl;
+	s << "   Telefono: " << numTele << endl << endl;
+	s << "*----------------------------------*" << endl;
 	return s.str();
+}
+
+Empleado* Copiloto::copia()
+{
+	return new Copiloto(nombre, cedula, edad, ocupacion, numTele);
 }

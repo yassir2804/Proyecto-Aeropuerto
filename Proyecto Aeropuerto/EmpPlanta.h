@@ -8,6 +8,7 @@ public:
 	Planta(string no, string ce, int ed, string pues);
 	virtual ~Planta();
 
-	virtual string toString();
+	virtual string toString() = 0;
+	virtual Empleado* copia() = 0;
 
 };

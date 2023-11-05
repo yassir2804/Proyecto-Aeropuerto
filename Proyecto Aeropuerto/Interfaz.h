@@ -15,8 +15,6 @@ public:
 	static int menuIngresarAvion();
 	static int menuIngresaContrato();
 
-
-
 	static void ingresarPiloto(Aeropuerto* ar);
 	static void ingresarCopiloto(Aeropuerto* ar);
 	static void ingresarAzafata(Aeropuerto* ar);

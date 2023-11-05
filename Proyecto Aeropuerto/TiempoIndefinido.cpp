@@ -2,7 +2,11 @@
 
 
 
-TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng, Fecha& fCes) :ContratoBase(desc, cod, sala,av,emp, fIng, fCes), ptrPlaza((Plaza*)&plaza)
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc, cod, sala,av,emp, fIng), ptrPlaza(plaza.copia())
+{
+}
+
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc, cod, sala, emp, fIng), ptrPlaza(plaza.copia())
 {
 }
 

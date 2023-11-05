@@ -36,6 +36,7 @@ public:
 
 	void controlServiciosProfesionales();
 	void controlPlazoFijo();
+	void controlTiempoIndefinido();
 
 
 };
