@@ -5,6 +5,10 @@ ServiciosProfesionales::ServiciosProfesionales(string desc, string cod, double s
 {
 }
 
+ServiciosProfesionales::ServiciosProfesionales(string desc, string cod, double sala, Empleado& emp, string tSer, string hor, Fecha& fIni, Fecha& fCul) :ContratoBase(desc, cod, sala, emp, fIni, fCul), tipoServicio(tSer), horario(hor)
+{
+}
+
 
 ServiciosProfesionales::~ServiciosProfesionales()
 {

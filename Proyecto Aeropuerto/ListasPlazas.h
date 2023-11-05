@@ -16,6 +16,7 @@ public:
 
 	bool estaVacio();
 	bool ingresaPlaza(Plaza& pla);
+	bool existePlaza(string cod);
 
 
 	string toString();

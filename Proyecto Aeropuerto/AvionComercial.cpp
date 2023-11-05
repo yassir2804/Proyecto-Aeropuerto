@@ -17,9 +17,9 @@ string AvionComercial::toString()
 	stringstream s;
 
 	s << "-----INFORMACION DEL AVION COMERCIAL-----" << endl;
+	s << "Numero de Placa:	" << numPlaca << endl;
 	s << "Fecha de creacion:	" << fCreado->toString() << endl;
 	s << "Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
-	s << "Numero de Placa:	" << numPlaca << endl;
 	s << "Tipo de Avion:		" << tipo << endl;
 	s << "Numero de Categoria:	" << categoria << endl;
 

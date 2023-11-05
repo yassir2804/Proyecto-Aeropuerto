@@ -35,6 +35,7 @@ string AvionMilitar::toString()
 	stringstream s;
 
 	s << "-----INFORMACION DEL AVION MILITAR-----" << endl;
+	s << "Numero de Placa:	     " << numPlaca << endl;
 	s << "Fecha de creacion:	 " << fCreado->toString() << endl;
 	s << "Distancia recorrida:	 " << distanciaRecorrida << " Km" << endl;
 	s << "Tipo de Avion:		 " << tipo << endl;

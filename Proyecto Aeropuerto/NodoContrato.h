@@ -1,5 +1,12 @@
 #pragma once
 #include"ContratoBase.h"
+#include "TiempoIndefinido.h"
+#include "PlazoFijo.h"
+#include "ServiciosProfesionales.h"
+#include "Azafata.h"
+#include "Piloto.h"
+#include "Copiloto.h"
+
 class NodoContratoBase {
 private:
 	ContratoBase* ptrContrato;

@@ -46,6 +46,21 @@ bool ListaPlaza::ingresaPlaza(Plaza& pla)
 	return false;
 }
 
+bool ListaPlaza::existePlaza(string cod)
+{
+	NodoPlaza* aux = primero;
+
+
+	while (aux != NULL) {
+		if (aux->getPlaza()->getCodigoPlaza() == cod) {
+			return true;
+		}
+		aux = aux->getSiguienteNodoPlaza();
+	}
+
+	return false;
+}
+
 string ListaPlaza::toString()
 {
 	NodoPlaza* aux = primero;

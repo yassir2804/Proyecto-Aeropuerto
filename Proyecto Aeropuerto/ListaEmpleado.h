@@ -16,6 +16,8 @@ public:
 
 	bool estaVacio();
 	bool ingresaEmpleado(Empleado& emp);
+	bool existeEmpleado(string ced);
+	Empleado* buscarEmpleadoPorCed(string ced);
 
 
 	string toString();

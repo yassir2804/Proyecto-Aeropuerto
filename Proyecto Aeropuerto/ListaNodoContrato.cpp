@@ -43,6 +43,91 @@ bool  ListaNodoContrato::ingresaContrato(ContratoBase& ptrContrato)
 	return false;
 }
 
+bool ListaNodoContrato::existeContrato(string cod)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (aux->getContratoBase()->getCodContrato() == cod) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeContratoConEmpleado(string ced)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->getEmpleado()->getCedula() == ced) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeAvionConPiloto(string pla)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto)){
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeAvionConCopiloto(string pla)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Copiloto)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeAvionConAzafata(string pla)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Azafata)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return false;
+}
+
+
+
 bool ListaNodoContrato::eliminaContratoPorCodigo(string cod)
 {
 	NodoContratoBase* aux = primero;

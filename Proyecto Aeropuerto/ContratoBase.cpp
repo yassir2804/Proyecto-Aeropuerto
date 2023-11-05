@@ -6,6 +6,10 @@ ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empl
 {
 }
 
+ContratoBase::ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng, Fecha& fCul) :descPuesto(desc), codContrato(cod), salario(sala), avion(NULL), empleado((Empleado*)&emp), fIngreso(new Fecha(fIng)), fCulminacion(new Fecha(fCul))
+{
+}
+
 ContratoBase::~ContratoBase()
 {
 

@@ -49,6 +49,40 @@ bool ListaEmpleado::ingresaEmpleado(Empleado& emp)
 	return false;
 }
 
+bool ListaEmpleado::existeEmpleado(string ced)
+{
+	NodoEmpleado* aux = primero;
+	
+
+	while (aux != NULL) {
+		if (aux->getEmpleado()->getCedula() == ced) {
+			return true;
+		}
+		aux = aux->getSigEmpleado();
+	}
+
+	return false;
+}
+
+Empleado* ListaEmpleado::buscarEmpleadoPorCed(string ced)
+{
+
+	NodoEmpleado* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getEmpleado()->getCedula() == ced) {
+			return  aux->getEmpleado();
+		}
+		aux = aux->getSigEmpleado();
+
+	}
+
+	return NULL;
+	
+}
+
 string ListaEmpleado::toString()
 {
 	NodoEmpleado* aux = primero;

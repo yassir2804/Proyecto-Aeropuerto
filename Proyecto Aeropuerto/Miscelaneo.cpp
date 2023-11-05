@@ -26,7 +26,7 @@ string Miscelaneo::toString()
 	s << "Nombre: " << nombre << endl;
 	s << "Cedula: " << cedula << endl;
 	s << "Edad: " << edad << endl;
-	s << "ocupacion: " << ocupacion << endl;
+	s << "Ocupacion: " << ocupacion << endl;
 	s << "Grado de Escolaridad: " << gradoEsc << endl;
 
 	return s.str();

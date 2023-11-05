@@ -17,6 +17,7 @@ protected:
 public:
 	//Constructor
 	ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp,Fecha& fIng, Fecha& fCul);
+	ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng, Fecha& fCul);
 
 	//Destructor
 	virtual ~ContratoBase();

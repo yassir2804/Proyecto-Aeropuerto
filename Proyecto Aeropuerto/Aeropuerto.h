@@ -30,7 +30,7 @@ public:
 
 	bool ingresarEmpleado(Empleado& emp);
 	bool ingresarAvion(Avion& avi);
-	bool ingresarNodoContrato(ContratoBase& con);
+	bool ingresarContrato(ContratoBase& con);
 	bool ingresarPlaza(Plaza& pla);
 
 };

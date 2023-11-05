@@ -49,7 +49,7 @@ bool Aeropuerto::ingresarAvion(Avion& avi)
 	else return false;
 }
 
-bool Aeropuerto::ingresarNodoContrato(ContratoBase& con)
+bool Aeropuerto::ingresarContrato(ContratoBase& con)
 {
 	if (listC->ingresaContrato(con))return true;
 	else return false;
