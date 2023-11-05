@@ -14,6 +14,7 @@ public:
 	static int menuIngresarEmpleado();
 	static int menuIngresarAvion();
 	static int menuIngresaContrato();
+	static int menuTiempoIndefinido();
 
 	static void ingresarPiloto(Aeropuerto* ar);
 	static void ingresarCopiloto(Aeropuerto* ar);
@@ -34,4 +35,5 @@ public:
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();
+	static void msjNoExisteCedula();
 };
