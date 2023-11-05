@@ -48,11 +48,11 @@ string ServiciosProfesionales::toString()
 
 	if (fIngreso != NULL)
 	{
-		s << "La fecha de ingreso es:" << fIngreso->toString() << endl;
+		s << "La fecha de ingreso es:	" << fIngreso->toString() << endl;
 	}
 	if (fCulminacion != NULL)
 	{
-		s << "La fecha de culminacion es:" << fCulminacion->toString() << endl;
+		s << "La fecha de culminacion es:	" << fCulminacion->toString() << endl;
 	}
 
 	if (empleado != NULL)
