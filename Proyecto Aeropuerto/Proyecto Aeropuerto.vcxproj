@@ -135,6 +135,7 @@
     <ClCompile Include="AvionComercial.cpp" />
     <ClCompile Include="AvionMilitar.cpp" />
     <ClCompile Include="Azafata.cpp" />
+    <ClCompile Include="Clase-Servicios.cpp" />
     <ClCompile Include="ContratoBase.cpp" />
     <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="Copiloto.cpp" />
