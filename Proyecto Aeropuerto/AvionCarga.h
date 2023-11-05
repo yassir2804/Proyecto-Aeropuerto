@@ -1,6 +1,7 @@
 #pragma once
 #include"AvionCivil.h"
 
+
 class AvionCarga : public AvionCivil {
 private:
 

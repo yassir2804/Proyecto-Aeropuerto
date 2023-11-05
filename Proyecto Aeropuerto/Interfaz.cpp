@@ -7,14 +7,14 @@ int Interfaz::menuPrincipal()
 		cout << endl;
 		cout << "------------GESTION DE AEROPUERTO----------" << endl;
 		cout << "-------------------------------------------" << endl;
-		cout << "---------------------MENU------------------" << endl;
-		cout << "   1-  Ingresar.                           " << endl;
-		cout << "   2-  Mantenimiento.                      " << endl;
-		cout << "   3-  Reportes.                           " << endl;
-		cout << "   4-  Consultar.                          " << endl;
-		cout << "   5-  Gestion de Contratos.               " << endl;
-		cout << "   6-  Salir.                              " << endl;
-		cout << "-------------------------------------------" << endl;
+		cout << "*--------------------MENU-----------------*" << endl;
+		cout << "|	<1>  Ingresar.                         |" << endl;
+		cout << "|	<2>  Mantenimiento.                    |" << endl;
+		cout << "|	<3>  Reportes.                         |" << endl;
+		cout << "|	<4>  Consultar.                        |" << endl;
+		cout << "|	<5>  Gestion de Contratos.             |" << endl;
+		cout << "|	<6>  Salir.                            |" << endl;
+		cout << "*-----------------------------------------*" << endl;
 		cout << "   Digite la opcion: ";
 		cin >> op;
 		return op;
@@ -26,13 +26,13 @@ int Interfaz::menuIngresar()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU DE INGRESOS-------------" << endl;
-	cout << "-------------------------------------------" << endl;
-	cout << "   1-  Ingresar Empleado.                  " << endl;
-	cout << "   2-  Ingresar Avion.                     " << endl;
-	cout << "   3-  Ingresar Plaza.                  " << endl;
-	cout << "   4-  Ingresar Contrato.                     " << endl;
-	cout << "   5-  Regresar.                           " << endl;
-	cout << "-------------------------------------------" << endl;
+	cout << "*-----------------------------------------*" << endl;
+	cout << "|   <1>  Ingresar Empleado.               |" << endl;
+	cout << "|   <2>  Ingresar Avion.                  |" << endl;
+	cout << "|   <3>  Ingresar Plaza.                  |" << endl;
+	cout << "|   <4>  Ingresar Contrato.               |" << endl;
+	cout << "|   <5>  Regresar.                        |" << endl;
+	cout << "*-----------------------------------------*" << endl;
 	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
@@ -44,15 +44,15 @@ int Interfaz::menuIngresarEmpleado()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR EMPLEADO-------------" << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   1-  Piloto.                  " << endl;
-	cout << "   2-  Copiloto.                     " << endl;
-	cout << "   3-  Azafata.                  " << endl;
-	cout << "   4-  Administrativo.                     " << endl;
-	cout << "   5-  Miscelaneo.                     " << endl;
-	cout << "   6-  Regresar.                           " << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   Ingrese el tipo de empleado que desea crear: ";
+	cout << "*-----------------------------------------------*" << endl;
+	cout << "|   <1>  Piloto.                                |" << endl;
+	cout << "|   <2>  Copiloto.                              |" << endl;
+	cout << "|   <3>  Azafata.                               |" << endl;
+	cout << "|   <4>  Administrativo.                        |" << endl;
+	cout << "|   <5>  Miscelaneo.                            |" << endl;
+	cout << "|   <6>  Regresar.                              |" << endl;
+	cout << "*-----------------------------------------------*" << endl;
+	cout << "   Ingrese el tipo de empleado a crear: ";
 	cin >> op;
 	return op;
 
@@ -64,13 +64,13 @@ int Interfaz::menuIngresarAvion()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR AVION-------------" << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   1-  Avion Comercial.                  " << endl;
-	cout << "   2-  Avion de Carga.                     " << endl;
-	cout << "   3-  Avion Militar.                  " << endl;
-	cout << "   4-  Regresar.                           " << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   Ingrese el tipo de avion que desea crear: ";
+	cout << "*--------------------------------------------*" << endl;
+	cout << "|   <1>  Avion Comercial.                    |" << endl;
+	cout << "|   <2>  Avion de Carga.                     |" << endl;
+	cout << "|   <3>  Avion Militar.                      |" << endl;
+	cout << "|   <4>  Regresar.                           |" << endl;
+	cout << "*--------------------------------------------*" << endl;
+	cout << "   Ingrese el tipo de avion a crear: ";
 	cin >> op;
 	return op;
 }
@@ -81,12 +81,12 @@ int Interfaz::menuIngresaContrato()
 	system("cls");
 	cout << endl;
 	cout << "--------------MENU INGRESAR CONTRATO-------------" << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   1-  Contrato de Servicios Profesionales.                  " << endl;
-	cout << "   2-  Contrato de Plazo Fijo.                     " << endl;
-	cout << "   3-  Contrato de Tiempo Indefinido.                  " << endl;
-	cout << "   4-  Regresar.                           " << endl;
-	cout << "------------------------------------------------" << endl;
+	cout << "*-----------------------------------------------*" << endl;
+	cout << "|   <1>  Contrato de Servicios Profesionales.   |" << endl;
+	cout << "|   <2>  Contrato de Plazo Fijo.                |" << endl;
+	cout << "|   <3>  Contrato de Tiempo Indefinido.         |" << endl;
+	cout << "|   <4>  Regresar.                              |" << endl;
+	cout << "*-----------------------------------------------*" << endl;
 	cout << "   Ingrese el tipo de contrato que desea crear: ";
 	cin >> op;
 	return op;
@@ -104,15 +104,15 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	cout << endl;
 	cout << "--------------CREACION DE UN PILOTO-------------" << endl;
 	cout << "------------------------------------------------" << endl;
-	cout << "   Ingrese la cedula: ";
+	cout << "   Digite la cedula: ";
 	cin >> ced;
-	cout << "   Ingrese el nombre: ";
+	cout << "   Digite el nombre: ";
 	cin >> nom;
-	cout << "   Ingrese la edad: ";
+	cout << "   Digite la edad: ";
 	cin >> ed;
-	cout << "   Ingrese el puesto: ";
+	cout << "   Digite el puesto: ";
 	cin >> pues;
-	cout << "   Ingrese los anios de experiencia: ";
+	cout << "   Digite los anios de experiencia: ";
 	cin >> exp; cout << endl;
 
 
@@ -294,7 +294,7 @@ void Interfaz::ingresarAvionComercial(Aeropuerto* ar)
 	cout << "--------------------------------------------------------" << endl;
 	cout << "   Ingrese el numero de placa: ";
 	cin >> pla;
-	cout << "   Ingrese la fecha de creacion: "<<endl;
+	cout << "   Ingresando la fecha de creacion: "<<endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
@@ -338,7 +338,7 @@ void Interfaz::ingresarAvionCarga(Aeropuerto* ar)
 	cout << "--------------------------------------------------------" << endl;
 	cout << "   Ingrese el numero de placa: ";
 	cin >> pla;
-	cout << "   Ingrese la fecha de creacion: " << endl;
+	cout << "   Ingresando la fecha de creacion: " << endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
@@ -386,7 +386,7 @@ void Interfaz::ingresaAvionMilitar(Aeropuerto* ar)
 	cout << "--------------------------------------------------------" << endl;
 	cout << "   Ingrese el numero de placa: ";
 	cin >> pla;
-	cout << "   Ingrese la fecha de creacion: " << endl;
+	cout << "   Ingresando la fecha de creacion: " << endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
@@ -473,7 +473,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 		cin >> cod;
 		cout << "   Ingrese la descripcion del puesto: ";
 		cin >> desc;
-		cout << "   Ingrese la fecha de Ingreso: " << endl << endl;
+		cout << "   Ingrese la fecha de Ingreso: " << endl;
 		cout << "   Ingrese el dia: ";
 		cin >> dd;
 		cout << "   Ingrese el mes: ";
@@ -483,7 +483,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 
 		fIng = new Fecha(dd, mm, yy);
 
-		cout << "   Ingrese la fecha de culminacion: " << endl << endl;
+		cout << "   Ingrese la fecha de culminacion: " << endl;
 		cout << "   Ingrese el dia: ";
 		cin >> dd;
 		cout << "   Ingrese el mes: ";
