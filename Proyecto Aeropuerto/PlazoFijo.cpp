@@ -39,14 +39,14 @@ string PlazoFijo::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL CONTRATO DE PLAZO FIJO-----" <<endl <<endl;
-	s << "Codigo del contrato: " << codContrato << endl;
-	s << "Descripcion del puesto: " << descPuesto << endl;
-	s << "Salario: " << salario << endl;
-	s << "Condicion: ";
+	s << "-----INFORMACION DEL CONTRATO-----" <<endl <<endl;
+	s << "	Codigo del contrato:	" << codContrato << endl;
+	s << "	Descripcion del puesto:	" << descPuesto << endl;
+	s << "	Salario:	" << salario << endl;
+	s << "	Condicion:	";
 
-	if (aceptado)s << "aceptado" << endl;
-	else s << "rechazado" << endl;
+	if (aceptado)s << "Aceptado" << endl;
+	else s << "Rechazado" << endl;
 
 	if (fIngreso != NULL)
 	{

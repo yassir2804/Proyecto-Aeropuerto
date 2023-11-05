@@ -502,7 +502,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 		cout << "   Ingrese la cedula del empleado que desea ligar a este contrato: ";
 		cin >> ced; cout << endl;
 
-		if ( ar->getListaEmpleado()->existeEmpleado(ced) == false) cout << "   \n No exite ningun empleado con esa cedula\n";
+		if ( ar->getListaEmpleado()->existeEmpleado(ced) == false) cout << "   \n No existe ningun empleado con esa cedula\n";
 		else
 		{
 			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) cout << "   \n El empleado ya esta asociado a un contrato\n";
@@ -703,7 +703,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
 
-							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No exite ningun avion con esa placa\n";
+							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No existe ningun avion con esa placa\n";
 							else
 							{
 								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) cout << "   \n Este avion ya posee un Piloto\n";
@@ -729,14 +729,14 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 
 						if (typeid(*emp) == typeid(Copiloto)) {
 
-							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No exite ningun avion civil\n";
+							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No existe ningun avion civil\n";
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesCiviles();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No exite ningun avion civil con esa placa\n";
+								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No existe ningun avion civil con esa placa\n";
 								else
 								{
 									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) cout << " Este avion ya posee un Copiloto\n";
@@ -761,14 +761,14 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 						}
 						if (typeid(*emp) == typeid(Azafata)) {
 
-							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No exite ningun avion comercial\n";
+							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No existe ningun avion comercial\n";
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesComerciales();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No exite ningun avion comercial con esa placa\n";
+								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No existe ningun avion comercial con esa placa\n";
 								else
 								{
 									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) cout << " Este avion ya posee una azafata\n";
