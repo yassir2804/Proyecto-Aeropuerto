@@ -103,7 +103,7 @@ void Interfaz::ingresarPiloto(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN PILOTO-------------" << endl;
-	cout << "------------------------------------------------" << endl<<endl;
+	cout << "*----------------------------------------------*" << endl<<endl;
 	cout << "   Cedula: ";
 	cin >> ced;	cout << endl;
 	cout << "   Nombre: ";
@@ -140,16 +140,16 @@ void Interfaz::ingresarCopiloto(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN COPILOTO-------------" << endl;
-	cout << "------------------------------------------------" << endl;
+	cout << "*------------------------------------------------*" << endl;
 	cout << "   Cedula: ";
-	cin >> ced; cout << endl;
+	cin >> ced;cout << endl;
 	cout << "   Nombre: ";
-	cin >> nom; cout << endl;
-	cout << "   Ingrese la edad: ";
-	cin >> ed; cout << endl;
-	cout << "   Ingrese el puesto: ";
-	cin >> pues;
-	cout << "   Ingrese el numero de telefono: ";
+	cin >> nom;cout << endl;
+	cout << "   Edad: ";
+	cin >> ed;cout << endl;
+	cout << "   Puesto: ";
+	cin >> pues;cout << endl;
+	cout << "   Numero de telefono: ";
 	cin >> tel; cout << endl;
 
 
@@ -177,16 +177,16 @@ void Interfaz::ingresarAzafata(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN AZAFATA-------------" << endl;
-	cout << "------------------------------------------------" << endl;
-	cout << "   Ingrese la cedula: ";
-	cin >> ced;
-	cout << "   Ingrese el nombre: ";
-	cin >> nom;
-	cout << "   Ingrese la edad: ";
-	cin >> ed;
-	cout << "   Ingrese el puesto: ";
-	cin >> pues;
-	cout << "   Ingrese la nacionalidad: ";
+	cout << "*-----------------------------------------------*" << endl;
+	cout << "   Cedula: ";
+	cin >> ced;cout << endl;
+	cout << "   Nombre: ";
+	cin >> nom;cout << endl;
+	cout << "   Edad: ";
+	cin >> ed;cout << endl;
+	cout << "  Puesto: ";
+	cin >> pues;cout << endl;
+	cout << "   Nacionalidad: ";
 	cin >> naci; cout << endl;
 
 
@@ -214,16 +214,16 @@ void Interfaz::ingresarAdministrativo(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN ADMINISTRATIVO-------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
-	cout << "   Ingrese la cedula: ";
-	cin >> ced;
-	cout << "   Ingrese el nombre: ";
-	cin >> nom;
-	cout << "   Ingrese la edad: ";
-	cin >> ed;
-	cout << "   Ingrese el puesto: ";
-	cin >> pues;
-	cout << "   Ingrese el titulo universitario: ";
+	cout << "*------------------------------------------------------*" << endl;
+	cout << "  Cedula: ";
+	cin >> ced;cout << endl;
+	cout << "   Nombre: ";
+	cin >> nom;cout << endl;
+	cout << "   Edad: ";
+	cin >> ed;cout << endl;
+	cout << "   Puesto: ";
+	cin >> pues;cout << endl;
+	cout << "   Titulo Universitario: ";
 	cin >> tit; cout << endl;
 
 
@@ -252,16 +252,16 @@ void Interfaz::ingresarMiscelaneo(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CREACION DE UN MISCELANEO-------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
-	cout << "   Ingrese la cedula: ";
-	cin >> ced;
-	cout << "   Ingrese el nombre: ";
-	cin >> nom;
-	cout << "   Ingrese la edad: ";
-	cin >> ed;
-	cout << "   Ingrese el puesto: ";
-	cin >> pues;
-	cout << "   Ingrese el grado: ";
+	cout << "*--------------------------------------------------*" << endl;
+	cout << "  Cedula: ";
+	cin >> ced;cout << endl;
+	cout << "   Nombre: ";
+	cin >> nom;cout << endl;
+	cout << "   Edad: ";
+	cin >> ed;cout << endl;
+	cout << "   Puesto: ";
+	cin >> pues;cout << endl;
+	cout << "   Grado: ";
 	cin >> gra; cout << endl;
 
 
@@ -291,21 +291,21 @@ void Interfaz::ingresarAvionComercial(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE AVION COMERCIAL--------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
-	cout << "   Ingrese el numero de placa: ";
-	cin >> pla;
-	cout << "   Ingresando la fecha de creacion: "<<endl;
+	cout << "*------------------------------------------------------*" << endl;
+	cout << "   Numero de placa: ";
+	cin >> pla;cout << endl;
+	cout << "   Fecha de creacion: "<<endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
 	cin >> mm;
 	cout << "   Ingrese el anio: ";
-	cin >> yy;
-	cout << "   Ingrese la distancia recorrida por el avion: ";
-	cin >> dis;
+	cin >> yy;cout << endl;
+	cout << "   Digite la distancia recorrida por el avion: ";
+	cin >> dis;cout << endl;
 	cout << "   Ingrese la categoria: ";
-	cin >> cat;
-	cout << "   Ingrese el tipo: ";
+	cin >> cat;cout << endl;
+	cout << "   Digite el tipo del avion: ";
 	cin >> tip; cout << endl;
 
 	fech = new Fecha(dd, mm, yy);
@@ -335,25 +335,25 @@ void Interfaz::ingresarAvionCarga(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE AVION DE CARGA---------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
-	cout << "   Ingrese el numero de placa: ";
-	cin >> pla;
+	cout << "*------------------------------------------------------*" << endl;
+	cout << "   Numero de placa: ";
+	cin >> pla;cout << endl;
 	cout << "   Ingresando la fecha de creacion: " << endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
 	cin >> mm;
 	cout << "   Ingrese el anio: ";
-	cin >> yy;
-	cout << "   Ingrese la distancia recorrida por el avion: ";
-	cin >> dis;
+	cin >> yy;cout << endl;
+	cout << "   Digite la distancia recorrida por el avion: ";
+	cin >> dis;cout << endl;
 	cout << "   Ingrese la categoria: ";
-	cin >> cat;
-	cout << "   Ingrese el tipo: ";
-	cin >> tip; 
-	cout << "   Ingrese el alto de la puerta: ";
-	cin >> alt;
-	cout << "   Ingrese el ancho de la puerta: ";
+	cin >> cat;cout << endl;
+	cout << "   Digite el tipo del avion: ";
+	cin >> tip; cout << endl;
+	cout << "   Digite el alto de la puerta: ";
+	cin >> alt;cout << endl;
+	cout << "   Digite el ancho de la puerta: ";
 	cin >> anch; cout << endl;
 
 	fech = new Fecha(dd, mm, yy);
@@ -383,23 +383,23 @@ void Interfaz::ingresaAvionMilitar(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE AVION MILITAR--------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
-	cout << "   Ingrese el numero de placa: ";
-	cin >> pla;
+	cout << "*----------------------------------------------------*" << endl;
+	cout << "   Numero de placa: ";
+	cin >> pla;cout << endl;
 	cout << "   Ingresando la fecha de creacion: " << endl;
 	cout << "   Ingrese el dia: ";
 	cin >> dd;
 	cout << "   Ingrese el mes: ";
 	cin >> mm;
 	cout << "   Ingrese el anio: ";
-	cin >> yy;
-	cout << "   Ingrese la distancia recorrida por el avion: ";
-	cin >> dis;
+	cin >> yy;cout << endl;
+	cout << "   Digite la distancia recorrida por el avion: ";
+	cin >> dis;cout << endl;
 	cout << "   Ingrese la categoria: ";
-	cin >> cat;
-	cout << "   Ingrese el tipo: ";
-	cin >> tip; 
-	cout << "   Ingrese la velocidad maxima: ";
+	cin >> cat;cout << endl;
+	cout << "   Digite el tipo del avion: ";
+	cin >> tip; cout << endl;
+	cout << "   Digite la velocidad maxima: ";
 	cin >> vel; cout << endl;
 
 	fech = new Fecha(dd, mm, yy);
@@ -428,9 +428,9 @@ void Interfaz::ingresarPlaza(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "------------------CREACION DE UNA PLAZA-----------------" << endl;
-	cout << "--------------------------------------------------------" << endl;
+	cout << "*------------------------------------------------------*" << endl;
 	cout << "   Ingrese el codigo de plaza: ";
-	cin >> cod;
+	cin >> cod;cout << endl; 
 	cout << "   Ingrese la descripcion de la plaza: ";
 	cin >> desc; cout << endl;
 
@@ -463,23 +463,23 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 
 	system("cls");
 	cout << endl;
-	cout << "---------------CREACION DE CONTRATO DE SERVICIOS PROFESIONALES--------------" << endl;
-	cout << "----------------------------------------------------------------------------" << endl;
+	cout << "----------CREACION DE CONTRATO DE SERVICIOS PROFESIONALES----------" << endl;
+	cout << "*-----------------------------------------------------------------*" << endl;
 	
 	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados(); 
 	else
 	{
-		cout << "   Ingrese el codigo del contrato: ";
-		cin >> cod;
-		cout << "   Ingrese la descripcion del puesto: ";
-		cin >> desc;
+		cout << "   Digite el codigo del contrato: ";
+		cin >> cod;cout << endl;
+		cout << "   Descripcion del puesto: ";
+		cin >> desc;cout << endl;
 		cout << "   Ingrese la fecha de Ingreso: " << endl;
 		cout << "   Ingrese el dia: ";
 		cin >> dd;
 		cout << "   Ingrese el mes: ";
 		cin >> mm;
 		cout << "   Ingrese el anio: ";
-		cin >> yy;
+		cin >> yy;cout << endl;
 
 		fIng = new Fecha(dd, mm, yy);
 
@@ -489,16 +489,16 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 		cout << "   Ingrese el mes: ";
 		cin >> mm;
 		cout << "   Ingrese el anio: ";
-		cin >> yy;
+		cin >> yy;cout << endl;
 
 		fCul = new Fecha(dd, mm, yy);
 
-		cout << "   Ingrese el salario: ";
-		cin >> sala;
-		cout << "   Ingrese el tipo de servicio: ";
-		cin >> tSer;
-		cout << "   Ingrese el Horario: ";
-		cin >> hor;
+		cout << "   Salario: ";
+		cin >> sala;cout << endl;
+		cout << "   Tipo de servicio: ";
+		cin >> tSer;cout << endl;
+		cout << "   Horario: ";
+		cin >> hor;cout << endl;
 		cout << "   Ingrese la cedula del empleado que desea ligar a este contrato: ";
 		cin >> ced; cout << endl;
 
@@ -647,29 +647,29 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "---------------CREACION DE CONTRATO DE PLAZO FIJO--------------" << endl;
-	cout << "---------------------------------------------------------------" << endl;
+	cout << "*-------------------------------------------------------------*" << endl;
 
 	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
 	else
 	{
-		cout << "   Ingrese el codigo del contrato: ";
-		cin >> cod;
-		cout << "   Ingrese la descripcion del puesto: ";
-		cin >> desc;
+		cout << "   Codigo del contrato: ";
+		cin >> cod;cout << endl; 
+		cout << "  Descripcion del puesto: ";
+		cin >> desc;cout << endl; 
 		cout << "   Ingrese la fecha de Ingreso: " << endl << endl;
 		cout << "   Ingrese el dia: ";
 		cin >> dd;
 		cout << "   Ingrese el mes: ";
 		cin >> mm;
 		cout << "   Ingrese el anio: ";
-		cin >> yy;
+		cin >> yy;cout << endl;  
 
 		fIng = new Fecha(dd, mm, yy);
 		fCul = new Fecha(dd, mm, yy+2);
 
-		cout << "   Ingrese el salario: ";
-		cin >> sala;
-		cout << "   Ingrese la cedula del empleado que desea ligar a este contrato: ";
+		cout << "  Salario: ";
+		cin >> sala;cout << endl; 
+		cout << "   Digite la cedula del empleado que desea ligar a este contrato: ";
 		cin >> ced; cout << endl;
 
 		if (ar->getListaEmpleado()->existeEmpleado(ced) == false) cout << "   \n No exite ningun empleado con esa cedula\n";
@@ -700,7 +700,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 						if (typeid(*emp) == typeid(Piloto)) {
 
 							cout << ar->getListaAvion()->toString();
-							cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
+							cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
 
 							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No exite ningun avion con esa placa\n";
@@ -733,7 +733,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesCiviles();
-								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
+								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
 								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No exite ningun avion civil con esa placa\n";
@@ -765,7 +765,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesComerciales();
-								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
+								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
 								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No exite ningun avion comercial con esa placa\n";
@@ -815,8 +815,8 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 
 	system("cls");
 	cout << endl;
-	cout << "---------------CREACION DE CONTRATO DE TIEMPO INDEFINIDO--------------" << endl;
-	cout << "----------------------------------------------------------------------" << endl;
+	cout << "-----------CREACION DE CONTRATO DE TIEMPO INDEFINIDO-----------" << endl;
+	cout << "*-------------------------------------------------------------*" << endl;
 
 	cout << "   Ingrese la fecha actual: " << endl << endl;
 	cout << "   Ingrese el dia: ";
@@ -824,7 +824,7 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 	cout << "   Ingrese el mes: ";
 	cin >> mm;
 	cout << "   Ingrese el anio: ";
-	cin >> yy;
+	cin >> yy;cout << endl;
 
 	act = new Fecha(dd, mm, yy);
 
@@ -834,7 +834,7 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 	{
 
 		cout << ar->getListaNodoContrato()->imprimirContratosVencidos(*act);
-		cout << "   Ingrese el codigo del contrato que desea seleccionar: ";
+		cout << "   Digite el codigo del contrato que desea seleccionar: ";
 		cin >> cod; cout << endl;
 
 		if (ar->getListaNodoContrato()->existeContratoVencidoConCod(*act,cod) == false) cout << "   No existe nigun contrato para renovar con ese codigo\n";
@@ -842,7 +842,8 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 		{
 			plazo = ar->getListaNodoContrato()->buscarContratoPorCod(cod);
 
-
+			cout << "-----------INGRESANDO DATOS NUEVOS-----------" << endl;
+			cout << "*-------------------------------------------*" << endl;
 
 			if(ar->getListaPlaza()->existePlazaParaPuesto(plazo->getEmpleado()->getOcupacion())== false)cout << "\n   No existen plazas\n";
 			else
@@ -852,8 +853,8 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 				cout << "----------------------------------------------------" << endl;
 				cout << ar->getListaPlaza()->imprimirPlazasDisponibles(plazo->getEmpleado()->getOcupacion());
 
-				cout << "   Ingrese el codigo de la plaza que desea seleccionar: ";
-				cin >> cod;
+				cout << "   Digite el codigo de la plaza que desea seleccionar: ";
+				cin >> cod;cout << endl;
 
 				if (ar->getListaPlaza()->existePlazaDisponible(cod, plazo->getEmpleado()->getOcupacion()) == false) cout << "\n   No hay plazas disponibles con ese codigo\n";
 				else 
@@ -862,11 +863,11 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 					pla = ar->getListaPlaza()->buscarPlazaPorCodigo(cod);
 
 
-					cout << "   Ingrese el codigo del contrato: ";
-					cin >> cod;
+					cout << "   Digite el codigo del contrato: ";
+					cin >> cod;cout << endl;
 
-					cout << "   Ingrese el salario: ";
-					cin >> sala;
+					cout << "   Salario: ";
+					cin >> sala;cout << endl;
 
 					cout << "   Ingrese la fecha de Ingreso: " << endl;
 					cout << "   Ingrese el dia: ";
