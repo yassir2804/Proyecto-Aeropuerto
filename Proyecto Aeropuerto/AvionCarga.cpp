@@ -34,17 +34,18 @@ double AvionCarga::getAlturaPuerta()
 string AvionCarga::toString()
 {
 	stringstream s;
-	s << "-------INFORMACION DEL AVION DE CARGA-------" << endl;
-	s << "Numero de Placa:	" << numPlaca << endl;
-	s << "Fecha de creacion:	" << fCreado->toString() << endl;
-	s << "Distancia recorrida:	" << distanciaRecorrida << " Km" << endl;
-	s << "Tipo de Avion:		" << tipo << endl;
-	s << "Numero de Categoria:	" << categoria << endl << endl;
-	s << "Categoria del avion: " << Servicio::avionCarga(categoria) << endl;
-	s << "Cantidad de pasajeros: " << Servicio::avionCargaPasajeros(categoria) << endl;
-	s << "Velocidad el avion: " << Servicio::avionCargaVelocidades(categoria) << " km" << endl;
-	s << "*Informacion de la puerta del avion de carga*" << endl;
-	s << "Ancho de la puerta de carga: " << anchoPuerta << " mts" << endl;
-	s << "Altura de la puerta de carga: " << alturaPuerta << " mts" << endl;
+	s << "*-------INFORMACION DEL AVION DE CARGA-------*" << endl;
+	s << "|Numero de Placa:	" << numPlaca << "		     |" << endl;
+	s << "|Fecha de creacion:	" << fCreado->toString() << "	     |" << endl;
+	s << "|Distancia recorrida:	" << distanciaRecorrida << " Km		     |" << endl;
+	s << "|Tipo de Avion:		" << tipo << "	     |" << endl;
+	s << "|Numero de Categoria:	" << categoria << "		     |" << endl;
+	s << "|Categoria del avion:	" << Servicio::avionCarga(categoria) << "	     |" << endl;
+	s << "|Cantidad de pasajeros:	" << Servicio::avionCargaPasajeros(categoria) << "		     |" << endl;
+	s << "|Velocidad el avion:	" << Servicio::avionCargaVelocidades(categoria) << " km		     |" << endl; 
+	s << "|	*--INFORMACION DE LA PUERTA--*       |" << endl;
+	s << "|Ancho de la puerta de carga: " << anchoPuerta << " mts         |" << endl;
+	s << "|Altura de la puerta de carga: " << alturaPuerta << " mts        |" << endl;
+	s << "*--------------------------------------------*" << endl;
 	return s.str();
 }
