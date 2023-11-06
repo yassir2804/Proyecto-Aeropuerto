@@ -16,4 +16,10 @@ public:
 	virtual string toString() = 0;
 	virtual Empleado* copia() = 0;
 
+	virtual void setAniosExp(int anExp);
+	virtual void setNumeroTelefono(string num);
+	virtual void setNacionalidad(string num);
+	virtual void setTitulo(string num);
+	virtual void setGradoEsc(string gra);
+
 };

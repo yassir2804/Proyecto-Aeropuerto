@@ -43,6 +43,13 @@ public:
 	static void cesarTiempoIndefinido(Aeropuerto* ar);
 
 	static void editarNombre(Aeropuerto* ar);
+	static void editarEdad(Aeropuerto* ar);
+	static void editarOcupacion(Aeropuerto* ar);
+	static void editarAniosExperiencia(Aeropuerto* ar);
+	static void editarTelefono(Aeropuerto* ar);
+	static void editarNacionalidad(Aeropuerto* ar);
+	static void editarTitulo(Aeropuerto* ar);
+	static void editarGradoEscolaridad(Aeropuerto* ar);
 
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();
@@ -63,4 +70,7 @@ public:
 	static void msjNoRenovarContratoCodigo();
 	static void msjPlaza();
 	static void msjPlazaCodigo();
+	static void msjErrorEliminar();
+	static void msjExitoEliminar();
+
 };

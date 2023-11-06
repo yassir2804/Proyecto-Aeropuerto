@@ -46,6 +46,13 @@ public:
 
 	void controlEditarEmpleado();
 	void controlEliminar();
-	void editarNombre();
+	void controlEditarNombre();
+	void controlEditarEdad();
+	void controlEditarOcupacion();
+	void controlEditarAniosExp();
+	void controlEditarTelefono();
+	void controlEditarNacionalidad();
+	void controlEditarTitulo();
+	void controlEditarGradoesc();
 
 };

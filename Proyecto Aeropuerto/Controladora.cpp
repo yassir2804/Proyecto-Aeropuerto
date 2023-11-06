@@ -213,11 +213,14 @@ void Controladora::controlEditarEmpleado()
     do {
         op = Interfaz::menuEditarEmpleado();
         switch (op) {
-        case 1: editarNombre(); break;
-        //case 2: controlCopiloto(); break;
-        //case 3: controlAzafata(); break;
-        //case 4: controlAdministrativo(); break;
-        //case 5: controlMiscelaneo(); break;
+        case 1: controlEditarNombre(); break;
+        case 2: controlEditarEdad(); break;
+        case 3: controlEditarOcupacion(); break;
+        case 4: controlEditarAniosExp(); break;
+        case 5: controlEditarTelefono(); break;
+        case 6: controlEditarNacionalidad(); break;
+        case 7: controlEditarTitulo(); break;
+        case 8: controlEditarGradoesc(); break;
         }
 
     } while (op != 9);
@@ -239,7 +242,42 @@ void Controladora::controlEliminar()
     //} while (op != 6);
 }
 
-void Controladora::editarNombre()
+void Controladora::controlEditarNombre()
 {
     Interfaz::editarNombre(aeropuerto);
+}
+
+void Controladora::controlEditarEdad()
+{
+    Interfaz::editarEdad(aeropuerto);
+}
+
+void Controladora::controlEditarOcupacion()
+{
+    Interfaz::editarOcupacion(aeropuerto);
+}
+
+void Controladora::controlEditarAniosExp()
+{
+    Interfaz::editarAniosExperiencia(aeropuerto);
+}
+
+void Controladora::controlEditarTelefono()
+{
+    Interfaz::editarTelefono(aeropuerto);
+}
+
+void Controladora::controlEditarNacionalidad()
+{
+    Interfaz::editarNacionalidad(aeropuerto);
+}
+
+void Controladora::controlEditarTitulo()
+{
+    Interfaz::editarTitulo(aeropuerto);
+}
+
+void Controladora::controlEditarGradoesc()
+{
+    Interfaz::editarGradoEscolaridad(aeropuerto);
 }

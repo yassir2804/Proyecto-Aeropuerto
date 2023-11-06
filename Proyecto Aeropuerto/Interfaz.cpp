@@ -1033,6 +1033,7 @@ void Interfaz::cesarTiempoIndefinido(Aeropuerto* ar)
 
 void Interfaz::editarNombre(Aeropuerto* ar)
 {
+	string ced, nom;
 	system("cls");
 	cout << endl;
 	cout << "-----------EDITAR NOMBRE-----------" << endl;
@@ -1042,9 +1043,219 @@ void Interfaz::editarNombre(Aeropuerto* ar)
 	{
 		cout<<ar->getListaEmpleado()->toString();
 
+		cout << "   Digite la cedula del empleado al que desea editar el nombre: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeEmpleado(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese el nuevo nombre: ";
+			cin >> nom; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setNombre(nom);
+		}
 	}
 
 	system("pause");
+}
+
+void Interfaz::editarEdad(Aeropuerto* ar)
+{
+	string ced;
+	int ed;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR EDAD-------------" << endl;
+	cout << "*---------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->toString();
+
+		cout << "   Digite la cedula del empleado al que desea editar la edad: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeEmpleado(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese la nueva edad: ";
+			cin >> ed; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setEdad(ed);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarOcupacion(Aeropuerto* ar)
+{
+	string ced, ocu;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR OCUPACION-------------" << endl;
+	cout << "*--------------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->toString();
+
+		cout << "   Digite la cedula del empleado al que desea editar la ocupacion: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeEmpleado(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese la nueva ocupacion: ";
+			cin >> ocu; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setOcupacion(ocu);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarAniosExperiencia(Aeropuerto* ar)
+{
+	string ced;
+	int anios;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR ANIOS DE EXPERIENCIA-------------" << endl;
+	cout << "*-------------------------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->existePiloto()==false) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->imprimirPilotos();
+
+		cout << "   Digite la cedula del empleado al que desea editar los anios de experiencia: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existePilotoConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese los nuevos anios de experiencia: ";
+			cin >> anios; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setAniosExp(anios);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarTelefono(Aeropuerto* ar)
+{
+	string ced, tel;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR NUMERO DE TELEFONO-------------" << endl;
+	cout << "*-----------------------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->existeCopiloto() == false) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->imprimirCopilotos();
+
+		cout << "   Digite la cedula del empleado al que desea editar el telefono: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeCopilotoConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese el nuevo telefono: ";
+			cin >> tel; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setNumeroTelefono(tel);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarNacionalidad(Aeropuerto* ar)
+{
+	string ced, nac;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR NACIONALIDAD-------------" << endl;
+	cout << "*------------------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->existeAzafata() == false) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->imprimirAzafatas();
+
+		cout << "   Digite la cedula del empleado al que desea editar la nacionalidad: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeAzafataConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese la nueva nacionalidad: ";
+			cin >> nac; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setNacionalidad(nac);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarTitulo(Aeropuerto* ar)
+{
+	string ced, tit;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR TITULO-------------" << endl;
+	cout << "*-----------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->existeAdministrativo() == false) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->imprimirAdministrativos();
+
+		cout << "   Digite la cedula del empleado al que desea editar el titulo: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeAdministrativoConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese el nuevo titulo: ";
+			cin >> tit; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setTitulo(tit);
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::editarGradoEscolaridad(Aeropuerto* ar)
+{
+	string ced, gra;
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR GRADO DE ESCOLARIDAD-------------" << endl;
+	cout << "*------------------------------------------*" << endl << endl;
+	if (ar->getListaEmpleado()->existeMiscelaneo() == false) msjSinEmpleados();
+	else
+	{
+		cout << ar->getListaEmpleado()->imprimirMiscelaneos();
+
+		cout << "   Digite la cedula del empleado al que desea editar el grado de escolaridad: ";
+		cin >> ced; cout << endl;
+
+		if (ar->getListaEmpleado()->existeMiscelaneoConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			cout << "   Ingrese el nuevo grado de escolaridad: ";
+			cin >> gra; cout << endl;
+
+			ar->getListaEmpleado()->buscarEmpleadoPorCed(ced)->setGradoEsc(gra);
+		}
+	}
+
+	system("pause");
+
 }
 
 void Interfaz::msjErorrIngresar()
@@ -1065,7 +1276,7 @@ void Interfaz::msjSinEmpleados()
 
 void Interfaz::msjNoExisteCedula()
 {
-	cout << "	No existe ningun empleado con esa cedula" << endl << endl;
+	cout << "No existe ningun empleado con esa cedula" << endl << endl;
 }
 
 void Interfaz::msjEmpleadoAsociado()

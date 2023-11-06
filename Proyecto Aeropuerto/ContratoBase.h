@@ -47,6 +47,7 @@ public:
 
 	virtual void setAceptado(bool ace);
 
+
 	//toString
 	virtual string toString() = 0;
 
