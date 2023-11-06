@@ -14,13 +14,13 @@ void Controladora::control0() {
         op = controlMenu();
         switch (op) {
         case 1: control1(); break;
-        //case 2: control2(); break;
+        case 2: control2(); break;
         //case 3: control3(); break;
         //case 4: control4(); break;
         //case 5: control5(); break;
             // Agrega más casos si es necesario.
         }
-    } while (op != 6);
+    } while (op != 5);
 }
 
 int Controladora::controlMenu() {
@@ -37,12 +37,23 @@ void Controladora::control1() {
             case 2: control1_2(); break;
             case 3: control1_3(); break;
             case 4: control1_4(); break;
-            //case 5: control5(); break;
         }
-        // Elimina o mueve la pausa si es necesario.
-        // system("pause");
+
     } while (op != 5);
 
+}
+
+void Controladora::control2()
+{
+    int op;
+    do {
+        op = Interfaz::menuMantenimiento();
+        switch (op) {
+        case 1: control2_1(); break;
+        case 2: control2_2(); break;
+        }
+
+    } while (op != 3);
 }
 
 void Controladora::control1_1()
@@ -56,10 +67,8 @@ void Controladora::control1_1()
             case 3: controlAzafata(); break;
             case 4: controlAdministrativo(); break;
             case 5: controlMiscelaneo(); break;
-            //case 6: control6(); break;
         }
-        // Elimina o mueve la pausa si es necesario.
-        // system("pause");
+
     } while (op != 6);
 }
 
@@ -72,12 +81,8 @@ void Controladora::control1_2()
         case 1: controlAvionComercial(); break;
         case 2: controlAvionCarga(); break;
         case 3: controlAvionMilitar(); break;
-        //case 4: controlAdministrativo(); break;
-        //case 5: controlMiscelaneo(); break;
-        //case 6: control6(); break;
         }
-        // Elimina o mueve la pausa si es necesario.
-        // system("pause");
+
     } while (op != 4);
 }
 
@@ -95,12 +100,37 @@ void Controladora::control1_4()
         case 1: controlServiciosProfesionales(); break;
         case 2: controlPlazoFijo(); break;
         case 3: controlTiempoIndefinido(); break;
-            //case 4: controlAdministrativo(); break;
-            //case 5: controlMiscelaneo(); break;
-            //case 6: control6(); break;
+
         }
-        // Elimina o mueve la pausa si es necesario.
-        // system("pause");
+
+    } while (op != 4);
+}
+
+void Controladora::control2_1()
+{
+    int op;
+    do {
+        op = Interfaz::menuEditar();
+        switch (op) {
+        case 1:controlEditarEmpleado(); break;
+        //case 2: controlAvionCarga(); break;
+        //case 3: controlAvionMilitar(); break;
+        }
+
+    } while (op != 4);
+}
+
+void Controladora::control2_2()
+{
+    int op;
+    do {
+        op = Interfaz::menuEliminar();
+        switch (op) {
+            //case 1: controlAvionComercial(); break;
+            //case 2: controlAvionCarga(); break;
+            //case 3: controlAvionMilitar(); break;
+        }
+
     } while (op != 4);
 }
 
@@ -156,5 +186,60 @@ void Controladora::controlPlazoFijo()
 
 void Controladora::controlTiempoIndefinido()
 {
+    int op;
+    do {
+        op = Interfaz::menuTiempoIndefinido();
+        switch (op) {
+        case 1: controlRenovarTiempoIndefinido(); break;
+        case 2: controlCesarTiempoIndefinido(); break;
+        }
+
+    } while (op != 3);
+}
+
+void Controladora::controlRenovarTiempoIndefinido()
+{
     Interfaz::renovarTiempoIndefinido(aeropuerto);
+}
+
+void Controladora::controlCesarTiempoIndefinido()
+{
+    Interfaz::cesarTiempoIndefinido(aeropuerto);
+}
+
+void Controladora::controlEditarEmpleado()
+{
+    int op;
+    do {
+        op = Interfaz::menuEditarEmpleado();
+        switch (op) {
+        case 1: editarNombre(); break;
+        //case 2: controlCopiloto(); break;
+        //case 3: controlAzafata(); break;
+        //case 4: controlAdministrativo(); break;
+        //case 5: controlMiscelaneo(); break;
+        }
+
+    } while (op != 9);
+}
+
+void Controladora::controlEliminar()
+{
+    //int op;
+    //do {
+    //    op = Interfaz::menuEliminar();
+    //    switch (op) {
+    //    case 1: controlPiloto(); break;
+    //    case 2: controlCopiloto(); break;
+    //    case 3: controlAzafata(); break;
+    //    case 4: controlAdministrativo(); break;
+    //    case 5: controlMiscelaneo(); break;
+    //    }
+
+    //} while (op != 6);
+}
+
+void Controladora::editarNombre()
+{
+    Interfaz::editarNombre(aeropuerto);
 }

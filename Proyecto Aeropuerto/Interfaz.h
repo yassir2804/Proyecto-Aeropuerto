@@ -16,6 +16,15 @@ public:
 	static int menuIngresaContrato();
 	static int menuTiempoIndefinido();
 
+	static int menuMantenimiento();
+
+	static int menuEditar();
+	static int menuEliminar();
+	
+	static int menuEditarEmpleado();
+	static int menuEditarAvion();
+	static int menuEditarContrato();
+
 	static void ingresarPiloto(Aeropuerto* ar);
 	static void ingresarCopiloto(Aeropuerto* ar);
 	static void ingresarAzafata(Aeropuerto* ar);
@@ -31,9 +40,16 @@ public:
 	static void ingresarServiciosProfesionales(Aeropuerto* ar);
 	static void ingresarPlazoFijo(Aeropuerto* ar);
 	static void renovarTiempoIndefinido(Aeropuerto* ar);
+	static void cesarTiempoIndefinido(Aeropuerto* ar);
+
+	static void editarNombre(Aeropuerto* ar);
 
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();
 	static void msjNoExisteCedula();
+
+	static void msjErrorEliminar();
+	static void msjExitoEliminar();
+
 };

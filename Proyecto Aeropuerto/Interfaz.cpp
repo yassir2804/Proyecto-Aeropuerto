@@ -12,8 +12,7 @@ int Interfaz::menuPrincipal()
 		cout << "	<2>  Mantenimiento.                    " << endl;
 		cout << "	<3>  Reportes.                         " << endl;
 		cout << "	<4>  Consultar.                        " << endl;
-		cout << "	<5>  Gestion de Contratos.             " << endl;
-		cout << "	<6>  Salir.                            " << endl<<endl;
+		cout << "	<5>  Salir.                            " << endl<<endl;
 		cout << "*-----------------------------------------*" << endl;
 		cout << "   Digite la opcion: ";
 		cin >> op;
@@ -99,10 +98,83 @@ int Interfaz::menuTiempoIndefinido()
 	cout << endl;
 	cout << "--------------MENU DE CONTRATOS DE TIEMPO INDEFINIDO--------------" << endl;
 	cout << "*----------------------------------------------------------------*" << endl << endl;
-	cout << "   <1>  Renovar contrato vencido.   " << endl;
-	cout << "   <2>  Cesar contrato vencido.                " << endl;
-	cout << "   <3>  Regresar.                              " << endl << endl;
+	cout << "   <1>  Renovar contrato vencido.                                 " << endl;
+	cout << "   <2>  Cesar contrato vencido.                                   " << endl;
+	cout << "   <3>  Regresar.                                                 " << endl << endl;
 	cout << "*----------------------------------------------------------------*" << endl;
+	cout << "   Digite la opcion: ";
+	cin >> op;
+	return op;
+}
+
+int Interfaz::menuMantenimiento()
+{
+	int op;
+	system("cls");
+	cout << endl;
+	cout << "--------------MENU DE MANTENIMIENTO--------------" << endl;
+	cout << "*-----------------------------------------------*" << endl << endl;
+	cout << "   <1>  Editar.                                 " << endl;
+	cout << "   <2>  Eliminar.                                   " << endl;
+	cout << "   <3>  Regresar.                                                 " << endl << endl;
+	cout << "*-----------------------------------------------*" << endl;
+	cout << "   Digite la opcion: ";
+	cin >> op;
+	return op;
+
+}
+
+int Interfaz::menuEditar()
+{
+	int op;
+	system("cls");
+	cout << endl;
+	cout << "--------------MENU DE EDICION-------------" << endl;
+	cout << "*-----------------------------------------*" << endl << endl;
+	cout << "   <1>  Editar Empleado.               " << endl;
+	cout << "   <2>  Editar Avion.                  " << endl;
+	cout << "   <3>  Editar Contrato.               " << endl;
+	cout << "   <4>  Regresar.                        " << endl << endl;
+	cout << "*-----------------------------------------*" << endl;
+	cout << "   Digite la opcion: ";
+	cin >> op;
+	return op;
+}
+
+int Interfaz::menuEliminar()
+{
+	int op;
+	system("cls");
+	cout << endl;
+	cout << "--------------MENU DE ELIMINAR-------------" << endl;
+	cout << "*-----------------------------------------*" << endl << endl;
+	cout << "   <1>  Eliminar Empleado.               " << endl;
+	cout << "   <2>  Eliminar Avion.                  " << endl;
+	cout << "   <3>  Eliminar Contrato.               " << endl;
+	cout << "   <4>  Regresar.                        " << endl << endl;
+	cout << "*-----------------------------------------*" << endl;
+	cout << "   Digite la opcion: ";
+	cin >> op;
+	return op;
+}
+
+int Interfaz::menuEditarEmpleado()
+{
+	int op;
+	system("cls");
+	cout << endl;
+	cout << "--------------MENU EDITAR EMPLEADO-------------" << endl;
+	cout << "*---------------------------------------------*" << endl << endl;
+	cout << "   <1>  Editar nombre.               " << endl;
+	cout << "   <2>  Editar edad.                  " << endl;
+	cout << "   <3>  Editar ocupacion.               " << endl;
+	cout << "   <4>  Editar anios de experiencia.               " << endl;
+	cout << "   <5>  Editar telefono.               " << endl;
+	cout << "   <6>  Editar nacionalidad.               " << endl;
+	cout << "   <7>  Editar titulo universitario.               " << endl;
+	cout << "   <8>  Editar grado de escolaridad.               " << endl;
+	cout << "   <9>  Regresar.                        " << endl << endl;
+	cout << "*-----------------------------------------*" << endl;
 	cout << "   Digite la opcion: ";
 	cin >> op;
 	return op;
@@ -848,7 +920,6 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 	if (ar->getListaNodoContrato()->existenContratosVencidos(*act)== false)cout << "\n   No hay contratos vencidos disponibles\n";
 	else
 	{
-
 		cout << ar->getListaNodoContrato()->imprimirContratosVencidos(*act);
 		cout << "   Digite el codigo del contrato que desea seleccionar: ";
 		cin >> cod; cout << endl;
@@ -858,8 +929,6 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 		{
 			plazo = ar->getListaNodoContrato()->buscarContratoPorCod(cod);
 
-			cout << "-----------INGRESANDO DATOS NUEVOS-----------" << endl;
-			cout << "*-------------------------------------------*" << endl;
 
 			if(ar->getListaPlaza()->existePlazaParaPuesto(plazo->getEmpleado()->getOcupacion())== false)cout << "\n   No existen plazas\n";
 			else
@@ -879,7 +948,7 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 					pla = ar->getListaPlaza()->buscarPlazaPorCodigo(cod);
 
 
-					cout << "   Digite el codigo del contrato: ";
+					cout << "   Digite el nuevo codigo del contrato: ";
 					cin >> cod;cout << endl;
 
 					cout << "   Salario: ";
@@ -895,7 +964,7 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 
 					fIng = new Fecha(dd, mm, yy);
 
-					if(typeid(*plazo->getEmpleado()) == typeid(Administrativo) || typeid(*plazo->getEmpleado()) == typeid(Miscelaneo))tiem = new TiempoIndefinido(plazo->getDescPuesto(), cod, plazo->getSalario(), *plazo->getAvion(), *plazo->getEmpleado(), *pla, *fIng);
+					if(typeid(*plazo->getEmpleado()) == typeid(Administrativo) || typeid(*plazo->getEmpleado()) == typeid(Miscelaneo))tiem = new TiempoIndefinido(plazo->getDescPuesto(), cod, plazo->getSalario(), *plazo->getEmpleado(), *pla, *fIng);
 					else tiem = new TiempoIndefinido(plazo->getDescPuesto(), cod, plazo->getSalario(),*plazo->getAvion(), *plazo->getEmpleado(), *pla, *fIng);
 
 					if (ar->getListaNodoContrato()->existeContrato(cod) == false) {
@@ -924,6 +993,61 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 	system("pause");
 }
 
+void Interfaz::cesarTiempoIndefinido(Aeropuerto* ar)
+{
+	Fecha* act = NULL;
+	string cod;
+	int  dd, mm, yy;
+
+	system("cls");
+	cout << endl;
+	cout << "-----------CESE DE CONTRATO DE TIEMPO INDEFINIDO-----------" << endl;
+	cout << "*-------------------------------------------------------------*" << endl;
+
+	cout << "   Ingrese la fecha actual: " << endl << endl;
+	cout << "   Ingrese el dia: ";
+	cin >> dd;
+	cout << "   Ingrese el mes: ";
+	cin >> mm;
+	cout << "   Ingrese el anio: ";
+	cin >> yy; cout << endl;
+
+	act = new Fecha(dd, mm, yy);
+
+	if (ar->getListaNodoContrato()->existenContratosVencidos(*act) == false)cout << "\n   No hay contratos vencidos disponibles\n";
+	else
+	{
+		cout << ar->getListaNodoContrato()->imprimirContratosVencidos(*act);
+		cout << "   Digite el codigo del contrato que desea seleccionar: ";
+		cin >> cod; cout << endl;
+
+
+		if (ar->getListaNodoContrato()->existeContratoVencidoConCod(*act, cod) == false) cout << "   No existe nigun contrato para eliminar con ese codigo\n";
+		else
+		{
+			if (ar->getListaNodoContrato()->eliminaContratoPorCodigo(cod))msjExitoEliminar();
+			else msjErrorEliminar();
+		}
+	}
+	system("pause");
+}
+
+void Interfaz::editarNombre(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------EDITAR NOMBRE-----------" << endl;
+	cout << "*---------------------------------*" << endl<<endl;
+	if (ar->getListaEmpleado()->estaVacio()) msjSinEmpleados();
+	else
+	{
+		cout<<ar->getListaEmpleado()->toString();
+
+	}
+
+	system("pause");
+}
+
 void Interfaz::msjErorrIngresar()
 {
 	cout << "   Fallo al ingresar" << endl<<endl;
@@ -937,12 +1061,22 @@ void Interfaz::msjExitoIngresar()
 void Interfaz::msjSinEmpleados()
 {
 
-	cout << " No se puede crear el contrato debido a que no hay ningun empleado registrado" << endl<<endl;
+	cout << "No hay ningun empleado registrado" << endl<<endl;
 }
 
 void Interfaz::msjNoExisteCedula()
 {
 	cout << " No existe ningun empleado con esa cedula" << endl << endl;
+}
+
+void Interfaz::msjErrorEliminar()
+{
+	cout << "   Fallo al Eliminar" << endl << endl;
+}
+
+void Interfaz::msjExitoEliminar()
+{
+	cout << "   Se elimino con exito" << endl << endl;
 }
 
 

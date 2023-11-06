@@ -41,8 +41,11 @@ public:
 	void setEmpleado(Empleado& emp);
 	void getAvion(Avion& av);
 
+
 	virtual bool estaVencido(Fecha& actual);
 	virtual bool getAceptado();
+
+	virtual void setAceptado(bool ace);
 
 	//toString
 	virtual string toString() = 0;

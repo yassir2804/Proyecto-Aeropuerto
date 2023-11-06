@@ -77,6 +77,10 @@ void ContratoBase::getAvion(Avion& av)
 	avion = (Avion*)&av;
 }
 
+void ContratoBase::setAceptado(bool ace)
+{
+}
+
 bool ContratoBase::estaVencido(Fecha& actual)
 {
 	return false;

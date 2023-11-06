@@ -17,12 +17,16 @@ public:
 
 	int controlMenu();
 
-	void control1();
+	void control1();	
+	void control2();
 
 	void control1_1();
 	void control1_2();
 	void control1_3();
 	void control1_4();
+
+	void control2_1();
+	void control2_2();
 
 	void controlPiloto();
 	void controlCopiloto();
@@ -37,6 +41,11 @@ public:
 	void controlServiciosProfesionales();
 	void controlPlazoFijo();
 	void controlTiempoIndefinido();
+	void controlRenovarTiempoIndefinido();
+	void controlCesarTiempoIndefinido();
 
+	void controlEditarEmpleado();
+	void controlEliminar();
+	void editarNombre();
 
 };
