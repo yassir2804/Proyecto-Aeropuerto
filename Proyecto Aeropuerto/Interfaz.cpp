@@ -590,10 +590,10 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 		cout << "   Ingrese la cedula del empleado que desea ligar a este contrato: ";
 		cin >> ced; cout << endl;
 
-		if ( ar->getListaEmpleado()->existeEmpleado(ced) == false) cout << "   \n No existe ningun empleado con esa cedula\n";
+		if ( ar->getListaEmpleado()->existeEmpleado(ced) == false) msjNoExisteCedula(); 
 		else
 		{
-			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) cout << "   \n El empleado ya esta asociado a un contrato\n";
+			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) msjEmpleadoAsociado(); 
 			else
 			{
 				emp = ar->getListaEmpleado()->buscarEmpleadoPorCed(ced);
@@ -612,7 +612,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 				}
 				else
 				{
-					if (ar->getListaAvion()->estaVacio())cout<<"\n No hay aviones disponibles\n" ;
+					if (ar->getListaAvion()->estaVacio()) msjAvionNoDisponible(); 
 					else
 					{
 						if (typeid(*emp) == typeid(Piloto)) {
@@ -621,10 +621,10 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 							cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
 
-							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No existe ningun avion con esa placa\n";
+							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) msjNoAvionPlaca(); 
 							else
 							{
-								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) cout << "   \n Este avion ya posee un Piloto\n";
+								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) msjAvionConPiloto();
 								else
 								{
 									avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -647,17 +647,17 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 
 						if (typeid(*emp) == typeid(Copiloto)) {
 
-							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No existe ningun avion civil\n";
+							if (ar->getListaAvion()->existeAvionCivil() == false) msjNoAvionCivil();
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesCiviles();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No existe ningun avion civil con esa placa\n";
+								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) msjNoAvionCivilPlaca();
 								else
 								{
-									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) cout << " Este avion ya posee un Copiloto\n";
+									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) msjAvionCopiloto();
 									else
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -679,17 +679,17 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 						}
 						if (typeid(*emp) == typeid(Azafata)) {
 
-							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No existe ningun avion comercial\n";
+							if (ar->getListaAvion()->existeAvionComercial() == false) msjNoAvionComercial();
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesComerciales();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No existe ningun avion comercial con esa placa\n";
+								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) msjNoAvionComercialPlaca();
 								else
 								{
-									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) cout << " Este avion ya posee una azafata\n";
+									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) msjAvionComercialAzafata();
 									else
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -763,7 +763,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 		if (ar->getListaEmpleado()->existeEmpleado(ced) == false)msjNoExisteCedula();
 		else
 		{
-			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) cout << "   \n El empleado ya esta asociado a un contrato\n";
+			if (ar->getListaNodoContrato()->existeContratoConEmpleado(ced)) msjEmpleadoAsociado(); 
 			else
 			{
 				emp = ar->getListaEmpleado()->buscarEmpleadoPorCed(ced);
@@ -782,7 +782,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 				}
 				else
 				{
-					if (ar->getListaAvion()->estaVacio())cout << "\n No hay aviones disponibles\n";
+					if (ar->getListaAvion()->estaVacio()) msjNoAvionesDisponibles();
 					else
 					{
 						if (typeid(*emp) == typeid(Piloto)) {
@@ -791,10 +791,10 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
 
-							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) cout << "\n No exite ningun avion con esa placa\n";
+							if (ar->getListaAvion()->existeAvionPorPlaca(pla) == false) msjNoAvionPlaca();
 							else
 							{
-								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) cout << "   \n Este avion ya posee un Piloto\n";
+								if (ar->getListaNodoContrato()->existeAvionConPiloto(pla)) msjAvionConPiloto(); 
 								else
 								{
 									avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -817,17 +817,16 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 
 						if (typeid(*emp) == typeid(Copiloto)) {
 
-							if (ar->getListaAvion()->existeAvionCivil() == false)cout << " No exite ningun avion civil\n";
+							if (ar->getListaAvion()->existeAvionCivil() == false) msjNoAvionCivil();
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesCiviles();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) cout << " No exite ningun avion civil con esa placa\n";
-								else
+								if (ar->getListaAvion()->existeAvionCivilPorPlaca(pla) == false) msjNoAvionCivilPlaca();
 								{
-									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) cout << " Este avion ya posee un Copiloto\n";
+									if (ar->getListaNodoContrato()->existeAvionConCopiloto(pla)) msjAvionCopiloto(); 
 									else
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -849,17 +848,17 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 						}
 						if (typeid(*emp) == typeid(Azafata)) {
 
-							if (ar->getListaAvion()->existeAvionComercial() == false)cout << " No exite ningun avion comercial\n";
+							if (ar->getListaAvion()->existeAvionComercial() == false) msjNoAvionComercial();
 							else
 							{
 								cout << ar->getListaAvion()->imprimeAvionesComerciales();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
 
-								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) cout << " No exite ningun avion comercial con esa placa\n";
+								if (ar->getListaAvion()->existeAvionComercialPorPlaca(pla) == false) msjNoAvionComercialPlaca();
 								else
 								{
-									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) cout << " Este avion ya posee una azafata\n";
+									if (ar->getListaNodoContrato()->existeAvionConAzafata(pla)) msjAvionComercialAzafata(); 
 									else
 									{
 										avi = ar->getListaAvion()->buscarAvionPorPlaca(pla);
@@ -917,14 +916,14 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 	act = new Fecha(dd, mm, yy);
 
 
-	if (ar->getListaNodoContrato()->existenContratosVencidos(*act)== false)cout << "\n   No hay contratos vencidos disponibles\n";
+	if (ar->getListaNodoContrato()->existenContratosVencidos(*act)== false)msjNoContratosVencidos(); 
 	else
 	{
 		cout << ar->getListaNodoContrato()->imprimirContratosVencidos(*act);
 		cout << "   Digite el codigo del contrato que desea seleccionar: ";
 		cin >> cod; cout << endl;
 
-		if (ar->getListaNodoContrato()->existeContratoVencidoConCod(*act,cod) == false) cout << "   No existe nigun contrato para renovar con ese codigo\n";
+		if (ar->getListaNodoContrato()->existeContratoVencidoConCod(*act,cod) == false) msjNoRenovarContratoCodigo(); 
 		else
 		{
 			plazo = ar->getListaNodoContrato()->buscarContratoPorCod(cod);
@@ -941,7 +940,7 @@ void Interfaz::renovarTiempoIndefinido(Aeropuerto* ar)
 				cout << "   Digite el codigo de la plaza que desea seleccionar: ";
 				cin >> cod;cout << endl;
 
-				if (ar->getListaPlaza()->existePlazaDisponible(cod, plazo->getEmpleado()->getOcupacion()) == false) cout << "\n   No hay plazas disponibles con ese codigo\n";
+				if (ar->getListaPlaza()->existePlazaDisponible(cod, plazo->getEmpleado()->getOcupacion()) == false) msjPlazaCodigo(); 
 				else 
 				{
 
@@ -1066,7 +1065,82 @@ void Interfaz::msjSinEmpleados()
 
 void Interfaz::msjNoExisteCedula()
 {
-	cout << " No existe ningun empleado con esa cedula" << endl << endl;
+	cout << "	No existe ningun empleado con esa cedula" << endl << endl;
+}
+
+void Interfaz::msjEmpleadoAsociado()
+{
+	cout << "	El empleado ya esta asociado a un contrato" << endl << endl;
+}
+
+void Interfaz::msjAvionNoDisponible()
+{
+	cout << "	No hay aviones disponibles" << endl << endl;
+}
+
+void Interfaz::msjNoAvionPlaca()
+{
+	cout << "	No existe ningun avion con esa placa" << endl << endl;
+}
+
+void Interfaz::msjAvionConPiloto()
+{
+	cout << "	Este avion ya posee un Piloto" << endl << endl;
+}
+
+void Interfaz::msjNoAvionCivil()
+{
+	cout << "	No existe ningun avion civil" << endl << endl;
+}
+
+void Interfaz::msjNoAvionCivilPlaca()
+{
+	cout << "	No existe ningun avion civil con esa placa" << endl << endl;
+}
+
+void Interfaz::msjAvionCopiloto()
+{
+	cout << "	Este avion ya posee un Copiloto" << endl << endl;
+}
+
+void Interfaz::msjNoAvionComercial() 
+{
+	cout << "	No existe ningun avion comercial" << endl << endl;
+}
+ 
+void Interfaz::msjNoAvionComercialPlaca() 
+{
+	cout << "	No existe ningun avion comercial con esa placa" << endl << endl;
+}
+
+void Interfaz::msjAvionComercialAzafata() 
+{
+	cout << "	Este avion ya posee una azafata" << endl << endl;
+}
+
+void Interfaz::msjNoAvionesDisponibles()
+{
+	cout << "	No hay aviones disponibles" << endl << endl;
+}
+
+void Interfaz::msjNoContratosVencidos()
+{
+	cout << "	No hay contratos vencidos disponibles" << endl << endl;
+}
+
+void Interfaz::msjNoRenovarContratoCodigo() 
+{
+	cout << "	No existe nigun contrato para renovar con ese codigo" << endl << endl;
+}
+
+void Interfaz::msjPlaza()
+{
+	cout << "	No existen plazas" << endl << endl;
+}
+
+void Interfaz::msjPlazaCodigo()
+{
+	cout << "	No hay plazas disponibles con ese codigo" << endl << endl;
 }
 
 void Interfaz::msjErrorEliminar()

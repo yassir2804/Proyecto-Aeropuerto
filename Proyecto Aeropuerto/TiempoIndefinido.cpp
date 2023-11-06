@@ -30,17 +30,17 @@ string TiempoIndefinido::toString()
 {
 	stringstream s;
 
-	s << "-----INFORMACION DEL CONTRATO DE TIEMPO INDEFINIDO-----" << endl<<endl;
-	s << "Codigo del contrato: " << codContrato << endl;
-	s << "Descripcion del puesto: " << descPuesto << endl;
-	s << "Salario: " << salario << endl;
+	s << "-----INFORMACION DEL CONTRATO-----" << endl<<endl;
+	s << "	Codigo del contrato:	" << codContrato << endl;
+	s << "	Descripcion del puesto:	" << descPuesto << endl;
+	s << "	Salario:	" << salario << endl;
 	if (fIngreso != NULL)
 	{
-		s << "La fecha de ingreso es:" << fIngreso->toString()<<endl;
+		s << "La fecha de ingreso es:	" << fIngreso->toString()<<endl;
 	}
 	if (fCulminacion != NULL)
 	{
-		s << "La fecha de cese de funciones es:" << fCulminacion->toString() << endl;
+		s << "La fecha de cese de funciones es:	" << fCulminacion->toString() << endl;
 	}
 
 	if (ptrPlaza != NULL)

@@ -48,8 +48,19 @@ public:
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();
 	static void msjNoExisteCedula();
-
-	static void msjErrorEliminar();
-	static void msjExitoEliminar();
-
+	static void msjEmpleadoAsociado();
+	static void msjAvionNoDisponible();
+	static void msjNoAvionPlaca();
+	static void msjAvionConPiloto();
+	static void msjNoAvionCivil();
+	static void msjNoAvionCivilPlaca();
+	static void msjAvionCopiloto();
+	static void msjNoAvionComercial();
+	static void msjNoAvionComercialPlaca();
+	static void msjAvionComercialAzafata();
+	static void msjNoAvionesDisponibles();
+	static void msjNoContratosVencidos();
+	static void msjNoRenovarContratoCodigo();
+	static void msjPlaza();
+	static void msjPlazaCodigo();
 };
