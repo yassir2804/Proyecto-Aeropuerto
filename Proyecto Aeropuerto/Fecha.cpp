@@ -51,5 +51,5 @@ string Fecha::toString()
 
 Fecha* Fecha::copia()
 {
-	return   new Fecha(dia, mes, anio);
+	return new Fecha(dia, mes, anio);
 }

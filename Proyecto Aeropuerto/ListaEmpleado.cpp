@@ -50,7 +50,7 @@ bool ListaEmpleado::ingresaEmpleado(Empleado& emp)
 	return false;
 }
 
-bool ListaEmpleado::existeEmpleado(string ced)
+bool ListaEmpleado::existeEmpleadoConCed(string ced)
 {
 	NodoEmpleado* aux = primero;
 	

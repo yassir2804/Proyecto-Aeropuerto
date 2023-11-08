@@ -113,8 +113,8 @@ void Controladora::control2_1()
         op = Interfaz::menuEditar();
         switch (op) {
         case 1:controlEditarEmpleado(); break;
-        //case 2: controlAvionCarga(); break;
-        //case 3: controlAvionMilitar(); break;
+        case 2: controEditarAvion(); break;
+        case 3: controlEditarContrato(); break;
         }
 
     } while (op != 4);
@@ -186,26 +186,9 @@ void Controladora::controlPlazoFijo()
 
 void Controladora::controlTiempoIndefinido()
 {
-    int op;
-    do {
-        op = Interfaz::menuTiempoIndefinido();
-        switch (op) {
-        case 1: controlRenovarTiempoIndefinido(); break;
-        case 2: controlCesarTiempoIndefinido(); break;
-        }
-
-    } while (op != 3);
+   Interfaz::ingresarTiempoIndefinido(aeropuerto);
 }
 
-void Controladora::controlRenovarTiempoIndefinido()
-{
-    Interfaz::renovarTiempoIndefinido(aeropuerto);
-}
-
-void Controladora::controlCesarTiempoIndefinido()
-{
-    Interfaz::cesarTiempoIndefinido(aeropuerto);
-}
 
 void Controladora::controlEditarEmpleado()
 {
@@ -226,20 +209,35 @@ void Controladora::controlEditarEmpleado()
     } while (op != 9);
 }
 
-void Controladora::controlEliminar()
+void Controladora::controEditarAvion()
 {
-    //int op;
-    //do {
-    //    op = Interfaz::menuEliminar();
-    //    switch (op) {
-    //    case 1: controlPiloto(); break;
-    //    case 2: controlCopiloto(); break;
-    //    case 3: controlAzafata(); break;
-    //    case 4: controlAdministrativo(); break;
-    //    case 5: controlMiscelaneo(); break;
-    //    }
+    int op;
+    do {
+        op = Interfaz::menuEditarAvion();
+        switch (op) {
+        case 1: controlEditarDistRecorrida(); break;
+        case 2: controlEditarCategoria(); break;
+        case 3: controlEditarTipo(); break;
+        case 4: controlEditarAnchPuer(); break;
+        case 5: controlEditarAltPuer(); break;
+        case 6: controlEditarVelMaxima(); break;
+        }
 
-    //} while (op != 6);
+    } while (op != 7);
+}
+
+void Controladora::controlEditarContrato()
+{
+    int op;
+    do {
+        op = Interfaz::menuEditarContrato();
+        switch (op) {
+        case 1: controlEditarSalario(); break;
+        case 2: controlEditarHorario(); break;
+        case 3: controlEditarAceptado(); break;
+        }
+
+    } while (op != 4);
 }
 
 void Controladora::controlEditarNombre()
@@ -280,4 +278,49 @@ void Controladora::controlEditarTitulo()
 void Controladora::controlEditarGradoesc()
 {
     Interfaz::editarGradoEscolaridad(aeropuerto);
+}
+
+void Controladora::controlEditarDistRecorrida()
+{
+    Interfaz::editarDisRecorrida(aeropuerto);
+}
+
+void Controladora::controlEditarCategoria()
+{
+    Interfaz::editarCategoria(aeropuerto);
+}
+
+void Controladora::controlEditarTipo()
+{
+    Interfaz::editarTipo(aeropuerto);
+}
+
+void Controladora::controlEditarAnchPuer()
+{
+    Interfaz::editarAnchoPuerta(aeropuerto);
+}
+
+void Controladora::controlEditarAltPuer()
+{
+    Interfaz::editarAltoPuerta(aeropuerto);
+}
+
+void Controladora::controlEditarVelMaxima()
+{
+    Interfaz::editarVelocidadMaxima(aeropuerto);
+}
+
+void Controladora::controlEditarSalario()
+{
+    Interfaz::editarSalario(aeropuerto);
+}
+
+void Controladora::controlEditarHorario()
+{
+    Interfaz::editarHorario(aeropuerto);
+}
+
+void Controladora::controlEditarAceptado()
+{
+    Interfaz::editarAceptado(aeropuerto);
 }

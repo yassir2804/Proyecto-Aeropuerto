@@ -16,4 +16,5 @@ public:
 	static int avionComercialPrecio(string codigo);
 	static string avionMilitarCategoria(string codigo); 
 	static double avionMilitarAlcance(string codigo);
+	static double avionMilitarCarga(string codigo);
 };

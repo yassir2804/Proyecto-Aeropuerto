@@ -36,4 +36,7 @@ public:
 	virtual string toString() = 0;
 	virtual Avion* copia() = 0;
 
+	virtual void setAnchoPuerta(double ancPuer);
+	virtual void setAlturaPuerta(double altPuer);
+	virtual void setVelocidadMaxima(double velMax);
 };

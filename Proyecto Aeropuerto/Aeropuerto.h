@@ -23,14 +23,86 @@ public:
 
 	virtual ~Aeropuerto();
 
-	ListaEmpleado* getListaEmpleado();
-	ListaAvion* getListaAvion();
-	ListaNodoContrato* getListaNodoContrato();
-	ListaPlaza* getListaPlaza();
 
+	//metodos de lista empleados
+	bool ListaEmpleadoEstaVacio();
 	bool ingresarEmpleado(Empleado& emp);
+	bool existePiloto();
+	bool existeCopiloto();
+	bool existeAzafata();
+	bool existeAdministrativo();
+	bool existeMiscelaneo();
+	bool existeEmpleadoConCed(string ced);
+	bool existePilotoConCed(string ced);
+	bool existeCopilotoConCed(string ced);
+	bool existeAzafataConCed(string ced);
+	bool existeAdministrativoConCed(string ced);
+	bool existeMiscelaneoConCed(string ced);
+	Empleado* buscarEmpleadoPorCed(string ced);
+	string imprimirMiscelaneos();
+	string imprimirAdministrativos();
+	string imprimirAzafatas();
+	string imprimirCopilotos();
+	string imprimirPilotos();
+	string imprimeEmpleados();
+
+
+	//metodos de lista avion
+	bool ListaAvionEstaVacio();
 	bool ingresarAvion(Avion& avi);
+	bool existeAvionCivil();
+	bool existeAvionComercial();
+	bool existeAvionCarga();
+	bool existeAvionMilitar();
+	bool existeAvionPorPlaca(string pla);
+	bool existeAvionCivilPorPlaca(string pla);
+	bool existeAvionComercialPorPlaca(string pla);
+	bool existeAvionCargaPorPlaca(string pla);
+	bool existeAvionMilitarPorPlaca(string pla);
+	Avion* buscarAvionPorPlaca(string pla);
+	string imprimeAvionesMilitares();
+	string imprimeAvionesCarga();
+	string imprimeAvionesCiviles();
+	string imprimeAvionesComerciales();
+	string imprimeAviones();
+
+	//metodos de lista contrato
+
+	bool ListaContratosEstaVacio();
 	bool ingresarContrato(ContratoBase& con);
+	bool ingresaContrato(ContratoBase& ptrContrato);
+	bool existeContrato(string cod);
+	bool existeContratoConEmpleado(string ced);
+	bool existeAvionConPiloto(string pla);
+	bool existeAvionConCopiloto(string pla);
+	bool existeAvionConAzafata(string pla);
+	bool existenContratosVencidos(Fecha& fech);
+	bool existeContratoVencidoConCod(Fecha& fech, string cod);
+	bool eliminaContratoPorCodigo(string cod);
+	ContratoBase* buscarContratoPorCod(string cod);
+	string imprimirContratosVencidos(Fecha& act);
+	string imprimeContratos();
+	string imprimirServiciosProfesionales();
+	string imprimirPlazosFijos();
+	string imprimirTiempoIndefinido();
+	bool existeServicioProfesional();
+	bool existePlazoFijo();
+	bool existeTiempoIndefinido();
+	bool existeServicioProfesionalConCod(string cod);
+	bool existePlazoFijoConCod(string cod);
+	bool existeTiempoIndefinidoConCod(string cod);
+	
+
+	//metodos de lista plazas
+
+	bool ListaPlazaEstaVacio();
 	bool ingresarPlaza(Plaza& pla);
+	bool ingresaPlaza(Plaza& pla);
+	bool existePlaza(string cod);
+	bool existePlazaParaPuesto(string pues);
+	bool existePlazaDisponible(string cod, string pues);
+	Plaza* buscarPlazaPorCodigo(string cod);
+	string imprimirPlazasDisponibles(string pues);
+	string imprimePlazas();
 
 };

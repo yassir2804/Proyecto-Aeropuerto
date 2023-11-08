@@ -47,6 +47,8 @@ public:
 
 	virtual void setAceptado(bool ace);
 
+	virtual void setHorario(string hor);
+
 
 	//toString
 	virtual string toString() = 0;

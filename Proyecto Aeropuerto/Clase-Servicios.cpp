@@ -94,3 +94,9 @@ double Servicio::avionMilitarAlcance(string codigo)
 	if (codigo == "M300") { return 4630; }
 	if (codigo == "M130") { return 4000; }
 }
+
+double Servicio::avionMilitarCarga(string codigo)
+{
+	if (codigo == "M300") { return 1400; }
+	if (codigo == "M130") { return 1300; }
+}

@@ -25,6 +25,8 @@ public:
 	static int menuEditarAvion();
 	static int menuEditarContrato();
 
+	//
+
 	static void ingresarPiloto(Aeropuerto* ar);
 	static void ingresarCopiloto(Aeropuerto* ar);
 	static void ingresarAzafata(Aeropuerto* ar);
@@ -39,8 +41,7 @@ public:
 
 	static void ingresarServiciosProfesionales(Aeropuerto* ar);
 	static void ingresarPlazoFijo(Aeropuerto* ar);
-	static void renovarTiempoIndefinido(Aeropuerto* ar);
-	static void cesarTiempoIndefinido(Aeropuerto* ar);
+	static void ingresarTiempoIndefinido(Aeropuerto* ar);
 
 	static void editarNombre(Aeropuerto* ar);
 	static void editarEdad(Aeropuerto* ar);
@@ -50,6 +51,17 @@ public:
 	static void editarNacionalidad(Aeropuerto* ar);
 	static void editarTitulo(Aeropuerto* ar);
 	static void editarGradoEscolaridad(Aeropuerto* ar);
+
+	static void editarDisRecorrida(Aeropuerto* ar);
+	static void editarCategoria(Aeropuerto* ar);
+	static void editarTipo(Aeropuerto* ar);
+	static void editarAnchoPuerta(Aeropuerto* ar);
+	static void editarAltoPuerta(Aeropuerto* ar);
+	static void editarVelocidadMaxima(Aeropuerto* ar);
+
+	static void editarSalario(Aeropuerto* ar);
+	static void editarHorario(Aeropuerto* ar);
+	static void editarAceptado(Aeropuerto* ar);
 
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();
@@ -66,6 +78,8 @@ public:
 	static void msjNoAvionComercialPlaca();
 	static void msjAvionComercialAzafata();
 	static void msjNoAvionesDisponibles();
+	static void msjNoContratosDispobibles();
+	static void msjNoContratosCod();
 	static void msjNoContratosVencidos();
 	static void msjNoRenovarContratoCodigo();
 	static void msjPlaza();

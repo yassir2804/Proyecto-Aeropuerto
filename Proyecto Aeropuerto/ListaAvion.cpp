@@ -74,6 +74,36 @@ bool ListaAvion::existeAvionComercial()
 	return false;
 }
 
+bool ListaAvion::existeAvionCarga()
+{
+	NodoAvion* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getAvion()) == typeid(AvionCarga)) {
+			return true;
+		}
+		aux = aux->getSigAvion();
+	}
+
+	return false;
+}
+
+bool ListaAvion::existeAvionMilitar()
+{
+	NodoAvion* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getAvion()) == typeid(AvionMilitar)) {
+			return true;
+		}
+		aux = aux->getSigAvion();
+	}
+
+	return false;
+}
+
 bool ListaAvion::existeAvionPorPlaca(string pla)
 {
 	NodoAvion* aux = primero;
@@ -118,6 +148,33 @@ bool ListaAvion::existeAvionComercialPorPlaca(string pla)
 	return false;
 }
 
+bool ListaAvion::existeAvionCargaPorPlaca(string pla)
+{
+	NodoAvion* aux = primero;
+
+	while (aux != NULL) {
+		if ( aux->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getAvion()) == typeid(AvionCarga)) {
+			return true;
+		}
+		aux = aux->getSigAvion();
+	}
+
+	return false;
+}
+
+bool ListaAvion::existeAvionMilitarPorPlaca(string pla)
+{
+	NodoAvion* aux = primero;
+
+	while (aux != NULL) {
+		if (aux->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getAvion()) == typeid(AvionMilitar)) {
+			return true;
+		}
+		aux = aux->getSigAvion();
+	}
+
+	return false;
+}
 Avion* ListaAvion::buscarAvionPorPlaca(string pla)
 {
 
@@ -138,6 +195,42 @@ Avion* ListaAvion::buscarAvionPorPlaca(string pla)
 
 
 
+
+string ListaAvion::imprimeAvionesMilitares()
+{
+	NodoAvion* aux = primero;
+	stringstream s;
+
+	s << "\n--------LISTA DE AVIONES--------" << endl << endl;
+
+	while (aux != NULL) {
+
+		if (typeid(*aux->getAvion()) == typeid(AvionMilitar))s << aux->getAvion()->toString() << endl;;
+
+		aux = aux->getSigAvion();
+
+	}
+
+	return s.str();
+}
+
+string ListaAvion::imprimeAvionesCarga()
+{
+	NodoAvion* aux = primero;
+	stringstream s;
+
+	s << "\n--------LISTA DE AVIONES--------" << endl << endl;
+
+	while (aux != NULL) {
+
+		if ( typeid(*aux->getAvion()) == typeid(AvionCarga))s << aux->getAvion()->toString() << endl;;
+
+		aux = aux->getSigAvion();
+
+	}
+
+	return s.str();
+}
 
 string ListaAvion::imprimeAvionesCiviles()
 {

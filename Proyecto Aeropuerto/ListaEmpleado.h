@@ -17,7 +17,6 @@ public:
 	bool estaVacio();
 
 	bool ingresaEmpleado(Empleado& emp);
-	bool existeEmpleado(string ced);
 
 	bool existePiloto();
 	bool existeCopiloto();
@@ -25,6 +24,7 @@ public:
 	bool existeAdministrativo();
 	bool existeMiscelaneo();
 
+	bool existeEmpleadoConCed(string ced);
 	bool existePilotoConCed(string ced);
 	bool existeCopilotoConCed(string ced);
 	bool existeAzafataConCed(string ced);

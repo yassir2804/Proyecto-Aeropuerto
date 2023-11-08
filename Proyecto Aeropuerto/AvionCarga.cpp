@@ -40,7 +40,7 @@ string AvionCarga::toString()
 	s << "Distancia recorrida:	" << distanciaRecorrida << " Km		     " << endl;
 	s << "Tipo de Avion:		" << tipo << "	     " << endl;
 	s << "Numero de Categoria:	" << categoria << "		     " << endl;
-	s << "Categoria del avion:	" << Servicio::avionCarga(categoria) << "	     " << endl;
+	s << "Marca del avion:	" << Servicio::avionCarga(categoria) << "	     " << endl;
 	s << "Cantidad de pasajeros:	" << Servicio::avionCargaPasajeros(categoria) << "		     " << endl;
 	s << "Velocidad el avion:	" << Servicio::avionCargaVelocidades(categoria) << " km" << endl << endl;
 	s << "*--INFORMACION DE LA PUERTA--*       " << endl;

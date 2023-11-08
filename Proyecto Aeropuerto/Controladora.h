@@ -19,6 +19,7 @@ public:
 
 	void control1();	
 	void control2();
+	void control3();
 
 	void control1_1();
 	void control1_2();
@@ -27,6 +28,8 @@ public:
 
 	void control2_1();
 	void control2_2();
+
+	void control3_1();
 
 	void controlPiloto();
 	void controlCopiloto();
@@ -41,11 +44,11 @@ public:
 	void controlServiciosProfesionales();
 	void controlPlazoFijo();
 	void controlTiempoIndefinido();
-	void controlRenovarTiempoIndefinido();
-	void controlCesarTiempoIndefinido();
 
 	void controlEditarEmpleado();
-	void controlEliminar();
+	void controEditarAvion();
+	void controlEditarContrato();
+
 	void controlEditarNombre();
 	void controlEditarEdad();
 	void controlEditarOcupacion();
@@ -54,5 +57,16 @@ public:
 	void controlEditarNacionalidad();
 	void controlEditarTitulo();
 	void controlEditarGradoesc();
+
+	void controlEditarDistRecorrida();
+	void controlEditarCategoria();
+	void controlEditarTipo();
+	void controlEditarAnchPuer();
+	void controlEditarAltPuer();
+	void controlEditarVelMaxima();
+
+	void controlEditarSalario();
+	void controlEditarHorario();
+	void controlEditarAceptado();
 
 };

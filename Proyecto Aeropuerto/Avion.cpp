@@ -61,4 +61,17 @@ string Avion::getNumeroDePlaca()
 	return numPlaca;
 }
 
+void Avion::setAnchoPuerta(double ancPuer)
+{
+}
+
+void Avion::setAlturaPuerta(double altPuer)
+{
+}
+
+void Avion::setVelocidadMaxima(double velMax)
+{
+}
+
+
 

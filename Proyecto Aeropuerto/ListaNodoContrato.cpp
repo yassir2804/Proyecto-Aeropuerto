@@ -39,6 +39,51 @@ bool  ListaNodoContrato::ingresaContrato(ContratoBase& ptrContrato)
 	return false;
 }
 
+bool ListaNodoContrato::existeServicioProfesional()
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(ServiciosProfesionales)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existePlazoFijo()
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(PlazoFijo)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeTiempoIndefinido()
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(TiempoIndefinido)) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
 bool ListaNodoContrato::existeContrato(string cod)
 {
 	NodoContratoBase* aux = primero;
@@ -46,6 +91,51 @@ bool ListaNodoContrato::existeContrato(string cod)
 
 	while (aux != NULL) {
 		if (aux->getContratoBase()->getCodContrato() == cod) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeServicioProfesionalConCod(string cod)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(ServiciosProfesionales)&& aux->getContratoBase()->getCodContrato() == cod ) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existePlazoFijoConCod(string cod)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(PlazoFijo) && aux->getContratoBase()->getCodContrato() == cod) {
+			return true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	return false;
+}
+
+bool ListaNodoContrato::existeTiempoIndefinidoConCod(string cod)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(TiempoIndefinido) && aux->getContratoBase()->getCodContrato() == cod) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -129,7 +219,7 @@ bool ListaNodoContrato::existenContratosVencidos(Fecha& fech)
 
 	while (aux != NULL) {
 
-		if (aux->getContratoBase()->estaVencido(fech)) {
+		if ( typeid(*aux->getContratoBase()) == typeid(PlazoFijo) &&  aux->getContratoBase()->estaVencido(fech)  && aux->getContratoBase()->getAceptado()) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -196,6 +286,51 @@ ContratoBase* ListaNodoContrato::buscarContratoPorCod(string cod)
 	}
 
 	return NULL;
+}
+
+string ListaNodoContrato::imprimirServiciosProfesionales()
+{
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(ServiciosProfesionales))s << aux->getContratoBase()->toString() << endl;
+		aux = aux->getNodoContratoBase();
+	}
+
+	return s.str();
+}
+
+string ListaNodoContrato::imprimirPlazosFijos()
+{
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(PlazoFijo))s << aux->getContratoBase()->toString() << endl;
+		aux = aux->getNodoContratoBase();
+	}
+
+	return s.str();
+}
+
+string ListaNodoContrato::imprimirTiempoIndefinido()
+{
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(TiempoIndefinido))s << aux->getContratoBase()->toString() << endl;
+		aux = aux->getNodoContratoBase();
+	}
+
+	return s.str();
 }
 
 string ListaNodoContrato::imprimirContratosVencidos(Fecha& act)

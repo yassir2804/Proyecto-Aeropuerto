@@ -81,6 +81,10 @@ void ContratoBase::setAceptado(bool ace)
 {
 }
 
+void ContratoBase::setHorario(string hor)
+{
+}
+
 bool ContratoBase::estaVencido(Fecha& actual)
 {
 	return false;
