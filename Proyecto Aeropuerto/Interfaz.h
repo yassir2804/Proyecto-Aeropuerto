@@ -71,7 +71,7 @@ public:
 
 	//Metodos para los reportes
 	static void reporteAviones(Aeropuerto* ar);
-	static void reporteContratoServiciosProfecionales(Aeropuerto* ar);
+	static void reporteContratoServiciosProfesionales(Aeropuerto* ar);
 	static void reportePlazoFijo(Aeropuerto* ar);
 	static void reporteTiempoIndefinido(Aeropuerto* ar);
 

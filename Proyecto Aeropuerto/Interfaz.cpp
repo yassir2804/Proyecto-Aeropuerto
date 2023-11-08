@@ -1710,13 +1710,13 @@ void Interfaz::reporteAviones(Aeropuerto* ar)
 	system("pause");
 }
 
-void Interfaz::reporteContratoServiciosProfecionales(Aeropuerto* ar)
+void Interfaz::reporteContratoServiciosProfesionales(Aeropuerto* ar)
 {
 	system("cls");
 	cout << endl;
-	cout << "-----------REPORTE DE SERVICIOS PROFECIONALES-------------" << endl;
+	cout << "-----------REPORTE DE SERVICIOS PROFESIONALES-------------" << endl;
 	cout << "*--------------------------------------------------------*" << endl << endl;
-	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles(); 
+	if (ar->existeServicioProfesional()==false) msjNoContratosDispobibles(); 
 	else {
 		cout << ar->imprimirServiciosProfesionales();
 	}
@@ -1729,7 +1729,7 @@ void Interfaz::reportePlazoFijo(Aeropuerto* ar)
 	cout << endl; 
 	cout << "-----------REPORTE DE CONTRATOS DE PLAZOS FIJOS-------------" << endl;
 	cout << "*----------------------------------------------------------*" << endl << endl; 
-	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles();
+	if (ar->existePlazoFijo()==false) msjNoContratosDispobibles();
 	else {
 		cout << ar->imprimirPlazosFijos(); 
 	}
@@ -1741,7 +1741,7 @@ void Interfaz::reporteTiempoIndefinido(Aeropuerto* ar)
 	cout << endl; 
 	cout << "-----------REPORTE DE CONTRATOS DE TIEMPO INDEFINIDO-------------" << endl;
 	cout << "*---------------------------------------------------------------*" << endl << endl;
-	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles(); 
+	if (ar->existeTiempoIndefinido()==false) msjNoContratosDispobibles(); 
 	else {
 		cout << ar->imprimirTiempoIndefinido();
 	}
