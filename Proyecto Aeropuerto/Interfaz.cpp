@@ -473,9 +473,6 @@ void Interfaz::ingresarAvionComercial(Aeropuerto* ar)
 	else msjErorrIngresar();
 
 
-
-
-
 	system("pause");
 }
 
@@ -1615,10 +1612,8 @@ void Interfaz::eliminarEmpleado(Aeropuerto* ar)
 			if (ar->eliminarEmpleadoPorCedula(ced)) 
 			{
 				if (ar->existeContratoConEmpleado(ced)) 
-					if(ar->eliminarContratoPorCedula(ced));
+					if(ar->eliminarContratoPorCedula(ced))msjExitoEliminar();
 					else msjErrorEliminar();
-
-				msjExitoEliminar();
 			}
 			else msjErrorEliminar();
 
@@ -1631,7 +1626,8 @@ void Interfaz::eliminarEmpleado(Aeropuerto* ar)
 void Interfaz::eliminarAvion(Aeropuerto* ar)
 {
 	Empleado* emp = NULL;
-	string pla;
+	string pla1,pla2;
+	bool error=false;
 	system("cls");
 	cout << endl;
 	cout << "-----------ELIMINAR AVION-------------" << endl;
@@ -1643,22 +1639,125 @@ void Interfaz::eliminarAvion(Aeropuerto* ar)
 		cout << ar->imprimeAviones();
 
 		cout << "   Digite la placa del avion que desea eliminar: ";
-		cin >> pla; cout << endl;
+		cin >> pla1; cout << endl;
 
-		if (ar->existeAvionPorPlaca(pla) == false)msjNoAvionPlaca();
+		if (ar->existeAvionPorPlaca(pla1) == false) msjNoAvionPlaca();
+	
 		else {
 
-			
+			emp = ar->buscarEmpleadoPorAvi(pla1);
 
-			if (ar->eliminarEmpleadoPorCedula(pla))
+			//acuerdese de igualar a NULL y el caso donde el avion no tenga tripulantes
+			while (emp != NULL)
 			{
-				if (ar->existeContratoConEmpleado(pla))
-					if (ar->eliminarContratoPorCedula(pla));
-					else msjErrorEliminar();
+				system("cls");
+				cout << endl;
+				cout << "-----------ELIMINAR AVION-------------" << endl;
+				cout << "*------------------------------------*" << endl << endl;
+				cout << "   El avion que desea eliminar posee tripulantes, reubiquelos en otro avion antes de eliminar"<<endl<<endl;
 
-				msjExitoEliminar();
+
+				//ar->buscarContratoPorCed(emp->getCedula())->setAvion(*ar->buscarAvionPorPlaca(pla2));
+
+				if ( typeid(*emp) == typeid(Piloto)) {
+
+					cout << emp->toString();
+					cout << "   Ingrese la placa del avion que desea ligar a este empleado: ";
+					cin >> pla2; cout << endl;
+
+					if (ar->existeAvionPorPlaca(pla2) == false){
+						msjNoAvionPlaca();
+						emp = NULL;
+						error = true;
+					}
+					else
+					{
+						if (ar->existeAvionConPiloto(pla2) || pla2 == pla1){
+							msjAvionConPiloto();
+							emp = NULL;
+							error = true;
+						}
+						else
+						{
+							ar->buscarContratoPorCed(emp->getCedula())->setAvion(*ar->buscarAvionPorPlaca(pla2));
+							emp = ar->buscarEmpleadoPorAvi(pla1);
+						}
+					}
+					
+
+				}
+
+				if (emp != NULL && typeid(*emp) == typeid(Copiloto)) {
+
+
+					if (ar->existeAvionCivil() == false){
+						msjNoAvionCivil();
+						emp = NULL;
+						error = true;
+					}
+					else {
+						cout << emp->toString();
+						cout << "   Ingrese la placa del avion que desea ligar a este empleado: ";
+						cin >> pla2; cout << endl;
+
+						if (ar->existeAvionCivilPorPlaca(pla2) == false) {
+							msjNoAvionCivilPlaca();
+							emp = NULL;
+							error = true;
+						}
+						else
+						{
+							if (ar->existeAvionConCopiloto(pla2) || pla2 == pla1) {
+								msjAvionConPiloto();
+								emp = NULL;
+								error = true;
+							}
+							else
+							{
+								ar->buscarContratoPorCed(emp->getCedula())->setAvion(*ar->buscarAvionPorPlaca(pla2));
+								emp = ar->buscarEmpleadoPorAvi(pla1);
+							}
+						}
+					}
+
+				}
+				if (emp != NULL &&  typeid(*emp) == typeid(Azafata)) {
+
+					if (ar->existeAvionComercial() == false) {
+						msjNoAvionComercial();
+						emp = NULL;
+						error = true;
+					}
+					else {
+						cout << emp->toString();
+						cout << "   Ingrese la placa del avion que desea ligar a este empleado: ";
+						cin >> pla2; cout << endl;
+
+						if (ar->existeAvionComercialPorPlaca(pla2) == false) {
+							msjNoAvionComercialPlaca();
+							emp = NULL;
+							error = true;
+						}
+						else
+						{
+							if (ar->existeAvionConAzafata(pla2) || pla2 == pla1) {
+								msjAvionComercialAzafata();
+								emp = NULL;
+								error = true;
+							}
+							else
+							{
+								ar->buscarContratoPorCed(emp->getCedula())->setAvion(*ar->buscarAvionPorPlaca(pla2));
+								emp = ar->buscarEmpleadoPorAvi(pla1);
+							}
+						}
+					}
+				}
 			}
-			else msjErrorEliminar();
+
+			if(!error)
+				if (ar->eliminarAvionPorPlaca(pla1))msjExitoEliminar();
+				else msjErrorEliminar();
 
 		}
 	}

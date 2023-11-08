@@ -72,9 +72,9 @@ void ContratoBase::setEmpleado(Empleado& emp)
 
 }
 
-void ContratoBase::getAvion(Avion& av)
+void ContratoBase::setAvion(Avion& av)
 {
-	avion = (Avion*)&av;
+	avion = av.copia();
 }
 
 void ContratoBase::setAceptado(bool ace)

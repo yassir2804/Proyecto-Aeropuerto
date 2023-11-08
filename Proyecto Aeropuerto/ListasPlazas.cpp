@@ -41,6 +41,7 @@ bool ListaPlaza::ingresaPlaza(Plaza& pla)
 		}
 
 		aux->setSiguienteNodoPlaza(new NodoPlaza(pla, NULL));
+		return true;
 
 	}
 	return false;

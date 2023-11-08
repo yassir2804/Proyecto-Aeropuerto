@@ -6,6 +6,9 @@
 #include "Azafata.h"
 #include "Piloto.h"
 #include "Copiloto.h"
+#include "Administrativo.h"
+#include "Miscelaneo.h"
+
 
 class NodoContratoBase {
 private:

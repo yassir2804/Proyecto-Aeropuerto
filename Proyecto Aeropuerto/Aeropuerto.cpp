@@ -187,6 +187,11 @@ bool Aeropuerto::existeAvionMilitarPorPlaca(string pla)
 	return listA->existeAvionMilitarPorPlaca(pla);
 }
 
+bool Aeropuerto::eliminarAvionPorPlaca(string pla)
+{
+	return listA->eliminarAvionPorPlaca(pla);
+}
+
 Avion* Aeropuerto::buscarAvionPorPlaca(string pla)
 {
 	return listA->buscarAvionPorPlaca(pla);
@@ -272,12 +277,23 @@ bool Aeropuerto::eliminarContratoPorCedula(string cod)
 	return listC->eliminarContratoPorCedula(cod);
 }
 
+Empleado* Aeropuerto::buscarEmpleadoPorAvi(string pla)
+{
+	return listC->buscarEmpleadoPorAvi(pla);
+}
+
 
 
 ContratoBase* Aeropuerto::buscarContratoPorCod(string cod)
 {
 	return listC->buscarContratoPorCod(cod);
 }
+
+ContratoBase* Aeropuerto::buscarContratoPorCed(string ced)
+{
+	return listC->buscarContratoPorCed(ced);
+}
+
 
 string Aeropuerto::imprimirContratosVencidos(Fecha& act)
 {

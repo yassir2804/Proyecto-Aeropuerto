@@ -86,6 +86,8 @@ public:
 	void controlEditarAceptado();
 
 	void controlEliminarEmpleado();
+	void contolEliminarAvion();
 	void controlEliminarContrato();
+
 
 };

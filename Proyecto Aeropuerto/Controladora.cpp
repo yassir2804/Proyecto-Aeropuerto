@@ -17,8 +17,7 @@ void Controladora::control0() {
         case 2: control2(); break;
         case 3: control3(); break;
         case 4: control4(); break;
-        //case 5: control5(); break;
-            // Agrega más casos si es necesario.
+
         }
     } while (op != 5);
 }
@@ -164,7 +163,7 @@ void Controladora::control2_2()
         op = Interfaz::menuEliminar();
         switch (op) {
             case 1: controlEliminarEmpleado(); break;
-            //case 2: controlEliminarContrato(); break;
+            case 2: contolEliminarAvion(); break;
             case 3: controlEliminarContrato(); break;
         }
 
@@ -427,6 +426,11 @@ void Controladora::controlEditarAceptado()
 void Controladora::controlEliminarEmpleado()
 {
     Interfaz::eliminarEmpleado(aeropuerto);
+}
+
+void Controladora::contolEliminarAvion()
+{
+    Interfaz::eliminarAvion(aeropuerto);
 }
 
 void Controladora::controlEliminarContrato()

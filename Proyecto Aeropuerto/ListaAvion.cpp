@@ -39,7 +39,7 @@ bool ListaAvion::ingresaAvion(Avion& av)
 		}
 
 		aux->setSigAvion(new NodoAvion(av, NULL));
-
+		return true;
 	}
 	return false;
 }
@@ -173,6 +173,31 @@ bool ListaAvion::existeAvionMilitarPorPlaca(string pla)
 		aux = aux->getSigAvion();
 	}
 
+	return false;
+}
+bool ListaAvion::eliminarAvionPorPlaca(string pla)
+{
+	NodoAvion* aux = primero;
+	NodoAvion* anterior = NULL;
+
+	if (!estaVacio() && aux->getAvion()->getNumeroDePlaca() == pla) {
+		NodoAvion* actual = primero;
+		if (!estaVacio()) {
+			primero = actual->getSigAvion();
+			delete actual;
+			return true;
+		}
+	}
+	else
+		if (!estaVacio()) {
+			while (aux != NULL && aux->getAvion()->getNumeroDePlaca() != pla) {
+				anterior = aux;
+				aux = aux->getSigAvion();
+			}
+			anterior->setSigAvion(aux->getSigAvion());
+			delete aux;
+			return true;
+		}
 	return false;
 }
 Avion* ListaAvion::buscarAvionPorPlaca(string pla)

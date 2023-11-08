@@ -60,6 +60,7 @@ public:
 	bool existeAvionComercialPorPlaca(string pla);
 	bool existeAvionCargaPorPlaca(string pla);
 	bool existeAvionMilitarPorPlaca(string pla);
+	bool eliminarAvionPorPlaca(string pla);
 	Avion* buscarAvionPorPlaca(string pla);
 	string imprimeAvionesMilitares();
 	string imprimeAvionesCarga();
@@ -81,7 +82,9 @@ public:
 	bool existeContratoVencidoConCod(Fecha& fech, string cod);
 	bool eliminaContratoPorCodigo(string cod);
 	bool eliminarContratoPorCedula(string cod);
+	Empleado* buscarEmpleadoPorAvi(string pla);
 	ContratoBase* buscarContratoPorCod(string cod);
+	ContratoBase* buscarContratoPorCed(string ced);
 	string imprimirContratosVencidos(Fecha& act);
 	string imprimeContratos();
 	string imprimirServiciosProfesionales();

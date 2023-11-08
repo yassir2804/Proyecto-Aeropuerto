@@ -39,7 +39,7 @@ public:
 	void setCodContrato(string cod);
 	void setSalario(double sal);
 	void setEmpleado(Empleado& emp);
-	void getAvion(Avion& av);
+	void setAvion(Avion& av);
 
 
 	virtual bool estaVencido(Fecha& actual);

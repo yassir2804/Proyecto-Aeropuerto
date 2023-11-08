@@ -25,6 +25,7 @@ public:
 	bool existeAvionComercialPorPlaca(string pla);
 	bool existeAvionCargaPorPlaca(string pla);
 	bool existeAvionMilitarPorPlaca(string pla);
+	bool eliminarAvionPorPlaca(string pla);
 
 	Avion* buscarAvionPorPlaca(string pla);
 

@@ -36,6 +36,8 @@ public:
 	bool eliminarContratoPorCedula(string ced);
 
 	ContratoBase* buscarContratoPorCod(string cod);
+	ContratoBase* buscarContratoPorCed(string ced);
+	Empleado* buscarEmpleadoPorAvi(string pla);
 
 	string imprimirServiciosProfesionales();
 	string imprimirPlazosFijos();

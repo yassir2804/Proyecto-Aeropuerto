@@ -314,6 +314,40 @@ ContratoBase* ListaNodoContrato::buscarContratoPorCod(string cod)
 	return NULL;
 }
 
+ContratoBase* ListaNodoContrato::buscarContratoPorCed(string ced)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (aux->getContratoBase()->getEmpleado()->getCedula() == ced) {
+			return  aux->getContratoBase();
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return NULL;
+}
+
+Empleado* ListaNodoContrato::buscarEmpleadoPorAvi(string pla)
+{
+	NodoContratoBase* aux = primero;
+
+
+	while (aux != NULL) {
+
+		if (typeid(*aux->getContratoBase()->getEmpleado()) != typeid(Administrativo) && typeid(*aux->getContratoBase()->getEmpleado()) != typeid(Miscelaneo) && aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla) {
+			return  aux->getContratoBase()->getEmpleado();
+		}
+		aux = aux->getNodoContratoBase();
+
+	}
+
+	return NULL;
+}
+
 string ListaNodoContrato::imprimirServiciosProfesionales()
 {
 	stringstream s;
