@@ -230,12 +230,13 @@ int Interfaz::menuDeReportes()
 	cout << "	<4>   Reporte de todas las personas contratadas.                 " << endl;
 	cout << "	<5>   Reporte de los pilotos de los aviones de carga.            " << endl;
 	cout << "	<6>   Reporte de los aviones con mas de 20 años en uso.          " << endl;
-	cout << "	<7>   Reporte de  los contratos de Servicios Profecionales.      " << endl;
+	cout << "	<7>   Reporte de los contratos de Servicios Profecionales.      " << endl;
 	cout << "	<8>   Reporte de los contratos de Plazo Fijo.                    " << endl;
 	cout << "	<9>   Reporte de los contratos de tiempo indefinido.             " << endl;
 	cout << "	<10>  Reporte de las tripulaciones de los aviones comerciales.   " << endl; 
 	cout << "	<11>  Reporte de los contratos de plazo fijo con mas de 2 años   " << endl;
-	cout << "	<12>  Reporte del avion de carga con la puerta mas grande.       " << endl<<endl;
+	cout << "	<12>  Reporte del avion de carga con la puerta mas grande.       " << endl;
+	cout << "	<13>  Regresar.                             " << endl << endl;
 	cout << "*------------------------------------------------------------------*" << endl;
 	cout << "   Digite la opcion: ";
 	cin >> op; 

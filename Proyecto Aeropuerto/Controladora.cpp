@@ -15,7 +15,7 @@ void Controladora::control0() {
         switch (op) {
         case 1: control1(); break;
         case 2: control2(); break;
-        //case 3: control3(); break;
+        case 3: control3(); break;
         //case 4: control4(); break;
         //case 5: control5(); break;
             // Agrega más casos si es necesario.
@@ -76,7 +76,7 @@ void Controladora::control3()
         case 12: control3_12(); break; 
         }
 
-    } while (op != 3);
+    } while (op != 13);
 }
 
 void Controladora::control1_1()
@@ -155,6 +155,54 @@ void Controladora::control2_2()
         }
 
     } while (op != 4);
+}
+
+void Controladora::control3_1()
+{
+}
+
+void Controladora::control3_2()
+{
+}
+
+void Controladora::control3_3()
+{
+}
+
+void Controladora::control3_4()
+{
+}
+
+void Controladora::control3_5()
+{
+}
+
+void Controladora::control3_6()
+{
+}
+
+void Controladora::control3_7()
+{
+}
+
+void Controladora::control3_8()
+{
+}
+
+void Controladora::control3_9()
+{
+}
+
+void Controladora::control3_10()
+{
+}
+
+void Controladora::control3_11()
+{
+}
+
+void Controladora::control3_12()
+{
 }
 
 void Controladora::controlPiloto()
