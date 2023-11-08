@@ -56,6 +56,29 @@ void Controladora::control2()
     } while (op != 3);
 }
 
+void Controladora::control3()
+{
+    int op;
+    do {
+        op = Interfaz::menuDeReportes();
+        switch (op) {
+        case 1: control3_1(); break; 
+        case 2: control3_2(); break; 
+        case 3: control3_3(); break; 
+        case 4: control3_4(); break; 
+        case 5: control3_5(); break; 
+        case 6: control3_6(); break; 
+        case 7: control3_7(); break; 
+        case 8: control3_8(); break; 
+        case 9: control3_9(); break; 
+        case 10: control3_10(); break; 
+        case 11: control3_11(); break; 
+        case 12: control3_12(); break; 
+        }
+
+    } while (op != 3);
+}
+
 void Controladora::control1_1()
 {
     int op;
