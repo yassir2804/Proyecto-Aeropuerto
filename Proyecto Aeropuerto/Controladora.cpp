@@ -16,7 +16,7 @@ void Controladora::control0() {
         case 1: control1(); break;
         case 2: control2(); break;
         case 3: control3(); break;
-        //case 4: control4(); break;
+        case 4: control4(); break;
         //case 5: control5(); break;
             // Agrega más casos si es necesario.
         }
@@ -77,6 +77,20 @@ void Controladora::control3()
         }
 
     } while (op != 13);
+}
+
+void Controladora::control4()
+{
+    int op; 
+    do {
+        op = Interfaz::menuDeConsultas();
+        switch (op) { 
+        case 1: control4_1(); break;
+        case 2: control4_2(); break; 
+        case 3: control4_3(); break;
+        }
+
+    } while (op != 4); 
 }
 
 void Controladora::control1_1()
@@ -204,6 +218,18 @@ void Controladora::control3_11()
 }
 
 void Controladora::control3_12()
+{
+}
+
+void Controladora::control4_1()
+{
+}
+
+void Controladora::control4_2()
+{
+}
+
+void Controladora::control4_3()
 {
 }
 

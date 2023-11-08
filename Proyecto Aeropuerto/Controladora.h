@@ -20,6 +20,7 @@ public:
 	void control1();	
 	void control2();
 	void control3();
+	void control4();
 
 	void control1_1();
 	void control1_2();
@@ -41,6 +42,10 @@ public:
 	void control3_10();
 	void control3_11();
 	void control3_12();
+
+	void control4_1();
+	void control4_2();
+	void control4_3();
 
 	void controlPiloto();
 	void controlCopiloto();
