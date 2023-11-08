@@ -1704,11 +1704,50 @@ void Interfaz::reporteAviones(Aeropuerto* ar)
 	if (ar->ListaAvionEstaVacio()) msjAvionNoDisponible();
 	else 
 	{
-		cout<<ar->imprimeAviones();
+		cout << ar->imprimeAviones();
 	}
 
 	system("pause");
 }
+
+void Interfaz::reporteContratoServiciosProfecionales(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE SERVICIOS PROFECIONALES-------------" << endl;
+	cout << "*--------------------------------------------------------*" << endl << endl;
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles(); 
+	else {
+		cout << ar->imprimirServiciosProfesionales();
+	}
+	system("pause");
+}
+
+void Interfaz::reportePlazoFijo(Aeropuerto* ar)
+{
+	system("cls"); 
+	cout << endl; 
+	cout << "-----------REPORTE DE CONTRATOS DE PLAZOS FIJOS-------------" << endl;
+	cout << "*----------------------------------------------------------*" << endl << endl; 
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles();
+	else {
+		cout << ar->imprimirPlazosFijos(); 
+	}
+	system("pause"); 
+}
+void Interfaz::reporteTiempoIndefinido(Aeropuerto* ar)
+{
+	system("cls"); 
+	cout << endl; 
+	cout << "-----------REPORTE DE CONTRATOS DE TIEMPO INDEFINIDO-------------" << endl;
+	cout << "*---------------------------------------------------------------*" << endl << endl;
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles(); 
+	else {
+		cout << ar->imprimirTiempoIndefinido();
+	}
+	system("pause"); 
+}
+
 
 
 void Interfaz::msjErorrIngresar()

@@ -199,14 +199,17 @@ void Controladora::control3_6()
 
 void Controladora::control3_7()
 {
+    Interfaz::reporteContratoServiciosProfecionales(aeropuerto); 
 }
 
 void Controladora::control3_8()
 {
+    Interfaz::reportePlazoFijo(aeropuerto);
 }
 
 void Controladora::control3_9()
 {
+    Interfaz::reporteTiempoIndefinido(aeropuerto);
 }
 
 void Controladora::control3_10()
