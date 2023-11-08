@@ -30,6 +30,17 @@ public:
 	void control2_2();
 
 	void control3_1();
+	void control3_2();
+	void control3_3();
+	void control3_4();
+	void control3_5();
+	void control3_6();
+	void control3_7();
+	void control3_8();
+	void control3_9();
+	void control3_10();
+	void control3_11();
+	void control3_12();
 
 	void controlPiloto();
 	void controlCopiloto();

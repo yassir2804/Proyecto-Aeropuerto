@@ -25,7 +25,7 @@ public:
 	static int menuEditarAvion();
 	static int menuEditarContrato();
 
-	//
+	static int menuDeReportes();
 
 	static void ingresarPiloto(Aeropuerto* ar);
 	static void ingresarCopiloto(Aeropuerto* ar);
