@@ -63,6 +63,9 @@ public:
 	static void editarHorario(Aeropuerto* ar);
 	static void editarAceptado(Aeropuerto* ar);
 
+	static void eliminarEmpleado(Aeropuerto* ar);
+	static void eliminarContrato(Aeropuerto* ar);
+
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();

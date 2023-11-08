@@ -31,6 +31,8 @@ public:
 	bool existeAdministrativoConCed(string ced);
 	bool existeMiscelaneoConCed(string ced);
 
+	bool eliminarEmpleadoPorCedula(string ced);
+
 	Empleado* buscarEmpleadoPorCed(string ced);
 
 	string imprimirMiscelaneos();

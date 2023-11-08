@@ -1550,6 +1550,69 @@ void Interfaz::editarAceptado(Aeropuerto* ar)
 	system("pause");
 }
 
+void Interfaz::eliminarEmpleado(Aeropuerto* ar)
+{
+	string ced;
+	system("cls");
+	cout << endl;
+	cout << "-----------ELIMINAR EMPLEADO-------------" << endl;
+	cout << "*---------------------------------------*" << endl << endl;
+
+	if (ar->ListaEmpleadoEstaVacio()) msjSinEmpleados();
+	else
+	{
+		cout << ar->imprimeEmpleados();
+
+		cout << "   Digite la cedula del empleado al que desea eliminar: ";
+		cin >> ced; cout << endl;
+
+		if (ar->existeEmpleadoConCed(ced) == false)msjNoExisteCedula();
+		else {
+
+			if (ar->eliminarEmpleadoPorCedula(ced)) 
+			{
+				if (ar->existeContratoConEmpleado(ced)) 
+					if(ar->eliminarContratoPorCedula(ced));
+					else msjErrorEliminar();
+
+				msjExitoEliminar();
+			}
+			else msjErrorEliminar();
+
+		}
+	}
+
+	system("pause");
+}
+
+void Interfaz::eliminarContrato(Aeropuerto* ar)
+{
+	string cod;
+	system("cls");
+	cout << endl;
+	cout << "-----------ELIMINAR CONTRATO-------------" << endl;
+	cout << "*---------------------------------------*" << endl << endl;
+
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles();
+	else
+	{
+		cout << ar->imprimeContratos();
+
+		cout << "   Digite el codigo del contrato al que desea eliminar: ";
+		cin >> cod; cout << endl;
+
+		if (ar->existeContrato(cod) == false)msjNoContratosDispobibles();
+		else {
+
+			if (ar->eliminaContratoPorCodigo(cod))msjExitoEliminar();
+			else msjErrorEliminar();
+
+		}
+	}
+
+	system("pause");
+}
+
 void Interfaz::msjErorrIngresar()
 {
 	cout << "   Fallo al ingresar" << endl << endl;
@@ -1563,12 +1626,12 @@ void Interfaz::msjExitoIngresar()
 void Interfaz::msjSinEmpleados()
 {
 
-	cout << "No hay ningun empleado registrado" << endl << endl;
+	cout << "   No hay ningun empleado registrado" << endl << endl;
 }
 
 void Interfaz::msjNoExisteCedula()
 {
-	cout << "No existe ningun empleado con esa cedula" << endl << endl;
+	cout << "   No existe ningun empleado con esa cedula" << endl << endl;
 }
 
 void Interfaz::msjEmpleadoAsociado()

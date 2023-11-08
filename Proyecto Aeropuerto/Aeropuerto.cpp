@@ -83,6 +83,11 @@ bool Aeropuerto::existeMiscelaneoConCed(string ced)
 	return listE->existeMiscelaneoConCed(ced);
 }
 
+bool Aeropuerto::eliminarEmpleadoPorCedula(string ced)
+{
+	return listE->eliminarEmpleadoPorCedula(ced);
+}
+
 Empleado* Aeropuerto::buscarEmpleadoPorCed(string ced)
 {
 	return listE->buscarEmpleadoPorCed(ced);
@@ -261,6 +266,13 @@ bool Aeropuerto::eliminaContratoPorCodigo(string cod)
 {
 	return listC->eliminaContratoPorCodigo(cod);
 }
+
+bool Aeropuerto::eliminarContratoPorCedula(string cod)
+{
+	return listC->eliminarContratoPorCedula(cod);
+}
+
+
 
 ContratoBase* Aeropuerto::buscarContratoPorCod(string cod)
 {

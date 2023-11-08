@@ -255,6 +255,32 @@ bool ListaNodoContrato::eliminaContratoPorCodigo(string cod)
 	return false;
 }
 
+bool ListaNodoContrato::eliminarContratoPorCedula(string ced)
+{
+	NodoContratoBase* aux = primero;
+	NodoContratoBase* anterior = NULL;
+
+	if (!estaVacio() && aux->getContratoBase()->getEmpleado()->getCedula() == ced) {
+		NodoContratoBase* actual = primero;
+		if (!estaVacio()) {
+			primero = actual->getNodoContratoBase();
+			delete actual;
+			return true;
+		}
+	}
+	else
+		if (!estaVacio()) {
+			while (aux != NULL && aux->getContratoBase()->getEmpleado()->getCedula() != ced) {
+				anterior = aux;
+				aux = aux->getNodoContratoBase();
+			}
+			anterior->setNodoContratoBase(aux->getNodoContratoBase());
+			delete aux;
+			return true;
+		}
+	return false;
+}
+
 bool ListaNodoContrato::existeContratoVencidoConCod(Fecha& fech, string cod)
 {
 	NodoContratoBase* aux = primero;

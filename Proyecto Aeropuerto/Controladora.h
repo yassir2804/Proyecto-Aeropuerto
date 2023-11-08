@@ -69,4 +69,7 @@ public:
 	void controlEditarHorario();
 	void controlEditarAceptado();
 
+	void controlEliminarEmpleado();
+	void controlEliminarContrato();
+
 };

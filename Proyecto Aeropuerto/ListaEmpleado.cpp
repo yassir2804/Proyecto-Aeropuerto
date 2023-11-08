@@ -216,6 +216,32 @@ bool ListaEmpleado::existeMiscelaneoConCed(string ced)
 	return false;
 }
 
+bool ListaEmpleado::eliminarEmpleadoPorCedula(string ced)
+{
+	NodoEmpleado* aux = primero;
+	NodoEmpleado* anterior = NULL;
+
+	if (!estaVacio() && aux->getEmpleado()->getCedula() == ced) {
+		NodoEmpleado* actual = primero;
+		if (!estaVacio()) {
+			primero = actual->getSigEmpleado();
+			delete actual;
+			return true;
+		}
+	}
+	else
+		if (!estaVacio()) {
+			while (aux != NULL && aux->getEmpleado()->getCedula() != ced) {
+				anterior = aux;
+				aux = aux->getSigEmpleado();
+			}
+			anterior->setSigEmpleado(aux->getSigEmpleado());
+			delete aux;
+			return true;
+		}
+	return false;
+}
+
 
 
 

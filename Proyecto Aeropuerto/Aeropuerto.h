@@ -38,6 +38,7 @@ public:
 	bool existeAzafataConCed(string ced);
 	bool existeAdministrativoConCed(string ced);
 	bool existeMiscelaneoConCed(string ced);
+	bool eliminarEmpleadoPorCedula(string ced);
 	Empleado* buscarEmpleadoPorCed(string ced);
 	string imprimirMiscelaneos();
 	string imprimirAdministrativos();
@@ -79,6 +80,7 @@ public:
 	bool existenContratosVencidos(Fecha& fech);
 	bool existeContratoVencidoConCod(Fecha& fech, string cod);
 	bool eliminaContratoPorCodigo(string cod);
+	bool eliminarContratoPorCedula(string cod);
 	ContratoBase* buscarContratoPorCod(string cod);
 	string imprimirContratosVencidos(Fecha& act);
 	string imprimeContratos();
