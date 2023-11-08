@@ -64,7 +64,10 @@ public:
 	static void editarAceptado(Aeropuerto* ar);
 
 	static void eliminarEmpleado(Aeropuerto* ar);
+	static void eliminarAvion(Aeropuerto* ar);
 	static void eliminarContrato(Aeropuerto* ar);
+
+	static void reporteAviones(Aeropuerto* ar);
 
 	static void msjErorrIngresar();
 	static void msjExitoIngresar();

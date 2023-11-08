@@ -1611,6 +1611,44 @@ void Interfaz::eliminarEmpleado(Aeropuerto* ar)
 	system("pause");
 }
 
+void Interfaz::eliminarAvion(Aeropuerto* ar)
+{
+	Empleado* emp = NULL;
+	string pla;
+	system("cls");
+	cout << endl;
+	cout << "-----------ELIMINAR AVION-------------" << endl;
+	cout << "*------------------------------------*" << endl << endl;
+
+	if (ar->ListaAvionEstaVacio()) msjAvionNoDisponible();
+	else
+	{
+		cout << ar->imprimeAviones();
+
+		cout << "   Digite la placa del avion que desea eliminar: ";
+		cin >> pla; cout << endl;
+
+		if (ar->existeAvionPorPlaca(pla) == false)msjNoAvionPlaca();
+		else {
+
+			
+
+			if (ar->eliminarEmpleadoPorCedula(pla))
+			{
+				if (ar->existeContratoConEmpleado(pla))
+					if (ar->eliminarContratoPorCedula(pla));
+					else msjErrorEliminar();
+
+				msjExitoEliminar();
+			}
+			else msjErrorEliminar();
+
+		}
+	}
+
+	system("pause");
+}
+
 void Interfaz::eliminarContrato(Aeropuerto* ar)
 {
 	string cod;
@@ -1638,6 +1676,23 @@ void Interfaz::eliminarContrato(Aeropuerto* ar)
 
 	system("pause");
 }
+
+void Interfaz::reporteAviones(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE TODOS LOS AVIONES-------------" << endl;
+	cout << "*--------------------------------------------------*" << endl << endl;
+
+	if (ar->ListaAvionEstaVacio()) msjAvionNoDisponible();
+	else 
+	{
+		cout<<ar->imprimeAviones();
+	}
+
+	system("pause");
+}
+
 
 void Interfaz::msjErorrIngresar()
 {

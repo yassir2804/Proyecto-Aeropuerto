@@ -159,6 +159,7 @@ void Controladora::control2_2()
 
 void Controladora::control3_1()
 {
+    
 }
 
 void Controladora::control3_2()
@@ -167,6 +168,7 @@ void Controladora::control3_2()
 
 void Controladora::control3_3()
 {
+    Interfaz::reporteAviones(aeropuerto);
 }
 
 void Controladora::control3_4()
