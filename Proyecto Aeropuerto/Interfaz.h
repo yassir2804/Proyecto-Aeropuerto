@@ -69,9 +69,13 @@ public:
 	static void eliminarAvion(Aeropuerto* ar);
 	static void eliminarContrato(Aeropuerto* ar);
 
+	//Metodos para los reportes
 	static void reporteAviones(Aeropuerto* ar);
+	static void reporteContratoServiciosProfesionales(Aeropuerto* ar);
+	static void reportePlazoFijo(Aeropuerto* ar);
+	static void reporteTiempoIndefinido(Aeropuerto* ar);
 
-	static void msjErorrIngresar();
+	static void msjErorrIngresar(); 
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();
 	static void msjNoExisteCedula();
