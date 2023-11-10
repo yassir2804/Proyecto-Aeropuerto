@@ -232,6 +232,7 @@ void Controladora::control3_12()
 
 void Controladora::control4_1()
 {
+    Interfaz::consultaTrabajadorPorCedulaYAeronave(aeropuerto);
 }
 
 void Controladora::control4_2()
@@ -240,6 +241,7 @@ void Controladora::control4_2()
 
 void Controladora::control4_3()
 {
+    Interfaz::consultaAvionCivil(aeropuerto); 
 }
 
 void Controladora::controlPiloto()

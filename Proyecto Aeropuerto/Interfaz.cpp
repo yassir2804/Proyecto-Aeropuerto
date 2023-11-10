@@ -1985,6 +1985,44 @@ void Interfaz::reporteAvionConMayorArea(Aeropuerto* ar)
 
 	system("pause");
 }
+void Interfaz::consultaTrabajadorPorCedulaYAeronave(Aeropuerto* ar)
+{
+	string ced;
+	system("cls");
+	cout << endl;
+	cout << "--------------CONSULTA DEL TRABAJADOR Y SU AVION--------------" << endl;
+	cout << "*------------------------------------------------------------*" << endl;
+	if (ar->ListaEmpleadoEstaVacio())
+		msjSinEmpleados();
+	else {
+		cout << "   Digite la cedula del empleado a consultar: ";
+		cin >> ced;cout << endl;
+		cout << ar->imprimirEmpleadoConSuAvion(ced) << endl;
+	}
+}
+//void Interfaz::consultaContratoConSuNumeroYTipo(Aeropuerto* ar)
+//{
+//}
+void Interfaz::consultaAvionCivil(Aeropuerto* ar)
+{
+	string pla;
+	system("cls");
+	cout << endl;
+	cout << "--------------CONSULTA POR EL AVION CIVIL POR SU PLACA--------------" << endl;
+	cout << "*------------------------------------------------------------------*" << endl;
+	if (ar->existeAvionCivil() == false) msjNoAvionCivil(); 
+	else
+	{
+		cout << ar->imprimeAvionesCiviles(); 
+		cout << "   Ingrese la placa del avion civil que desea consultar: "; 
+		cin >> pla; cout << endl; 
+
+		if (ar->existeAvionCivilPorPlaca(pla) == false) msjNoAvionCivilPlaca(); 
+		else {
+			cout << ar->buscarAvionPorPlaca(pla)->toString() << endl; 
+		}
+	}
+}
 void Interfaz::msjErorrIngresar()
 {
 	cout << "   Fallo al ingresar" << endl << endl;

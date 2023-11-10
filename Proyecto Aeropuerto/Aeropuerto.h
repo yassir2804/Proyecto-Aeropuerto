@@ -99,6 +99,7 @@ public:
 	string imprimirContratosConSuEmpleado();
 	string imprimirEmpleadosContratados();
 	string imprimirPilotosDeAvionesCarga();
+	string imprimirEmpleadoConSuAvion(string ced);
 	bool existeServicioProfesional();
 	bool existePlazoFijo();
 	bool existeTiempoIndefinido();
