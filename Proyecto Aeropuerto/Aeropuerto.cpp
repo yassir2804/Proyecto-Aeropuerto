@@ -360,6 +360,11 @@ string Aeropuerto::imprimirPilotosDeAvionesCarga()
 	return listC->imprimirPilotosDeAvionesCarga();
 }
 
+string Aeropuerto::imprimirEmpleadoConSuAvion(string ced)
+{
+	return listC->imprimirEmpleadoConSuAvion(ced);
+}
+
 
 bool Aeropuerto::existeServicioProfesional()
 {

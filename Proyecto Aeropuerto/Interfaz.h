@@ -83,6 +83,11 @@ public:
 	static void reporteContratosVencidos(Aeropuerto* ar);
 	static void reporteAvionConMayorArea(Aeropuerto* ar);
 
+	//Metodoso para las consultas
+	static void consultaTrabajadorPorCedulaYAeronave(Aeropuerto* ar);
+	/*static void consultaContratoConSuNumeroYTipo(Aeropuerto* ar);*/
+	static void consultaAvionCivil(Aeropuerto* ar);
+
 	static void msjErorrIngresar(); 
 	static void msjExitoIngresar();
 	static void msjSinEmpleados();
