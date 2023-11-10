@@ -38,23 +38,22 @@ bool PlazoFijo::estaVencido(Fecha& actual)
 string PlazoFijo::toString()
 {
 	stringstream s;
-
-	s << "-----INFORMACION DEL CONTRATO-----" <<endl <<endl;
-	s << "	Codigo del contrato:	" << codContrato << endl;
-	s << "	Descripcion del puesto:	" << descPuesto << endl;
-	s << "	Salario:	" << salario << endl;
-	s << "	Condicion:	";
+	s << "-----INFORMACION DEL CONTRATO-----" << endl << endl;
+	s << "   Codigo del contrato: " << codContrato << endl;
+	s << "   Descripcion del puesto: " << descPuesto << endl;
+	s << "   Salario: " << salario << endl;
+	s << "   Condicion:	";
 
 	if (aceptado)s << "Aceptado" << endl;
 	else s << "Rechazado" << endl;
 
 	if (fIngreso != NULL)
 	{
-		s << "La fecha de ingreso es:" << fIngreso->toString()<<endl;
+		s << "   La fecha de ingreso es:" << fIngreso->toString()<<endl;
 	}
 	if (fCulminacion != NULL)
 	{
-		s << "La fecha de culminacion es:" << fCulminacion->toString()<<endl;
+		s << "   La fecha de culminacion es:" << fCulminacion->toString()<<endl<<endl;
 	}
 
 	if (empleado != NULL)
@@ -68,6 +67,35 @@ string PlazoFijo::toString()
 	}
 
 
+
+	return s.str();
+}
+
+string PlazoFijo::imrprimirContratoYEmpleado() 
+{
+	stringstream s;
+	s << "-----INFORMACION DEL CONTRATO-----" << endl << endl;
+	s << "   Codigo del contrato: " << codContrato << endl;
+	s << "   Descripcion del puesto: " << descPuesto << endl;
+	s << "   Salario: " << salario << endl;
+	s << "   Condicion:	";
+
+	if (aceptado)s << "Aceptado" << endl;
+	else s << "Rechazado" << endl;
+
+	if (fIngreso != NULL)
+	{
+		s << "   La fecha de ingreso es:" << fIngreso->toString() << endl;
+	}
+	if (fCulminacion != NULL)
+	{
+		s << "   La fecha de culminacion es:" << fCulminacion->toString() << endl << endl;
+	}
+
+	if (empleado != NULL)
+	{
+		s << empleado->toString();
+	}
 
 	return s.str();
 }

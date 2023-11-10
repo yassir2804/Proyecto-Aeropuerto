@@ -12,6 +12,8 @@ public:
 	//Destructor
 	virtual ~ListaNodoContrato();
 
+	NodoContratoBase* getPrimero();
+
 	bool estaVacio();
 	bool ingresaContrato(ContratoBase& ptrContrato);
 
@@ -42,7 +44,11 @@ public:
 	string imprimirServiciosProfesionales();
 	string imprimirPlazosFijos();
 	string imprimirTiempoIndefinido();
-	string imprimirContratosVencidos(Fecha &act);
+	string imprimirContratosVencidosAceptados(Fecha &act);
+	string imprimirContratosVencidos(Fecha& act);
+	string imprimirContratosConSuEmpleado();
+	string imprimirEmpleadosContratados();
+	string imprimirPilotosDeAvionesCarga();
 
 	string toString();
 }; 

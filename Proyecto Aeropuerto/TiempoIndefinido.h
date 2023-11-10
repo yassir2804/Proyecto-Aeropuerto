@@ -25,4 +25,6 @@ public:
 	//toString
 
 	virtual string toString();
+	string imrprimirContratoYEmpleado();
+
 }; 

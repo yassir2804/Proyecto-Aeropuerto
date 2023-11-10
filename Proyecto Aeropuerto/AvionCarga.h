@@ -27,6 +27,7 @@ public:
 	double getAnchoPuerta();
 	double getAlturaPuerta();
 
+	double areaPuerta();
 
 	//toString
 	string toString();

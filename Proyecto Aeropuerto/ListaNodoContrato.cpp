@@ -15,6 +15,11 @@ ListaNodoContrato::~ListaNodoContrato()
 	}
 }
 
+NodoContratoBase* ListaNodoContrato::getPrimero()
+{
+	return primero;
+}
+
 
 bool ListaNodoContrato::estaVacio()
 {
@@ -393,7 +398,7 @@ string ListaNodoContrato::imprimirTiempoIndefinido()
 	return s.str();
 }
 
-string ListaNodoContrato::imprimirContratosVencidos(Fecha& act)
+string ListaNodoContrato::imprimirContratosVencidosAceptados(Fecha& act)
 {
 	stringstream s;
 
@@ -406,6 +411,75 @@ string ListaNodoContrato::imprimirContratosVencidos(Fecha& act)
 	}
 
 	return s.str();
+}
+
+string ListaNodoContrato::imprimirContratosVencidos(Fecha& act)
+{
+	stringstream s;
+	bool hayVencidos = false;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS VENCIDOS--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (aux->getContratoBase()->estaVencido(act)) {
+			s << aux->getContratoBase()->toString() << endl;
+			hayVencidos = true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	if (hayVencidos)return s.str();
+	else return "   No hay contratos vencidos\n\n";;
+}
+
+string ListaNodoContrato::imprimirContratosConSuEmpleado()
+{
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE CONTRATOS CON SU EMPLEADO--------" << endl << endl;
+
+	while (aux != NULL) {
+		s << aux->getContratoBase()->imrprimirContratoYEmpleado();
+		aux = aux->getNodoContratoBase();
+		s << endl;
+	}
+	return s.str();
+}
+
+string ListaNodoContrato::imprimirEmpleadosContratados()
+{
+	stringstream s;
+
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE EMPLEADOS CONTRATADOS--------" << endl << endl;
+
+	while (aux != NULL) {
+		s << aux->getContratoBase()->getEmpleado()->toString();
+		aux = aux->getNodoContratoBase();
+		s << endl;
+	}
+	return s.str();
+}
+
+string ListaNodoContrato::imprimirPilotosDeAvionesCarga()
+{
+	stringstream s;
+	bool hayPilotos = false;
+	NodoContratoBase* aux = primero;
+	s << "--------LISTA DE PILOTOS DE AVIONES DE CARGA--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()->getAvion()) == typeid(AvionCarga) && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto)) {
+			s << aux->getContratoBase()->getEmpleado()->toString() << endl;
+			hayPilotos = true;
+		}
+		aux = aux->getNodoContratoBase();
+	}
+
+	if (hayPilotos)return s.str();
+	else return "   No hay ningun avion de carga con piloto asignado\n\n";
 }
 
 string ListaNodoContrato::toString()

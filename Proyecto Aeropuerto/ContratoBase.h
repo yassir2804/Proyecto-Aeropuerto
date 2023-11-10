@@ -51,6 +51,7 @@ public:
 
 
 	//toString
+	virtual string imrprimirContratoYEmpleado()=0;
 	virtual string toString() = 0;
 
 };

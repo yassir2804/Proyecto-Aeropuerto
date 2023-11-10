@@ -518,9 +518,6 @@ void Interfaz::ingresarAvionCarga(Aeropuerto* ar)
 	else msjErorrIngresar();
 
 
-
-
-
 	system("pause");
 }
 
@@ -985,7 +982,7 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 	if (ar->existenContratosVencidos(*act) == false)msjNoContratosVencidos();
 	else
 	{
-		cout << ar->imprimirContratosVencidos(*act);
+		cout << ar->imprimirContratosVencidosAceptados(*act);
 		cout << "   Digite el codigo del contrato que desea seleccionar: ";
 		cin >> cod; cout << endl;
 
@@ -1647,7 +1644,6 @@ void Interfaz::eliminarAvion(Aeropuerto* ar)
 
 			emp = ar->buscarEmpleadoPorAvi(pla1);
 
-			//acuerdese de igualar a NULL y el caso donde el avion no tenga tripulantes
 			while (emp != NULL)
 			{
 				system("cls");
@@ -1656,8 +1652,6 @@ void Interfaz::eliminarAvion(Aeropuerto* ar)
 				cout << "*------------------------------------*" << endl << endl;
 				cout << "   El avion que desea eliminar posee tripulantes, reubiquelos en otro avion antes de eliminar"<<endl<<endl;
 
-
-				//ar->buscarContratoPorCed(emp->getCedula())->setAvion(*ar->buscarAvionPorPlaca(pla2));
 
 				if ( typeid(*emp) == typeid(Piloto)) {
 
@@ -1793,6 +1787,22 @@ void Interfaz::eliminarContrato(Aeropuerto* ar)
 	system("pause");
 }
 
+void Interfaz::reporteContratosConEmleado(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE TODOS LOS CONTRATOS Y SU EMPLEADO-------------" << endl;
+	cout << "*------------------------------------------------------------------*" << endl << endl;
+
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles();
+	else
+	{
+		cout << ar->imprimirContratosConSuEmpleado();
+	}
+
+	system("pause");
+}
+
 void Interfaz::reporteAviones(Aeropuerto* ar)
 {
 	system("cls");
@@ -1826,8 +1836,8 @@ void Interfaz::reportePlazoFijo(Aeropuerto* ar)
 {
 	system("cls"); 
 	cout << endl; 
-	cout << "-----------REPORTE DE CONTRATOS DE PLAZOS FIJOS-------------" << endl;
-	cout << "*----------------------------------------------------------*" << endl << endl; 
+	cout << "-----------REPORTE DE CONTRATOS DE PLAZO FIJO-------------" << endl;
+	cout << "*---------------------------------------------------------*" << endl << endl; 
 	if (ar->existePlazoFijo()==false) msjNoContratosDispobibles();
 	else {
 		cout << ar->imprimirPlazosFijos(); 
@@ -1847,8 +1857,135 @@ void Interfaz::reporteTiempoIndefinido(Aeropuerto* ar)
 	system("pause"); 
 }
 
+void Interfaz::reporteAvionesYTripulacion(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE AVIONES Y TRIPULACION-------------" << endl;
+	cout << "*------------------------------------------------------*" << endl << endl;
 
+	if (ar->ListaAvionEstaVacio()) msjAvionNoDisponible();
+	else
+	{
+		cout << ar->imprimirAvionesConTripulacion();
+	}
 
+	system("pause");
+}
+void Interfaz::reporteEmpleadosContratados(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE EMPLEADOS CONTRATADOS-------------" << endl;
+	cout << "*------------------------------------------------------*" << endl << endl;
+
+	if (ar->ListaContratosEstaVacio()) msjNoContratados();
+	else
+	{
+		cout << ar->imprimirEmpleadosContratados();
+	}
+
+	system("pause");
+
+}
+void Interfaz::reportePilotosAvionesCarga(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE LOS PILOTOS DE AVIONES DE CARGA-------------" << endl;
+	cout << "*----------------------------------------------------------------*" << endl << endl;
+
+	if (ar->existeAvionCarga()==false) msjNoAvionCarga();
+	else
+	{
+		cout << ar->imprimirPilotosDeAvionesCarga();
+	}
+
+	system("pause");
+}
+void Interfaz::reporteAvionesMasDe20(Aeropuerto* ar)
+{
+	Fecha* act = NULL;
+	int dd, mm, yy;
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE LOS AVIONES CON MAS DE 20 ANIOS-------------" << endl;
+	cout << "*----------------------------------------------------------------*" << endl << endl;
+	cout << "   Ingrese la fecha actual: " << endl << endl;
+	cout << "   Ingrese el dia: ";
+	cin >> dd;
+	cout << "   Ingrese el mes: ";
+	cin >> mm;
+	cout << "   Ingrese el anio: ";
+	cin >> yy; cout << endl;
+
+	act = new Fecha(dd, mm, yy);
+
+	if (ar->ListaAvionEstaVacio())msjAvionNoDisponible();
+	else
+	{
+		cout << ar->imprimirAvionesDeMasDe20(*act);
+	}
+
+	system("pause");
+}
+void Interfaz::reporteTripulacionAvionComercial(Aeropuerto* ar)
+{
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE TRIPULACION DE AVIONES COMERCIALES-------------" << endl;
+	cout << "*-------------------------------------------------------------------*" << endl << endl;
+
+	if (ar->existeAvionComercial()== false) msjNoAvionComercial();
+	else
+	{
+		cout << ar->imprimirTripulacionAvionComercial();
+	}
+
+	system("pause");
+}
+void Interfaz::reporteContratosVencidos(Aeropuerto* ar)
+{
+	Fecha* act = NULL;
+	int dd, mm, yy;
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE CONTRATOS VENCIDOS-------------" << endl;
+	cout << "*---------------------------------------------------*" << endl << endl;
+	cout << "   Ingrese la fecha actual: " << endl << endl;
+	cout << "   Ingrese el dia: ";
+	cin >> dd;
+	cout << "   Ingrese el mes: ";
+	cin >> mm;
+	cout << "   Ingrese el anio: ";
+	cin >> yy; cout << endl;
+
+	act = new Fecha(dd, mm, yy);
+
+	if (ar->ListaContratosEstaVacio())msjNoContratosVencidos();
+	else
+	{
+		cout << ar->imprimirContratosVencidos(*act);
+	}
+
+	system("pause");
+}
+void Interfaz::reporteAvionConMayorArea(Aeropuerto* ar)
+{
+
+	system("cls");
+	cout << endl;
+	cout << "-----------REPORTE DE AVION CON MAYOR AREA-------------" << endl;
+	cout << "*-----------------------------------------------------*" << endl << endl;
+	if (ar->ListaAvionEstaVacio())msjAvionNoDisponible();
+	else
+	{
+		if (ar->buscarAvionConMayorArea() != NULL)cout << ar->buscarAvionConMayorArea()->toString();
+		else msjNoAvionCarga();
+	}
+
+	system("pause");
+}
 void Interfaz::msjErorrIngresar()
 {
 	cout << "   Fallo al ingresar" << endl << endl;
@@ -1925,6 +2062,11 @@ void Interfaz::msjNoAvionesDisponibles()
 	cout << "	No hay aviones disponibles" << endl << endl;
 }
 
+void Interfaz::msjNoAvionCarga()
+{
+	cout << "	No hay aviones de carga disponibles" << endl << endl;
+}
+
 void Interfaz::msjNoContratosDispobibles()
 {
 	cout << "	No hay contratos disponibles" << endl << endl;
@@ -1963,6 +2105,11 @@ void Interfaz::msjErrorEliminar()
 void Interfaz::msjExitoEliminar()
 {
 	cout << "   Se elimino con exito" << endl << endl;
+}
+
+void Interfaz::msjNoContratados()
+{
+	cout << "   No existen empleados contratados" << endl << endl;
 }
 
 

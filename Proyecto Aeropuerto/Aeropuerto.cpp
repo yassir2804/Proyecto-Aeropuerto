@@ -197,6 +197,11 @@ Avion* Aeropuerto::buscarAvionPorPlaca(string pla)
 	return listA->buscarAvionPorPlaca(pla);
 }
 
+Avion* Aeropuerto::buscarAvionConMayorArea()
+{
+	return listA->buscarAvionConMayorArea();
+}
+
 string Aeropuerto::imprimeAvionesMilitares()
 {
 	return listA->imprimeAvionesMilitares();
@@ -220,6 +225,21 @@ string Aeropuerto::imprimeAvionesComerciales()
 string Aeropuerto::imprimeAviones()
 {
 	return listA->toString();
+}
+
+string Aeropuerto::imprimirAvionesConTripulacion()
+{
+	return listA->imprimirAvionesConTripulacion(*listC);
+}
+
+string Aeropuerto::imprimirTripulacionAvionComercial()
+{
+	return listA->imprimirTripulacionAvionComercial(*listC);
+}
+
+string Aeropuerto::imprimirAvionesDeMasDe20(Fecha& act)
+{
+	return listA->imprimirAvionesDeMasDe20(act);
 }
 
 bool Aeropuerto::ListaContratosEstaVacio()
@@ -295,6 +315,11 @@ ContratoBase* Aeropuerto::buscarContratoPorCed(string ced)
 }
 
 
+string Aeropuerto::imprimirContratosVencidosAceptados(Fecha& act)
+{
+	return listC->imprimirContratosVencidosAceptados(act);
+}
+
 string Aeropuerto::imprimirContratosVencidos(Fecha& act)
 {
 	return listC->imprimirContratosVencidos(act);
@@ -318,6 +343,21 @@ string Aeropuerto::imprimirPlazosFijos()
 string Aeropuerto::imprimirTiempoIndefinido()
 {
 	return listC->imprimirTiempoIndefinido();
+}
+
+string Aeropuerto::imprimirContratosConSuEmpleado()
+{
+	return 	listC->imprimirContratosConSuEmpleado();
+}
+
+string Aeropuerto::imprimirEmpleadosContratados()
+{
+	return listC->imprimirEmpleadosContratados();
+}
+
+string Aeropuerto::imprimirPilotosDeAvionesCarga()
+{
+	return listC->imprimirPilotosDeAvionesCarga();
 }
 
 

@@ -172,11 +172,12 @@ void Controladora::control2_2()
 
 void Controladora::control3_1()
 {
-    
+    Interfaz::reporteContratosConEmleado(aeropuerto);
 }
 
 void Controladora::control3_2()
 {
+    Interfaz::reporteAvionesYTripulacion(aeropuerto);
 }
 
 void Controladora::control3_3()
@@ -186,14 +187,17 @@ void Controladora::control3_3()
 
 void Controladora::control3_4()
 {
+    Interfaz::reporteEmpleadosContratados(aeropuerto);
 }
 
 void Controladora::control3_5()
 {
+    Interfaz::reportePilotosAvionesCarga(aeropuerto);
 }
 
 void Controladora::control3_6()
 {
+    Interfaz::reporteAvionesMasDe20(aeropuerto);
 }
 
 void Controladora::control3_7()
@@ -213,14 +217,17 @@ void Controladora::control3_9()
 
 void Controladora::control3_10()
 {
+    Interfaz::reporteTripulacionAvionComercial(aeropuerto);
 }
 
 void Controladora::control3_11()
 {
+    Interfaz::reporteContratosVencidos(aeropuerto);
 }
 
 void Controladora::control3_12()
 {
+    Interfaz::reporteAvionConMayorArea(aeropuerto);
 }
 
 void Controladora::control4_1()

@@ -218,8 +218,31 @@ Avion* ListaAvion::buscarAvionPorPlaca(string pla)
 	return NULL;
 }
 
+Avion* ListaAvion::buscarAvionConMayorArea()
+{
+	NodoAvion* aux = primero;
+	Avion* mayor = NULL;
 
+	if (!estaVacio()) {
+		mayor = primero->getAvion();
 
+		while (aux != NULL) {
+
+			if (typeid(*aux->getAvion()) == typeid(AvionCarga)) {
+				if (aux->getAvion()->areaPuerta() > mayor->areaPuerta()) {
+					mayor = aux->getAvion();
+				}
+			}
+			aux = aux->getSigAvion();
+		}
+		if (typeid(*mayor) != typeid(AvionCarga)) {
+			mayor = NULL;
+		}
+
+		return mayor;
+	}
+	return NULL;
+}
 
 string ListaAvion::imprimeAvionesMilitares()
 {
@@ -230,7 +253,7 @@ string ListaAvion::imprimeAvionesMilitares()
 
 	while (aux != NULL) {
 
-		if (typeid(*aux->getAvion()) == typeid(AvionMilitar))s << aux->getAvion()->toString() << endl;;
+		if (typeid(*aux->getAvion()) == typeid(AvionMilitar))s << aux->getAvion()->toString() << endl;
 
 		aux = aux->getSigAvion();
 
@@ -248,7 +271,7 @@ string ListaAvion::imprimeAvionesCarga()
 
 	while (aux != NULL) {
 
-		if ( typeid(*aux->getAvion()) == typeid(AvionCarga))s << aux->getAvion()->toString() << endl;;
+		if ( typeid(*aux->getAvion()) == typeid(AvionCarga))s << aux->getAvion()->toString() << endl;
 
 		aux = aux->getSigAvion();
 
@@ -266,7 +289,7 @@ string ListaAvion::imprimeAvionesCiviles()
 
 	while (aux != NULL) {
 
-		if(typeid(*aux->getAvion()) == typeid(AvionComercial) || typeid(*aux->getAvion()) == typeid(AvionCarga))s << aux->getAvion()->toString() << endl;;
+		if(typeid(*aux->getAvion()) == typeid(AvionComercial) || typeid(*aux->getAvion()) == typeid(AvionCarga))s << aux->getAvion()->toString() << endl;
 
 		aux = aux->getSigAvion();
 
@@ -284,7 +307,102 @@ string ListaAvion::imprimeAvionesComerciales()
 
 	while (aux != NULL) {
 
-		if (typeid(*aux->getAvion()) == typeid(AvionComercial))s << aux->getAvion()->toString() << endl;;
+		if (typeid(*aux->getAvion()) == typeid(AvionComercial))s << aux->getAvion()->toString() << endl;
+
+		aux = aux->getSigAvion();
+
+	}
+
+	return s.str();
+}
+
+string ListaAvion::imprimirAvionesConTripulacion(ListaNodoContrato& list)
+{
+	stringstream s;
+	NodoAvion* aux = primero;
+	NodoContratoBase* aux2 = NULL;
+	bool tripulacion = false;
+	int contador = 0;
+
+	s << "----------AVIONES CON SU TRIPULACION--------------" << endl;
+
+	while (aux != NULL) {
+
+		contador = 1;
+		tripulacion = false;
+
+		s << aux->getAvion()->toString();
+		aux2 = list.getPrimero();
+
+		while (aux2 != NULL) {
+			if (aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
+				s << "*----------TRIPULANTE "<<contador++<<"--------------*" << endl << endl
+					<< aux2->getContratoBase()->getEmpleado()->toString();
+				tripulacion = true; 
+			}
+			aux2 = aux2->getNodoContratoBase();
+		}
+
+		if (!tripulacion) {
+			s <<endl<< "   No tiene tripulacion." <<endl<< endl;
+		}
+
+		aux = aux->getSigAvion();
+	}
+
+	return s.str();
+
+}
+
+string ListaAvion::imprimirTripulacionAvionComercial(ListaNodoContrato& list)
+{
+	stringstream s;
+	NodoAvion* aux = primero;
+	NodoContratoBase* aux2 = NULL;
+	bool tripulacion = false;
+	int contador = 0;
+
+	s << "----------AVIONES COMERCIALES CON SU TRIPULACION--------------" << endl;
+
+	while (aux != NULL) {
+
+		if (typeid(*aux->getAvion()) == typeid(AvionComercial)) {
+
+			contador = 1;
+			tripulacion = false;
+			s << aux->getAvion()->toString();
+			aux2 = list.getPrimero();
+
+			while (aux2 != NULL) {
+				if (aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
+					s << "*----------TRIPULANTE " << contador++ << "--------------*" << endl << endl
+						<< aux2->getContratoBase()->getEmpleado()->toString();
+					tripulacion = true;
+				}
+				aux2 = aux2->getNodoContratoBase();
+			}
+
+			if (!tripulacion) {
+				s << endl << "   No tiene tripulacion." << endl << endl;
+			}
+		}
+
+		aux = aux->getSigAvion();
+	}
+
+	return s.str();
+}
+
+string ListaAvion::imprimirAvionesDeMasDe20(Fecha& act)
+{
+	NodoAvion* aux = primero;
+	stringstream s;
+
+	s << "\n--------LISTA DE AVIONES DE MAS DE 20 ANIOS--------" << endl << endl;
+
+	while (aux != NULL) {
+
+		if (aux->getAvion()->masDe20Anios(act))s << aux->getAvion()->toString() << endl;;
 
 		aux = aux->getSigAvion();
 

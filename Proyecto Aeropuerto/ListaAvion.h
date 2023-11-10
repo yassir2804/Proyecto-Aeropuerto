@@ -28,11 +28,15 @@ public:
 	bool eliminarAvionPorPlaca(string pla);
 
 	Avion* buscarAvionPorPlaca(string pla);
+	Avion* buscarAvionConMayorArea();
 
 	string imprimeAvionesMilitares();
 	string imprimeAvionesCarga();
 	string imprimeAvionesCiviles();
 	string imprimeAvionesComerciales();
+	string imprimirAvionesConTripulacion(ListaNodoContrato& list);
+	string imprimirTripulacionAvionComercial(ListaNodoContrato& list);
+	string imprimirAvionesDeMasDe20(Fecha& act);
 	string toString();
 
 };

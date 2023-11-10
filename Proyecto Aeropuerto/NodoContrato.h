@@ -8,6 +8,7 @@
 #include "Copiloto.h"
 #include "Administrativo.h"
 #include "Miscelaneo.h"
+#include "AvionCarga.h"
 
 
 class NodoContratoBase {

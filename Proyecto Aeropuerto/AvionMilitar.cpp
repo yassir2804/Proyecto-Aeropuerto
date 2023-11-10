@@ -33,18 +33,19 @@ string AvionMilitar::getTipo()
 string AvionMilitar::toString()
 {
 	stringstream s;
-
-	s << "*-----INFORMACION DEL AVION-----*" << endl<<endl;
-	s << "Numero de Placa:	" << numPlaca << "            " << endl;
-	s << "Fecha de creacion:	" << fCreado->toString() << "       " << endl;
-	s << "Distancia recorrida:	" << distanciaRecorrida << " Km         " << endl;
-	s << "Tipo de Avion:		" << tipo << "            " << endl;
-	s << "Numero de Categoria:	" << categoria << "            " << endl;
-	s << "Marca del avion:	" << Servicio::avionMilitarCategoria(categoria) << "  " << endl;
-	s << "Velocidad avion:	" << Servicio::avionMilitarAlcance(categoria) << "            " << endl;
-	s << "Carga:	" << Servicio::avionMilitarCarga(categoria) << "            " << endl;
-	s << "Velocidad maxima:	" << velocidadMaxima << " km/h        " << endl<<endl;
+	s << left;
+	s << "*-----INFORMACION DEL AVION-----*" << endl << endl;
+	s << "   Numero de Placa:      " << setw(20) << numPlaca << "            " << endl;
+	s << "   Fecha de creacion:    " << setw(20) << fCreado->toString() << "       " << endl;
+	s << "   Distancia recorrida:  " << setw(0) << distanciaRecorrida << " Km         " << endl;
+	s << "   Tipo de Avion:        " << setw(20) << tipo << "            " << endl;
+	s << "   Numero de Categoria:  " << setw(20) << categoria << "            " << endl;
+	s << "   Marca del avion:      " << setw(20) << Servicio::avionMilitarCategoria(categoria) << "  " << endl;
+	s << "   Velocidad avion:      " << setw(20) << Servicio::avionMilitarAlcance(categoria) << "            " << endl;
+	s << "   Carga:                " << setw(20) << Servicio::avionMilitarCarga(categoria) << "            " << endl;
+	s << "   Velocidad maxima:     " << setw(0) << velocidadMaxima << " km/h        " << endl << endl;
 	s << "*-------------------------------*" << endl;
+	s << right;
 	return s.str();
 }
 

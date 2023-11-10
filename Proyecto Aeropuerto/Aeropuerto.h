@@ -62,11 +62,15 @@ public:
 	bool existeAvionMilitarPorPlaca(string pla);
 	bool eliminarAvionPorPlaca(string pla);
 	Avion* buscarAvionPorPlaca(string pla);
+	Avion* buscarAvionConMayorArea();
 	string imprimeAvionesMilitares();
 	string imprimeAvionesCarga();
 	string imprimeAvionesCiviles();
 	string imprimeAvionesComerciales();
 	string imprimeAviones();
+	string imprimirAvionesConTripulacion();
+	string imprimirTripulacionAvionComercial();
+	string imprimirAvionesDeMasDe20(Fecha& act);
 
 	//metodos de lista contrato
 
@@ -85,11 +89,15 @@ public:
 	Empleado* buscarEmpleadoPorAvi(string pla);
 	ContratoBase* buscarContratoPorCod(string cod);
 	ContratoBase* buscarContratoPorCed(string ced);
+	string imprimirContratosVencidosAceptados(Fecha& act);
 	string imprimirContratosVencidos(Fecha& act);
 	string imprimeContratos();
 	string imprimirServiciosProfesionales();
 	string imprimirPlazosFijos();
 	string imprimirTiempoIndefinido();
+	string imprimirContratosConSuEmpleado();
+	string imprimirEmpleadosContratados();
+	string imprimirPilotosDeAvionesCarga();
 	bool existeServicioProfesional();
 	bool existePlazoFijo();
 	bool existeTiempoIndefinido();

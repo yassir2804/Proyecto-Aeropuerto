@@ -31,16 +31,16 @@ string TiempoIndefinido::toString()
 	stringstream s;
 
 	s << "-----INFORMACION DEL CONTRATO-----" << endl<<endl;
-	s << "	Codigo del contrato:	" << codContrato << endl;
-	s << "	Descripcion del puesto:	" << descPuesto << endl;
-	s << "	Salario:	" << salario << endl;
+	s << "   Codigo del contrato: " << codContrato << endl;
+	s << "   Descripcion del puesto: " << descPuesto << endl;
+	s << "   Salario: " << salario << endl;
 	if (fIngreso != NULL)
 	{
-		s << "La fecha de ingreso es:	" << fIngreso->toString()<<endl;
+		s << "   La fecha de ingreso es: " << fIngreso->toString()<<endl<<endl;
 	}
 	if (fCulminacion != NULL)
 	{
-		s << "La fecha de cese de funciones es:	" << fCulminacion->toString() << endl;
+		s << "   La fecha de cese de funciones es: " << fCulminacion->toString() << endl<<endl;
 	}
 
 	if (ptrPlaza != NULL)
@@ -60,3 +60,35 @@ string TiempoIndefinido::toString()
 
 	return s.str();
 }
+
+string TiempoIndefinido::imrprimirContratoYEmpleado()
+{
+	stringstream s;
+
+	s << "-----INFORMACION DEL CONTRATO-----" << endl << endl;
+	s << "   Codigo del contrato: " << codContrato << endl;
+	s << "   Descripcion del puesto: " << descPuesto << endl;
+	s << "   Salario: " << salario << endl;
+	if (fIngreso != NULL)
+	{
+		s << "   La fecha de ingreso es: " << fIngreso->toString() << endl << endl;
+	}
+	if (fCulminacion != NULL)
+	{
+		s << "   La fecha de cese de funciones es: " << fCulminacion->toString() << endl << endl;
+	}
+
+	if (ptrPlaza != NULL)
+	{
+		s << ptrPlaza->toString();
+	}
+
+	if (empleado != NULL)
+	{
+		s << empleado->toString();
+	}
+
+
+	return s.str();
+}
+

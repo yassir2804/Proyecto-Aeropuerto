@@ -73,5 +73,22 @@ void Avion::setVelocidadMaxima(double velMax)
 {
 }
 
+double Avion::areaPuerta()
+{
+	return 0.0;
+}
+
+bool Avion::masDe20Anios(Fecha& act)
+{
+	if (act.getAnio() - fCreado->getAnio() > 20 ||
+		(act.getAnio() - fCreado->getAnio() == 20 && act.getMes() > fCreado->getMes()) ||
+		(act.getAnio() - fCreado->getAnio() == 20 && act.getMes() == fCreado->getMes() && act.getDia() > fCreado->getDia())) {
+		return true;
+	}
+
+	return false;
+}
+
+
 
 

@@ -2,6 +2,7 @@
 #include "AvionComercial.h"
 #include "AvionCarga.h"
 #include "AvionMilitar.h"
+#include "ListaNodoContrato.h"
 
 class NodoAvion {
 

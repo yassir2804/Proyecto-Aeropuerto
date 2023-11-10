@@ -70,10 +70,18 @@ public:
 	static void eliminarContrato(Aeropuerto* ar);
 
 	//Metodos para los reportes
+	static void reporteContratosConEmleado(Aeropuerto* ar);
 	static void reporteAviones(Aeropuerto* ar);
 	static void reporteContratoServiciosProfesionales(Aeropuerto* ar);
 	static void reportePlazoFijo(Aeropuerto* ar);
 	static void reporteTiempoIndefinido(Aeropuerto* ar);
+	static void reporteAvionesYTripulacion(Aeropuerto* ar);
+	static void reporteEmpleadosContratados(Aeropuerto* ar);
+	static void reportePilotosAvionesCarga(Aeropuerto* ar);
+	static void reporteAvionesMasDe20(Aeropuerto* ar);
+	static void reporteTripulacionAvionComercial(Aeropuerto* ar);
+	static void reporteContratosVencidos(Aeropuerto* ar);
+	static void reporteAvionConMayorArea(Aeropuerto* ar);
 
 	static void msjErorrIngresar(); 
 	static void msjExitoIngresar();
@@ -90,6 +98,7 @@ public:
 	static void msjNoAvionComercialPlaca();
 	static void msjAvionComercialAzafata();
 	static void msjNoAvionesDisponibles();
+	static void msjNoAvionCarga();
 	static void msjNoContratosDispobibles();
 	static void msjNoContratosCod();
 	static void msjNoContratosVencidos();
@@ -98,5 +107,7 @@ public:
 	static void msjPlazaCodigo();
 	static void msjErrorEliminar();
 	static void msjExitoEliminar();
+	static void msjNoContratados();
+
 
 };

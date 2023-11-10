@@ -1,6 +1,7 @@
 #pragma once
 #include"Fecha.h"
 #include"Clase-Servicios.h"
+#include <iomanip>
 
 
 class Avion {
@@ -39,4 +40,8 @@ public:
 	virtual void setAnchoPuerta(double ancPuer);
 	virtual void setAlturaPuerta(double altPuer);
 	virtual void setVelocidadMaxima(double velMax);
+
+	virtual double areaPuerta();
+
+	bool masDe20Anios(Fecha& act);
 };
