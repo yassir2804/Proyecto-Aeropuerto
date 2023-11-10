@@ -297,6 +297,11 @@ bool Aeropuerto::eliminarContratoPorCedula(string cod)
 	return listC->eliminarContratoPorCedula(cod);
 }
 
+bool Aeropuerto::eliminarContratosVencidosNoAceptados(Fecha& act)
+{
+	return listC->eliminarContratosVencidosNoAceptados(act);
+}
+
 Empleado* Aeropuerto::buscarEmpleadoPorAvi(string pla)
 {
 	return listC->buscarEmpleadoPorAvi(pla);

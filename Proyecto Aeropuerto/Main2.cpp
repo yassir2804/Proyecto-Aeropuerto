@@ -21,6 +21,10 @@
 //	Plaza* pla1 = new Plaza("432", "Huerfano", false);
 //	ContratoBase* tiem = new TiempoIndefinido("Contratacion en el puesto de aviador", "1111", 4500, *av3, *pil, *pla, *fech1);
 //	ContratoBase* plFij = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *admi, *fech1, *fech2);
+//	ContratoBase* plFij1 = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *admi, *fech1, *fech2);
+//	ContratoBase* plFij2 = new PlazoFijo("Contratacion en el puesto de aviador", "a456", 4500, *admi, *fech1, *fech2);
+//	plFij->setAceptado(false);
+//	//plFij2->setAceptado(false);
 //	//ContratoBase* ser = new ServiciosProfesionales("Contratacion en el puesto de aviador", "a456", 4500, *av3, *pil,"Servicio de limpieza","Lunesa a viernes", * fech1, *fech2);
 //
 //	//cout << tiem->toString()<<endl;
@@ -54,21 +58,24 @@
 //	ar->ingresarAvion(*av2);
 //	ar->ingresarAvion(*av3);
 //	ar->ingresarAvion(*av1);
-//	ar->ingresarContrato(*tiem);
 //	ar->ingresarContrato(*plFij);
+//	ar->ingresarContrato(*plFij1);
+//	ar->ingresarContrato(*plFij2);
 //	ar->ingresarPlaza(*pla);
 //	ar->ingresarPlaza(*pla1);
 //
-//	cout << ar->imprimeAviones();
-//	cout << ar->imprimeEmpleados();
+//	//cout << ar->imprimeAviones();
+//	//cout << ar->imprimeEmpleados();
 //	cout << ar->imprimeContratos();
-//	cout << ar->imprimePlazas();
+//	//cout << ar->imprimePlazas();
 //
 //	//ar->eliminaContratoPorCodigo("1111");
 //
+//	ar->eliminarContratosVencidosNoAceptados();
+//
 //	//cout << ar->imprimeAviones();
 //	//cout << ar->imprimeEmpleados();
-//	//cout << ar->imprimeContratos();
+//	cout << ar->imprimeContratos();
 //	//cout << ar->imprimePlazas();
 //
 //

@@ -224,7 +224,7 @@ bool ListaNodoContrato::existenContratosVencidos(Fecha& fech)
 
 	while (aux != NULL) {
 
-		if ( typeid(*aux->getContratoBase()) == typeid(PlazoFijo) &&  aux->getContratoBase()->estaVencido(fech)  && aux->getContratoBase()->getAceptado()) {
+		if ( typeid(*aux->getContratoBase()) == typeid(PlazoFijo) &&  aux->getContratoBase()->estaVencido(fech)) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -284,6 +284,40 @@ bool ListaNodoContrato::eliminarContratoPorCedula(string ced)
 			return true;
 		}
 	return false;
+}
+
+bool ListaNodoContrato::eliminarContratosVencidosNoAceptados(Fecha& act)
+{
+	NodoContratoBase* aux = primero;
+	NodoContratoBase* anterior = NULL;
+	bool eliminado = false;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getContratoBase()) == typeid(PlazoFijo) && aux->getContratoBase()->getAceptado() == false && aux->getContratoBase()->estaVencido(act)) {
+			NodoContratoBase* actual = aux;
+
+			if (anterior == NULL) {
+
+				primero = actual->getNodoContratoBase();
+				aux = primero;  
+			}
+			else {
+				
+				anterior->setNodoContratoBase(actual->getNodoContratoBase());
+				aux = anterior->getNodoContratoBase();  
+			}
+
+			delete actual;
+			eliminado = true;
+		}
+		else {
+			
+			anterior = aux;
+			aux = aux->getNodoContratoBase();
+		}
+	}
+
+	return eliminado;
 }
 
 bool ListaNodoContrato::existeContratoVencidoConCod(Fecha& fech, string cod)

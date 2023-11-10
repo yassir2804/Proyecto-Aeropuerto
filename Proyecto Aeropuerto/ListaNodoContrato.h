@@ -36,6 +36,7 @@ public:
 
 	bool eliminaContratoPorCodigo(string cod);
 	bool eliminarContratoPorCedula(string ced);
+	bool eliminarContratosVencidosNoAceptados(Fecha& act);
 
 	ContratoBase* buscarContratoPorCod(string cod);
 	ContratoBase* buscarContratoPorCed(string ced);

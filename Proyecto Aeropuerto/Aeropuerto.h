@@ -86,6 +86,7 @@ public:
 	bool existeContratoVencidoConCod(Fecha& fech, string cod);
 	bool eliminaContratoPorCodigo(string cod);
 	bool eliminarContratoPorCedula(string cod);
+	bool eliminarContratosVencidosNoAceptados(Fecha& act);
 	Empleado* buscarEmpleadoPorAvi(string pla);
 	ContratoBase* buscarContratoPorCod(string cod);
 	ContratoBase* buscarContratoPorCed(string ced);

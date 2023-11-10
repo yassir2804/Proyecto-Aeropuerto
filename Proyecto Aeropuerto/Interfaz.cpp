@@ -669,7 +669,6 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 					}
 					else msjErorrIngresar();
 
-					cout << ar->imprimeContratos();
 				}
 				else
 				{
@@ -697,9 +696,6 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 										else msjErorrIngresar();
 									}
 									else msjErorrIngresar();
-
-									cout << ar->imprimeContratos();
-
 
 								}
 
@@ -731,7 +727,6 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 										}
 										else msjErorrIngresar();
 
-										cout << ar->imprimeContratos();
 
 									}
 
@@ -763,7 +758,6 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 										}
 										else msjErorrIngresar();
 
-										cout << ar->imprimeContratos();
 
 									}
 
@@ -979,10 +973,15 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 	act = new Fecha(dd, mm, yy);
 
 
+
+
 	if (ar->existenContratosVencidos(*act) == false)msjNoContratosVencidos();
 	else
 	{
-		cout << ar->imprimirContratosVencidosAceptados(*act);
+		if (ar->eliminarContratosVencidosNoAceptados(*act)) cout << "   Se han eliminado los empleados sin oportunidad de renovacion" << endl<<endl;
+		else cout << "   No se han econtrado contratos vencidos sin oportunidad de renovacion" << endl<<endl;
+
+		cout << ar->imprimirContratosVencidos(*act);
 		cout << "   Digite el codigo del contrato que desea seleccionar: ";
 		cin >> cod; cout << endl;
 
@@ -1977,7 +1976,7 @@ void Interfaz::reporteAvionConMayorArea(Aeropuerto* ar)
 	cout << endl;
 	cout << "-----------REPORTE DE AVION CON MAYOR AREA-------------" << endl;
 	cout << "*-----------------------------------------------------*" << endl << endl;
-	if (ar->ListaAvionEstaVacio())msjAvionNoDisponible();
+	if (ar->existeAvionCarga()==false)msjNoAvionCarga();
 	else
 	{
 		if (ar->buscarAvionConMayorArea() != NULL)cout << ar->buscarAvionConMayorArea()->toString();

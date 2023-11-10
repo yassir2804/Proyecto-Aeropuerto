@@ -24,6 +24,7 @@ ContratoBase::~ContratoBase()
 	if (empleado != NULL) delete empleado;
 	if (avion != NULL) delete avion;
 	if (fIngreso != NULL) delete fIngreso;
+	if (fIngreso != NULL) delete fCulminacion;
 }
 
 string ContratoBase::getDescPuesto()
@@ -68,7 +69,7 @@ void ContratoBase::setSalario(double sal)
 
 void ContratoBase::setEmpleado(Empleado& emp)
 {
-	empleado = (Empleado*)&emp;
+	empleado = emp.copia();
 
 }
 
