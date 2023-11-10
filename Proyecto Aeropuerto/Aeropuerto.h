@@ -46,7 +46,7 @@ public:
 	string imprimirCopilotos();
 	string imprimirPilotos();
 	string imprimeEmpleados();
-
+	string imprimirEmpleadoConSuAvion(string ced);
 
 	//metodos de lista avion
 	bool ListaAvionEstaVacio();
@@ -99,7 +99,6 @@ public:
 	string imprimirContratosConSuEmpleado();
 	string imprimirEmpleadosContratados();
 	string imprimirPilotosDeAvionesCarga();
-	string imprimirEmpleadoConSuAvion(string ced);
 	bool existeServicioProfesional();
 	bool existePlazoFijo();
 	bool existeTiempoIndefinido();

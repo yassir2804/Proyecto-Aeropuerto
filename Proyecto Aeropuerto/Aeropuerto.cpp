@@ -123,6 +123,11 @@ string Aeropuerto::imprimeEmpleados()
 	return listE->toString();
 }
 
+string Aeropuerto::imprimirEmpleadoConSuAvion( string ced)
+{
+	return listE->imprimirEmpleadoConSuAvion(*listC,ced);
+}
+
 bool Aeropuerto::ingresarAvion(Avion& avi)
 {
 	return listA->ingresaAvion(avi);
@@ -364,13 +369,6 @@ string Aeropuerto::imprimirPilotosDeAvionesCarga()
 {
 	return listC->imprimirPilotosDeAvionesCarga();
 }
-
-string Aeropuerto::imprimirEmpleadoConSuAvion(string ced)
-{
-	return listC->imprimirEmpleadoConSuAvion(ced);
-}
-
-
 bool Aeropuerto::existeServicioProfesional()
 {
 	return listC->existeServicioProfesional();

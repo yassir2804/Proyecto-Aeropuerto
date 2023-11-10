@@ -11,6 +11,7 @@
 #include "AvionCarga.h"
 
 
+
 class NodoContratoBase {
 private:
 	ContratoBase* ptrContrato;

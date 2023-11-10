@@ -264,6 +264,39 @@ Empleado* ListaEmpleado::buscarEmpleadoPorCed(string ced)
 	
 }
 
+string ListaEmpleado::imprimirEmpleadoConSuAvion(ListaNodoContrato& list, string ced)
+{
+	stringstream s;
+	NodoEmpleado* aux = primero;
+	NodoContratoBase* aux2 = NULL;
+
+
+
+	s << "----------EMPLEADO CON SU AVION--------------" << endl<<endl;
+
+	while (aux != NULL) {
+
+
+		s << buscarEmpleadoPorCed(ced)->toString();
+		aux2 = list.getPrimero();
+
+		while (aux2 != NULL) {
+			if (typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Miscelaneo) && typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Administrativo) && aux2->getContratoBase()->getEmpleado()->getCedula() == ced) {
+				s << aux2->getContratoBase()->getAvion()->toString();
+				return s.str();
+			}
+			aux2 = aux2->getNodoContratoBase();
+		}
+			s << endl << "   No tiene avion." << endl << endl;
+		
+			return s.str();
+
+		aux = aux->getSigEmpleado();
+	}
+
+
+}
+
 string ListaEmpleado::imprimirMiscelaneos()
 {
 	NodoEmpleado* aux = primero;

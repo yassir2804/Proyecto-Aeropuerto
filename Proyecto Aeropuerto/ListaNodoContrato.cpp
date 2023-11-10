@@ -516,30 +516,6 @@ string ListaNodoContrato::imprimirPilotosDeAvionesCarga()
 	else return "   No hay ningun avion de carga con piloto asignado\n\n";
 }
 
-string ListaNodoContrato::imprimirEmpleadoConSuAvion(string ced)
-{
-	stringstream s;
-	NodoContratoBase* aux = primero;
-	bool tieneAvion = false;
-
-	while (aux != NULL) {
-
-		if (aux->getContratoBase()->getEmpleado()->getCedula() == ced) { 
-			s << aux->getContratoBase()->getEmpleado()->toString() << endl;
-			if ((typeid(*aux->getContratoBase()->getEmpleado()) != typeid(Miscelaneo)) && (typeid(*aux->getContratoBase()->getEmpleado()) != typeid(Administrativo))) {
-				s << aux->getContratoBase()->getAvion()->toString() << endl;
-				tieneAvion = true;
-			}
-		}
-		aux = aux->getNodoContratoBase();
-	}
-	if (tieneAvion)
-		return s.str();     
-	else {
-		s << "   Este empleado no esta ligado a ningun avion\n\n";
-		return s.str();
-	}
-}
 
 string ListaNodoContrato::toString()
 {

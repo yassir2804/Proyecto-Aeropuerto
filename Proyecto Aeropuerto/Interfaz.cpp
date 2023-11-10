@@ -833,7 +833,6 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 					}
 					else msjErorrIngresar();
 
-					cout << ar->imprimeContratos();
 				}
 				else
 				{
@@ -861,9 +860,6 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 										else msjErorrIngresar();
 									}
 									else msjErorrIngresar();
-
-									cout << ar->imprimeContratos();
-
 
 								}
 
@@ -895,8 +891,6 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 										}
 										else msjErorrIngresar();
 
-										cout << ar->imprimeContratos();
-
 									}
 
 								}
@@ -926,8 +920,6 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 											else msjErorrIngresar();
 										}
 										else msjErorrIngresar();
-
-										cout << ar->imprimeContratos();
 
 									}
 
@@ -1030,9 +1022,6 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 				}
 				else msjErorrIngresar();
 
-
-				cout << ar->imprimeContratos();
-
 			}
 			else
 
@@ -1088,8 +1077,6 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 					}
 					else msjErorrIngresar();
 
-
-					cout << ar->imprimeContratos();
 				}
 
 			}
@@ -1991,29 +1978,57 @@ void Interfaz::consultaTrabajadorPorCedulaYAeronave(Aeropuerto* ar)
 	system("cls");
 	cout << endl;
 	cout << "--------------CONSULTA DEL TRABAJADOR Y SU AVION--------------" << endl;
-	cout << "*------------------------------------------------------------*" << endl;
-	if (ar->ListaEmpleadoEstaVacio())
-		msjSinEmpleados();
-	else {
+	cout << "*------------------------------------------------------------*" << endl<<endl;
+
+	if (ar->ListaEmpleadoEstaVacio())msjSinEmpleados();
+
+	else 
+	{
 		cout << "   Digite la cedula del empleado a consultar: ";
 		cin >> ced;cout << endl;
-		cout << ar->imprimirEmpleadoConSuAvion(ced) << endl;
+		if (ar->existeEmpleadoConCed(ced) == false)msjNoExisteCedula();
+
+		else cout << ar->imprimirEmpleadoConSuAvion(ced) << endl;
 	}
+
+	system("pause");
 }
-//void Interfaz::consultaContratoConSuNumeroYTipo(Aeropuerto* ar)
-//{
-//}
+void Interfaz::consultaContratoConSuNumeroYTipo(Aeropuerto* ar)
+{
+	string cod;
+	system("cls");
+	cout << endl;
+	cout << "--------------CONSULTA POR CONTRATO Y SU TIPO--------------" << endl;
+	cout << "*---------------------------------------------------------*" << endl << endl;
+	if (ar->ListaContratosEstaVacio()) msjNoContratosDispobibles();
+	else
+	{
+		cout << "   Ingrese el codigo del contrato que desea consultar: ";
+		cin >> cod; cout << endl;
+
+		if (ar->existeContrato(cod) == false) msjNoContratosCod();
+		else {
+			cout << ar->buscarContratoPorCod(cod)->toString() << endl;
+			if (typeid(*ar->buscarContratoPorCod(cod)) == typeid(ServiciosProfesionales))cout << " El contrato es de servicios profesionales"<<endl<<endl;
+			if (typeid(*ar->buscarContratoPorCod(cod)) == typeid(PlazoFijo))cout << " El contrato es de plazo fijo" << endl << endl;
+			if (typeid(*ar->buscarContratoPorCod(cod)) == typeid(TiempoIndefinido))cout << " El contrato es de tiempo indefinido" << endl << endl;
+
+		}
+	}
+
+	system("pause");
+
+}
 void Interfaz::consultaAvionCivil(Aeropuerto* ar)
 {
 	string pla;
 	system("cls");
 	cout << endl;
 	cout << "--------------CONSULTA POR EL AVION CIVIL POR SU PLACA--------------" << endl;
-	cout << "*------------------------------------------------------------------*" << endl;
+	cout << "*------------------------------------------------------------------*" << endl<<endl;
 	if (ar->existeAvionCivil() == false) msjNoAvionCivil(); 
 	else
 	{
-		cout << ar->imprimeAvionesCiviles(); 
 		cout << "   Ingrese la placa del avion civil que desea consultar: "; 
 		cin >> pla; cout << endl; 
 
@@ -2022,6 +2037,8 @@ void Interfaz::consultaAvionCivil(Aeropuerto* ar)
 			cout << ar->buscarAvionPorPlaca(pla)->toString() << endl; 
 		}
 	}
+
+	system("pause");
 }
 void Interfaz::msjErorrIngresar()
 {

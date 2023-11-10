@@ -35,6 +35,7 @@ public:
 
 	Empleado* buscarEmpleadoPorCed(string ced);
 
+	string imprimirEmpleadoConSuAvion(ListaNodoContrato& list, string ced);
 	string imprimirMiscelaneos();
 	string imprimirAdministrativos();
 	string imprimirAzafatas();

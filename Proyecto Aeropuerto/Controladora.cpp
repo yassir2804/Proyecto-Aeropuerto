@@ -237,6 +237,7 @@ void Controladora::control4_1()
 
 void Controladora::control4_2()
 {
+    Interfaz::consultaContratoConSuNumeroYTipo(aeropuerto);
 }
 
 void Controladora::control4_3()

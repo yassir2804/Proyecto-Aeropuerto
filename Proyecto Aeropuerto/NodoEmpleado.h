@@ -4,6 +4,8 @@
 #include "Administrativo.h"
 #include "Miscelaneo.h"
 #include "Azafata.h"
+#include "ListaNodoContrato.h"
+
 
 class NodoEmpleado {
 
