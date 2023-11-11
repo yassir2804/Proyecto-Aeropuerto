@@ -1,7 +1,23 @@
-TiempoIndefinido	1234	4321	15
-1	Piloto	Libre
-1	1	1
-12	12	12
-Piloto	Yassir	1	56	Piloto	20
-AvionCarga	1	2000	puertaTras	A319	56	23
-1	1	2020
+TiempoIndefinido	26	Conserje	5000
+5	Miscelaneo	Ocupada
+11	11	2023
+0	0	0
+Miscelaneo	Yassir	52	25	Miscelaneo	Sexto
+PlazoFijo	9	9	6000	Aceptado
+9	15	2012
+9	15	2014
+Piloto	Pablo	1	36	Piloto	10
+AvionCarga	156	5600	2	A319	5	6
+8	10	1999
+ServiciosProfesionales	3	6	6	6	6
+6	6	6
+6	6	6
+Azafata	6	6	6	6	6
+AvionComercial	2	2	2	130
+2	2	2
+PlazoFijo	33	2	3000	Aceptado
+1	1	2023
+1	1	2025
+Copiloto	2	2	2	2	2
+AvionComercial	2	2	2	130
+2	2	2

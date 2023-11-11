@@ -1,6 +1,5 @@
-Piloto	Yassir	1	56	Piloto	20
-Copiloto	Manuel	2	1	Copiloto	2020
-Miscelaneo	5	5	5	5	5
-Piloto	6	6	6	6	6
-Copiloto	9	9	9	9	9
-Piloto	125	125	125	125	125
+Miscelaneo	Yassir	52	25	Miscelaneo	Sexto
+Administrativo	Manuel	569	552	administrativo	Licenciatura
+Piloto	Pablo	1	36	Piloto	10
+Copiloto	2	2	2	2	2
+Azafata	6	6	6	6	6

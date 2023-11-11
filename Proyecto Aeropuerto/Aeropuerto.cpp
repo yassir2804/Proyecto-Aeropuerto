@@ -12,10 +12,6 @@ Aeropuerto::Aeropuerto(string nom, string ced, string tel): nombreE(nom),cedulaJ
 	leerListaPlazas();
 	leerListaContratos();
 
-	cout << imprimeContratos();
-
-	cout << "{";
-
 }
 
 Aeropuerto::~Aeropuerto()

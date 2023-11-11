@@ -1071,6 +1071,9 @@ void Interfaz::ingresarTiempoIndefinido(Aeropuerto* ar)
 					ar->eliminaContratoPorCodigo(plazo->getCodContrato());
 
 					if (ar->existeContrato(cod) == false) {
+
+						aux->getPlaza()->setOcupada(true);
+
 						if (ar->ingresarContrato(*aux)) {
 
 							pla->setOcupada(true);

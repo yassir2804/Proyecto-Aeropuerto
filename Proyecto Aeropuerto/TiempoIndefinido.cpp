@@ -2,11 +2,11 @@
 
 
 
-TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc, cod, sala,av,emp, fIng), ptrPlaza(plaza.copia())
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Avion& av, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc, cod, sala, av,emp, fIng), ptrPlaza(plaza.copia())
 {
 }
 
-TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc, cod, sala, emp, fIng), ptrPlaza(plaza.copia())
+TiempoIndefinido::TiempoIndefinido(string desc, string cod, double sala, Empleado& emp, Plaza& plaza, Fecha& fIng) :ContratoBase(desc,cod,sala,emp,fIng), ptrPlaza(plaza.copia())
 {
 }
 
@@ -125,7 +125,7 @@ ContratoBase* TiempoIndefinido::leerContrato(ifstream& file)
 	fIng = Fecha::leerFecha(file);
 	fCul = Fecha::leerFecha(file);
 
-	if (fCul->getDia() == 0)fCul == NULL;
+	if (fCul->getDia() == 0)fCul = NULL;
 
 	getline(file, tipo, '\t');
 
@@ -144,12 +144,17 @@ ContratoBase* TiempoIndefinido::leerContrato(ifstream& file)
 		tiem = new TiempoIndefinido(desc, cod, sal, *emp, *pla, *fIng);
 		if (fCul != NULL) tiem->setFechaCulminacion(*fCul);
 
+		return tiem;
+
 	}
 	if (tipo == "Miscelaneo") {
 		emp = Miscelaneo::leerEmpleado(file);
 
 		tiem = new TiempoIndefinido(desc, cod, sal, *emp, *pla, *fIng);
 		if (fCul != NULL) tiem->setFechaCulminacion(*fCul);
+
+
+		return tiem;
 	}
 
 	getline(file, tipo, '\t');

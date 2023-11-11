@@ -102,7 +102,13 @@ string PlazoFijo::imrprimirContratoYEmpleado()
 
 void PlazoFijo::guardarContrato(ofstream& file)
 {
-	file << "PlazoFijo" << '\t' << codContrato << '\t' << descPuesto << '\t' << salario << '\n';
+	string estado;
+
+	if (aceptado)estado = "Aceptado";
+	else estado = "Rechazado";
+
+	file << "PlazoFijo" << '\t' << codContrato << '\t' << descPuesto << '\t' << salario << '\t'<< estado << '\n';
+
 
 	if (fIngreso != NULL) fIngreso->guardarFecha(file);
 	if (fCulminacion != NULL) fCulminacion->guardarFecha(file);
@@ -113,16 +119,22 @@ void PlazoFijo::guardarContrato(ofstream& file)
 
 ContratoBase* PlazoFijo::leerContrato(ifstream& file)
 {
-	string cod, desc, salS, tipo;
+	string cod, desc, salS, tipo, estadoS;
+	bool estado;
 	double sal;
 	Fecha* fIng;
 	Fecha* fCul;
 	Empleado* emp = NULL;
 	Avion* avi = NULL;
+	ContratoBase* pla = NULL;
 
 	getline(file, cod, '\t');
 	getline(file, desc, '\t');
-	getline(file, salS, '\n');
+	getline(file, salS, '\t');
+	getline(file, estadoS, '\n');
+
+	if (estadoS == "Aceptado")estado = true;
+	else estado = false;
 
 	sal = stod(salS);
 
@@ -142,11 +154,21 @@ ContratoBase* PlazoFijo::leerContrato(ifstream& file)
 	}
 	if (tipo == "Administrativo") {
 		emp = Administrativo::leerEmpleado(file);
-		return new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+
+		pla = new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+
+		if (estado)pla->setAceptado(estado);
+		else pla->setAceptado(estado);
+
+		return pla;
 	}
 	if (tipo == "Miscelaneo") {
-		emp = Miscelaneo::leerEmpleado(file);
-		return new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+		pla = new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+
+		if (estado)pla->setAceptado(estado);
+		else pla->setAceptado(estado);
+
+		return pla;
 	}
 
 	getline(file, tipo, '\t');
@@ -162,5 +184,11 @@ ContratoBase* PlazoFijo::leerContrato(ifstream& file)
 		avi = AvionMilitar::leerAvion(file);
 	}
 
-	return new PlazoFijo(desc, cod, sal, *avi, *emp, *fIng, *fCul);
+	pla = new PlazoFijo(desc, cod, sal, *avi, *emp, *fIng, *fCul);
+
+	if (estado)pla->setAceptado(estado);
+	else pla->setAceptado(estado);
+
+	return pla;
+
 }

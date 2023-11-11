@@ -12,7 +12,6 @@ ContratoBase::ContratoBase(string desc, string cod, double sala, Empleado& emp, 
 
 ContratoBase::ContratoBase(string desc, string cod, double sala, Avion& av, Empleado& emp, Fecha& fIng) :descPuesto(desc), codContrato(cod), salario(sala), avion(av.copia()), empleado(emp.copia()), fIngreso(new Fecha(fIng)), fCulminacion(NULL)
 {
-
 }
 
 ContratoBase::ContratoBase(string desc, string cod, double sala, Empleado& emp, Fecha& fIng): descPuesto(desc), codContrato(cod), salario(sala), avion(NULL), empleado(emp.copia()), fIngreso(new Fecha(fIng)), fCulminacion(NULL)
@@ -94,6 +93,11 @@ void ContratoBase::setAceptado(bool ace)
 
 void ContratoBase::setHorario(string hor)
 {
+}
+
+Plaza* ContratoBase::getPlaza()
+{
+	return NULL;
 }
 
 bool ContratoBase::estaVencido(Fecha& actual)

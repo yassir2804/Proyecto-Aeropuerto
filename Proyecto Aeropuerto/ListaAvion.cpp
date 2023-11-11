@@ -335,7 +335,7 @@ string ListaAvion::imprimirAvionesConTripulacion(ListaNodoContrato& list)
 		aux2 = list.getPrimero();
 
 		while (aux2 != NULL) {
-			if (aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
+			if (typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Administrativo) && typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Miscelaneo) && aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
 				s << "*----------TRIPULANTE "<<contador++<<"--------------*" << endl << endl
 					<< aux2->getContratoBase()->getEmpleado()->toString();
 				tripulacion = true; 
@@ -374,7 +374,7 @@ string ListaAvion::imprimirTripulacionAvionComercial(ListaNodoContrato& list)
 			aux2 = list.getPrimero();
 
 			while (aux2 != NULL) {
-				if (aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
+				if (typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Administrativo) && typeid(*aux2->getContratoBase()->getEmpleado()) != typeid(Miscelaneo) && aux2->getContratoBase()->getAvion()->getNumeroDePlaca() == aux->getAvion()->getNumeroDePlaca()) {
 					s << "*----------TRIPULANTE " << contador++ << "--------------*" << endl << endl
 						<< aux2->getContratoBase()->getEmpleado()->toString();
 					tripulacion = true;

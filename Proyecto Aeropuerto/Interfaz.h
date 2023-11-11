@@ -86,7 +86,6 @@ public:
 	//Metodoso para las consultas
 	static void consultaTrabajadorPorCedulaYAeronave(Aeropuerto* ar);
 	static void consultaContratoConSuNumeroYTipo(Aeropuerto* ar);
-	/*static void consultaContratoConSuNumeroYTipo(Aeropuerto* ar);*/
 	static void consultaAvionCivil(Aeropuerto* ar);
 
 	static void msjErorrIngresar(); 

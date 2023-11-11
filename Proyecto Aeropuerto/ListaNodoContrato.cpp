@@ -505,7 +505,7 @@ string ListaNodoContrato::imprimirPilotosDeAvionesCarga()
 	s << "--------LISTA DE PILOTOS DE AVIONES DE CARGA--------" << endl << endl;
 
 	while (aux != NULL) {
-		if (typeid(*aux->getContratoBase()->getAvion()) == typeid(AvionCarga) && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto)) {
+		if (typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto) && typeid(*aux->getContratoBase()->getAvion()) == typeid(AvionCarga) && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto)) {
 			s << aux->getContratoBase()->getEmpleado()->toString() << endl;
 			hayPilotos = true;
 		}

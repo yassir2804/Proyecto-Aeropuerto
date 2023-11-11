@@ -10,6 +10,7 @@
 #include "AvionComercial.h"
 #include "AvionCarga.h"
 #include "AvionMilitar.h"
+#include "Plaza.h"
 
 class ContratoBase {
 protected:
@@ -56,6 +57,8 @@ public:
 	virtual void setAceptado(bool ace);
 
 	virtual void setHorario(string hor);
+
+	virtual Plaza* getPlaza();
 
 
 	//toString
