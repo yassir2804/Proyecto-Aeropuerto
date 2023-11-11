@@ -458,8 +458,10 @@ void Interfaz::ingresarAvionComercial(Aeropuerto* ar)
 	cin >> yy; cout << endl;
 	cout << "   Digite la distancia recorrida por el avion: ";
 	cin >> dis; cout << endl;
-	cout << "   Ingrese la categoria: ";
-	cin >> cat; cout << endl;
+	do {
+		cout << "   Ingrese la categoria: ";
+		cin >> cat; cout << endl;
+	} while (cat != "310" && cat != "747" && cat != "767" && cat != "777" && cat != "130" && cat != "850");
 	cout << "   Digite el tipo del avion: ";
 	cin >> tip; cout << endl;
 
@@ -499,8 +501,10 @@ void Interfaz::ingresarAvionCarga(Aeropuerto* ar)
 	cin >> yy; cout << endl;
 	cout << "   Digite la distancia recorrida por el avion: ";
 	cin >> dis; cout << endl;
-	cout << "   Ingrese la categoria: ";
-	cin >> cat; cout << endl;
+	do {
+		cout << "   Ingrese la categoria: ";
+		cin >> cat; cout << endl;
+	} while (cat != "A319" && cat != "A320" && cat != "A321" && cat != "A330" && cat != "A340" && cat != "B737" && cat != "B777");
 	cout << "   Digite el tipo del avion: ";
 	cin >> tip; cout << endl;
 	cout << "   Digite el alto de la puerta: ";
@@ -544,8 +548,10 @@ void Interfaz::ingresaAvionMilitar(Aeropuerto* ar)
 	cin >> yy; cout << endl;
 	cout << "   Digite la distancia recorrida por el avion: ";
 	cin >> dis; cout << endl;
-	cout << "   Ingrese la categoria: ";
-	cin >> cat; cout << endl;
+	do {
+		cout << "   Ingrese la categoria: ";
+		cin >> cat; cout << endl;
+	} while (cat != "M300" && cat != "M130");
 	cout << "   Digite el tipo del avion: ";
 	cin >> tip; cout << endl;
 	cout << "   Digite la velocidad maxima: ";
