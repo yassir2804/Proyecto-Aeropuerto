@@ -2,7 +2,14 @@
 #include"Empleado.h"
 #include"Avion.h"
 #include"Fecha.h"
-
+#include"Piloto.h"
+#include"Copiloto.h"
+#include"Azafata.h"
+#include"Administrativo.h"
+#include "Miscelaneo.h"
+#include "AvionComercial.h"
+#include "AvionCarga.h"
+#include "AvionMilitar.h"
 
 class ContratoBase {
 protected:
@@ -40,7 +47,8 @@ public:
 	void setSalario(double sal);
 	void setEmpleado(Empleado& emp);
 	void setAvion(Avion& av);
-
+	void setFechaIngreso(Fecha& fech);
+	void setFechaCulminacion(Fecha& fech);
 
 	virtual bool estaVencido(Fecha& actual);
 	virtual bool getAceptado();
@@ -53,5 +61,8 @@ public:
 	//toString
 	virtual string imrprimirContratoYEmpleado()=0;
 	virtual string toString() = 0;
+
+
+	virtual void guardarContrato(ofstream& file)=0;
 
 };

@@ -39,4 +39,6 @@ public:
 	string imprimirAvionesDeMasDe20(Fecha& act);
 	string toString();
 
+	void guardarListaAvion();
+	void leerListaAvion();
 };

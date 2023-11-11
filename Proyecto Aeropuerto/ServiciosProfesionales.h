@@ -29,5 +29,7 @@ public:
 
 	string imrprimirContratoYEmpleado();
 
+	void guardarContrato(ofstream& );
+	static ContratoBase* leerContrato(ifstream&);
 
 };

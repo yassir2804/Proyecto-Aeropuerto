@@ -38,3 +38,25 @@ Empleado* Administrativo::copia()
 	return new Administrativo(nombre, cedula, edad, ocupacion, titulo);
 }
 
+void Administrativo::guardarEmpleado(ofstream& file)
+{
+	file << "Administrativo" << '\t' << nombre << '\t' << cedula << '\t' << edad << '\t' << ocupacion << '\t' << titulo << '\n';
+}
+
+Empleado* Administrativo::leerEmpleado(ifstream& file)
+{
+	string nom, ced, edS, ocu, tit;
+	int ed;
+	getline(file, nom, '\t');
+	getline(file, ced, '\t');
+	getline(file, edS, '\t');
+	getline(file, ocu, '\t');
+	getline(file, tit, '\n');
+
+	stringstream e(edS);
+	e >> ed;
+
+
+	return new Administrativo(nom, ced, ed, ocu, tit);
+}
+

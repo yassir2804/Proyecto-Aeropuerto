@@ -22,4 +22,7 @@ public:
 	virtual void setTitulo(string num);
 	virtual void setGradoEsc(string gra);
 
+	virtual void guardarEmpleado(ofstream& file)=0;
+
+
 };

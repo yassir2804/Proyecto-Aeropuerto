@@ -21,6 +21,7 @@ public:
 	void control2();
 	void control3();
 	void control4();
+	void control5();
 
 	void control1_1();
 	void control1_2();

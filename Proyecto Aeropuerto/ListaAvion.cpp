@@ -125,7 +125,7 @@ bool ListaAvion::existeAvionCivilPorPlaca(string pla)
 
 
 	while (aux != NULL) {
-		if (aux->getAvion()->getNumeroDePlaca() == pla && (typeid(*aux->getAvion()) == typeid(AvionCarga) || typeid(*aux->getAvion()) == typeid(AvionComercial))) {
+		if ((typeid(*aux->getAvion()) == typeid(AvionCarga) || typeid(*aux->getAvion()) == typeid(AvionComercial)) && aux->getAvion()->getNumeroDePlaca() == pla ) {
 			return true;
 		}
 		aux = aux->getSigAvion();
@@ -139,7 +139,7 @@ bool ListaAvion::existeAvionComercialPorPlaca(string pla)
 	NodoAvion* aux = primero;
 
 	while (aux != NULL) {
-		if (aux->getAvion()->getNumeroDePlaca() == pla && ( typeid(*aux->getAvion()) == typeid(AvionComercial))) {
+		if ((typeid(*aux->getAvion()) == typeid(AvionComercial)) && aux->getAvion()->getNumeroDePlaca() == pla) {
 			return true;
 		}
 		aux = aux->getSigAvion();
@@ -153,7 +153,7 @@ bool ListaAvion::existeAvionCargaPorPlaca(string pla)
 	NodoAvion* aux = primero;
 
 	while (aux != NULL) {
-		if ( aux->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getAvion()) == typeid(AvionCarga)) {
+		if (typeid(*aux->getAvion()) == typeid(AvionCarga) && aux->getAvion()->getNumeroDePlaca() == pla ) {
 			return true;
 		}
 		aux = aux->getSigAvion();
@@ -167,7 +167,7 @@ bool ListaAvion::existeAvionMilitarPorPlaca(string pla)
 	NodoAvion* aux = primero;
 
 	while (aux != NULL) {
-		if (aux->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getAvion()) == typeid(AvionMilitar)) {
+		if ( typeid(*aux->getAvion()) == typeid(AvionMilitar) && aux->getAvion()->getNumeroDePlaca() == pla ) {
 			return true;
 		}
 		aux = aux->getSigAvion();
@@ -427,4 +427,59 @@ string ListaAvion::toString()
 	}
 
 	return s.str();
+}
+
+void ListaAvion::guardarListaAvion()
+{
+	NodoAvion* aux = primero;
+	ofstream file;
+	file.open("../ListaAviones.txt", ios::out);
+
+	if (file.good()) {
+		while (aux != NULL) {
+
+
+			aux->getAvion()->guardarAvion(file);
+			aux = aux->getSigAvion();
+
+		}
+	}
+
+	file.close();
+}
+
+void ListaAvion::leerListaAvion()
+{
+	Avion* avi = NULL;
+	string tipo;
+	ifstream file;
+	file.open("../ListaAviones.txt", ios::in);
+
+	if (file.good()) {
+		while (!file.eof()) {
+			getline(file, tipo, '\t');
+
+
+
+			if (tipo == "AvionComercial") {
+				avi = AvionComercial::leerAvion(file);
+			}
+			if (tipo == "AvionCarga") {
+				avi = AvionCarga::leerAvion(file);
+			}
+			if (tipo == "AvionMilitar") {
+				avi = AvionMilitar::leerAvion(file);
+			}
+
+			if (file.eof()) {
+				break;
+			}
+
+			if (avi != NULL) {
+				ingresaAvion(*avi);
+			}
+		}
+	}
+
+	file.close();
 }

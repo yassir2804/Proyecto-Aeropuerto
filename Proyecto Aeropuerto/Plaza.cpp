@@ -58,3 +58,27 @@ Plaza* Plaza::copia()
 {
 	return new Plaza(codigoPlaza, nombrePlaza, ocupada);
 }
+
+void Plaza::guardarPlaza(ofstream& file)
+{
+	string estado;
+	if (ocupada)estado = "Ocupada";
+	else estado = "Libre";
+
+	file << codigoPlaza << '\t' << nombrePlaza << '\t' << estado << '\n';
+}
+
+Plaza* Plaza::leerPlaza(ifstream& file)
+{
+	string cod, nom, ocuS;
+	bool ocu;
+	getline(file, cod, '\t');
+	getline(file, nom, '\t');
+	getline(file, ocuS, '\n');
+
+	if(ocuS == "Ocupada")ocu=true;
+	else ocu = false;
+
+	return  new Plaza(cod, nom,ocu);
+
+}

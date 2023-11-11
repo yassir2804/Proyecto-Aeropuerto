@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<sstream>
+#include<fstream>
 using namespace std;
 
 class Fecha {
@@ -31,5 +32,6 @@ public:
 
 
     Fecha* copia();
-
+    void guardarFecha(ofstream&);
+    static Fecha* leerFecha(ifstream&);
 };

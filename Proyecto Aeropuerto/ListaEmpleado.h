@@ -43,4 +43,8 @@ public:
 	string imprimirPilotos();
 	string toString();
 
+
+	void guardarListaEmpleado();
+	void leerListaEmpleado();
+
 };

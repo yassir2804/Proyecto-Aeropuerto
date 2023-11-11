@@ -48,6 +48,9 @@ public:
 	string imprimeEmpleados();
 	string imprimirEmpleadoConSuAvion(string ced);
 
+	void guardarListaEmpleado();
+	void leerListaEmpleado();
+
 	//metodos de lista avion
 	bool ListaAvionEstaVacio();
 	bool ingresarAvion(Avion& avi);
@@ -71,6 +74,9 @@ public:
 	string imprimirAvionesConTripulacion();
 	string imprimirTripulacionAvionComercial();
 	string imprimirAvionesDeMasDe20(Fecha& act);
+
+	void guardarListaAvion();
+	void leerListaAvion();
 
 	//metodos de lista contrato
 
@@ -105,6 +111,9 @@ public:
 	bool existeServicioProfesionalConCod(string cod);
 	bool existePlazoFijoConCod(string cod);
 	bool existeTiempoIndefinidoConCod(string cod);
+
+	void guardarListaContratos();
+	void leerListaContratos();
 	
 
 	//metodos de lista plazas
@@ -118,5 +127,8 @@ public:
 	Plaza* buscarPlazaPorCodigo(string cod);
 	string imprimirPlazasDisponibles(string pues);
 	string imprimePlazas();
+
+	void guardarListaPlazas();
+	void leerListaPlazas();
 
 };

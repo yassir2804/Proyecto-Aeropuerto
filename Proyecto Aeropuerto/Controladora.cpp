@@ -17,6 +17,7 @@ void Controladora::control0() {
         case 2: control2(); break;
         case 3: control3(); break;
         case 4: control4(); break;
+        case 5: control5(); break;
 
         }
     } while (op != 5);
@@ -25,6 +26,7 @@ void Controladora::control0() {
 int Controladora::controlMenu() {
     return Interfaz::menuPrincipal();
 }
+
 
 void Controladora::control1() {
     
@@ -90,6 +92,14 @@ void Controladora::control4()
         }
 
     } while (op != 4); 
+}
+
+void Controladora::control5()
+{
+    aeropuerto->guardarListaEmpleado();
+    aeropuerto->guardarListaAvion();
+    aeropuerto->guardarListaPlazas();
+    aeropuerto->guardarListaContratos();
 }
 
 void Controladora::control1_1()

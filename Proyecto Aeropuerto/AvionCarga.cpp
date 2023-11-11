@@ -60,5 +60,35 @@ string AvionCarga::toString()
 
 Avion* AvionCarga::copia()
 {
-	return new AvionCarga(*fCreado->copia(), distanciaRecorrida, categoria, tipo, numPlaca, anchoPuerta,alturaPuerta);
+	return new AvionCarga(*fCreado->copia(), distanciaRecorrida, categoria, numPlaca,tipo, anchoPuerta,alturaPuerta);
+}
+
+void AvionCarga::guardarAvion(ofstream& file)
+{
+	file << "AvionCarga" << '\t' << numPlaca << '\t' << distanciaRecorrida << '\t' << tipo << '\t' << categoria << '\t' << anchoPuerta << '\t' << alturaPuerta << '\n';
+
+	if (fCreado != NULL) fCreado->guardarFecha(file);
+}
+
+Avion* AvionCarga::leerAvion(ifstream& file)
+{
+	string pla, disS, tip, cat, anchS, altS;
+	double dis, anch, alt;
+	Fecha* fCre;
+
+	getline(file, pla, '\t');
+	getline(file, disS, '\t');
+	getline(file, tip, '\t');
+	getline(file, cat, '\t');
+	getline(file, anchS, '\t');
+	getline(file, altS, '\n');
+
+	dis = stod(disS);
+	anch = stod(anchS);
+	alt = stod(altS);
+
+	fCre = Fecha::leerFecha(file);
+
+	return new AvionCarga(*fCre, dis, cat, pla,tip, anch, alt);
+
 }

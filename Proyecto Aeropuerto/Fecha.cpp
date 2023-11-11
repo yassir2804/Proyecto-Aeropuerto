@@ -53,3 +53,24 @@ Fecha* Fecha::copia()
 {
 	return new Fecha(dia, mes, anio);
 }
+
+void Fecha::guardarFecha(ofstream& file)
+{
+	file << dia << '\t' << mes << '\t' << anio << '\n';
+}
+
+Fecha* Fecha::leerFecha(ifstream& file)
+{
+	string diaS, mesS, anioS;
+	int dia, mes, anio;
+	getline(file, diaS, '\t');
+	getline(file, mesS, '\t');
+	getline(file, anioS, '\n');
+
+	dia = stoi(diaS);
+	mes = stoi(mesS);
+	anio = stoi(anioS);
+
+	return new Fecha(dia, mes, anio);
+
+}

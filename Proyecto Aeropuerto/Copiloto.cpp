@@ -36,3 +36,24 @@ Empleado* Copiloto::copia()
 {
 	return new Copiloto(nombre, cedula, edad, ocupacion, numTele);
 }
+
+void Copiloto::guardarEmpleado(ofstream& file)
+{
+	file << "Copiloto" << '\t' << nombre << '\t' << cedula << '\t' << edad << '\t' << ocupacion << '\t' << numTele << '\n';
+}
+
+Empleado* Copiloto::leerEmpleado(ifstream& file)
+{
+	string nom, ced, edS, ocu, num;
+	int ed;
+	getline(file, nom, '\t');
+	getline(file, ced, '\t');
+	getline(file, edS, '\t');
+	getline(file, ocu, '\t');
+	getline(file, num, '\n');
+
+	ed = stoi(edS);
+
+
+	return new Copiloto(nom, ced, ed, ocu, num);
+}

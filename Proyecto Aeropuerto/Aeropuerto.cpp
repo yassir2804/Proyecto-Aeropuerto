@@ -6,6 +6,16 @@ Aeropuerto::Aeropuerto(string nom, string ced, string tel): nombreE(nom),cedulaJ
 	listE = new ListaEmpleado();
 	listC = new ListaNodoContrato();
 	listP = new ListaPlaza();
+
+	leerListaEmpleado();
+	leerListaAvion();
+	leerListaPlazas();
+	leerListaContratos();
+
+	cout << imprimeContratos();
+
+	cout << "{";
+
 }
 
 Aeropuerto::~Aeropuerto()
@@ -123,9 +133,19 @@ string Aeropuerto::imprimeEmpleados()
 	return listE->toString();
 }
 
-string Aeropuerto::imprimirEmpleadoConSuAvion( string ced)
+string Aeropuerto::imprimirEmpleadoConSuAvion(string ced)
 {
 	return listE->imprimirEmpleadoConSuAvion(*listC,ced);
+}
+
+void Aeropuerto::guardarListaEmpleado()
+{
+	listE->guardarListaEmpleado();
+}
+
+void Aeropuerto::leerListaEmpleado()
+{
+	listE->leerListaEmpleado();
 }
 
 bool Aeropuerto::ingresarAvion(Avion& avi)
@@ -245,6 +265,16 @@ string Aeropuerto::imprimirTripulacionAvionComercial()
 string Aeropuerto::imprimirAvionesDeMasDe20(Fecha& act)
 {
 	return listA->imprimirAvionesDeMasDe20(act);
+}
+
+void Aeropuerto::guardarListaAvion()
+{
+	listA->guardarListaAvion();
+}
+
+void Aeropuerto::leerListaAvion()
+{
+	listA->leerListaAvion();
 }
 
 bool Aeropuerto::ListaContratosEstaVacio()
@@ -399,6 +429,14 @@ bool Aeropuerto::existeTiempoIndefinidoConCod(string cod)
 {
 	return listC->existeTiempoIndefinidoConCod(cod);
 }
+void Aeropuerto::guardarListaContratos()
+{
+	listC->guardarListaContratos();
+}
+void Aeropuerto::leerListaContratos()
+{
+	listC->leerListaContratos();
+}
 bool Aeropuerto::ListaPlazaEstaVacio()
 {
 	return listP->estaVacio();
@@ -438,4 +476,14 @@ string Aeropuerto::imprimirPlazasDisponibles(string pues)
 string Aeropuerto::imprimePlazas()
 {
 	return listP->toString();
+}
+
+void Aeropuerto::guardarListaPlazas()
+{
+	listP->guardarListaPlazas();
+}
+
+void Aeropuerto::leerListaPlazas()
+{
+	listP->leerListaPlazas();
 }

@@ -294,7 +294,7 @@ string ListaEmpleado::imprimirEmpleadoConSuAvion(ListaNodoContrato& list, string
 		aux = aux->getSigEmpleado();
 	}
 
-
+	return s.str();
 }
 
 string ListaEmpleado::imprimirMiscelaneos()
@@ -398,4 +398,63 @@ string ListaEmpleado::toString()
 
 
 	return s.str();
+}
+
+void ListaEmpleado::guardarListaEmpleado()
+{
+	NodoEmpleado* aux = primero;
+	ofstream file;
+	file.open("../ListaEmpleados.txt", ios::out);
+
+	if (file.good()) {
+		while (aux != NULL) {
+
+
+			aux->getEmpleado()->guardarEmpleado(file);
+			aux = aux->getSigEmpleado();
+
+		}
+	}
+
+	file.close();
+
+}
+
+void ListaEmpleado::leerListaEmpleado()
+{
+	Empleado* emp = NULL;
+	string tipo;
+	ifstream file;
+	file.open("../ListaEmpleados.txt", ios::in);
+
+	if (file.good()) {
+		while (!file.eof()) {
+			getline(file, tipo, '\t');
+
+			if (tipo == "Piloto") {
+				emp = Piloto::leerEmpleado(file);
+			}
+			if (tipo == "Copiloto") {
+				emp = Copiloto::leerEmpleado(file);
+			}
+			if (tipo == "Azafata") {
+				emp = Azafata::leerEmpleado(file);
+			}
+			if (tipo == "Administrativo") {
+				emp = Administrativo::leerEmpleado(file);
+			}
+			if (tipo == "Miscelaneo") {
+				emp = Miscelaneo::leerEmpleado(file);
+			}
+			if (file.eof()) {
+				break;
+			}
+
+			if (emp != NULL) {
+				ingresaEmpleado(*emp);
+			}
+		}
+	}
+
+	file.close();
 }

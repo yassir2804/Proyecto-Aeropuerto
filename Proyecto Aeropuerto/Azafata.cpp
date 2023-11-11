@@ -37,3 +37,25 @@ Empleado* Azafata::copia()
 {
 	return new Azafata(nombre, cedula, edad, ocupacion, nacionalidad);
 }
+
+void Azafata::guardarEmpleado(ofstream& file)
+{
+	file << "Azafata" << '\t' << nombre << '\t' << cedula << '\t' << edad << '\t' << ocupacion << '\t' << nacionalidad << '\n';
+}
+
+Empleado* Azafata::leerEmpleado(ifstream& file)
+{
+	string nom, ced, edS, ocu, nac;
+	int ed;
+	getline(file, nom, '\t');
+	getline(file, ced, '\t');
+	getline(file, edS, '\t');
+	getline(file, ocu, '\t');
+	getline(file, nac, '\n');
+
+	stringstream e(edS);
+	e >> ed;
+
+
+	return new Azafata(nom, ced, ed, ocu, nac);
+}

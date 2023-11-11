@@ -110,7 +110,7 @@ bool ListaNodoContrato::existeServicioProfesionalConCod(string cod)
 
 
 	while (aux != NULL) {
-		if (typeid(*aux->getContratoBase()) == typeid(ServiciosProfesionales)&& aux->getContratoBase()->getCodContrato() == cod ) {
+		if (typeid(*aux->getContratoBase()) == typeid(ServiciosProfesionales) && aux->getContratoBase()->getCodContrato() == cod ) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -173,7 +173,7 @@ bool ListaNodoContrato::existeAvionConPiloto(string pla)
 
 	while (aux != NULL) {
 
-		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto)){
+		if (typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Piloto) && aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla ){
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -190,7 +190,7 @@ bool ListaNodoContrato::existeAvionConCopiloto(string pla)
 
 	while (aux != NULL) {
 
-		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Copiloto)) {
+		if ( typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Copiloto) && aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla ) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -207,7 +207,7 @@ bool ListaNodoContrato::existeAvionConAzafata(string pla)
 
 	while (aux != NULL) {
 
-		if (aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla && typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Azafata)) {
+		if ( typeid(*aux->getContratoBase()->getEmpleado()) == typeid(Azafata)  && aux->getContratoBase()->getAvion()->getNumeroDePlaca() == pla) {
 			return true;
 		}
 		aux = aux->getNodoContratoBase();
@@ -531,4 +531,56 @@ string ListaNodoContrato::toString()
 	}
 	return s.str();
 
+}
+
+void ListaNodoContrato::guardarListaContratos()
+{
+	NodoContratoBase* aux = primero;
+	ofstream file;
+	file.open("../ListaContratos.txt", ios::out);
+
+	if (file.good()) {
+
+		while (aux != NULL) {
+
+
+			aux->getContratoBase()->guardarContrato(file);
+			aux = aux->getNodoContratoBase();
+
+		}
+	}
+
+	file.close();
+}
+
+void ListaNodoContrato::leerListaContratos()
+{
+	ContratoBase* con = NULL;
+	string tipo;
+	ifstream file;
+	file.open("../ListaContratos.txt", ios::in);
+
+	if (file.good()) {
+		while (!file.eof()) {
+			getline(file, tipo, '\t');
+
+			if (tipo == "ServiciosProfesionales") {
+				con = ServiciosProfesionales::leerContrato(file);
+			}
+			if (tipo == "PlazoFijo") {
+				con = PlazoFijo::leerContrato(file);
+			}
+			if (tipo == "TiempoIndefinido") {
+				con = TiempoIndefinido::leerContrato(file);
+			}
+			if (file.eof()) {
+				break;
+			}
+			if (con != NULL) {
+				ingresaContrato(*con);
+			}
+		}
+	}
+
+	file.close();
 }

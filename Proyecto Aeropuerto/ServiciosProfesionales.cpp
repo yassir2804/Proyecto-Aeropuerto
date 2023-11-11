@@ -66,7 +66,6 @@ string ServiciosProfesionales::toString()
 	}
 
 
-
 	return s.str();
 }
 
@@ -95,5 +94,72 @@ string ServiciosProfesionales::imrprimirContratoYEmpleado()
 		s << empleado->toString();
 	}
 	return s.str();
+}
+
+void ServiciosProfesionales::guardarContrato(ofstream& file)
+{
+	file << "ServiciosProfesionales" << '\t' << codContrato << '\t' << descPuesto << '\t' << salario << '\t' << tipoServicio << '\t' << horario << '\n';
+
+	if (fIngreso != NULL) fIngreso->guardarFecha(file);
+	if (fCulminacion != NULL) fCulminacion->guardarFecha(file);
+	if (empleado != NULL) empleado->guardarEmpleado(file);
+	if (avion != NULL) avion->guardarAvion(file);
+	
+}
+
+ContratoBase* ServiciosProfesionales::leerContrato(ifstream& file)
+{
+	string cod, desc, salS, tip, hor, tipo;
+	double sal;
+	Fecha* fIng = NULL;
+	Fecha* fCul = NULL;
+	Empleado* emp = NULL;
+	Avion* avi = NULL;
+
+	getline(file, cod, '\t');
+	getline(file, desc, '\t');
+	getline(file, salS, '\t');
+	getline(file, tip, '\t');
+	getline(file, hor, '\n');
+
+	sal = stod(salS);
+
+	fIng = Fecha::leerFecha(file);
+	fCul = Fecha::leerFecha(file);
+
+	getline(file, tipo, '\t');
+
+	if (tipo == "Piloto") {
+		emp = Piloto::leerEmpleado(file);
+	}
+	if (tipo == "Copiloto") {
+		emp = Copiloto::leerEmpleado(file);
+	}
+	if (tipo == "Azafata") {
+		emp = Azafata::leerEmpleado(file);
+	}
+	if (tipo == "Administrativo") {
+		emp = Administrativo::leerEmpleado(file);
+		return new ServiciosProfesionales(desc, cod, sal, *emp, tip, hor, *fIng, *fCul);
+	}
+	if (tipo == "Miscelaneo") {
+		emp = Miscelaneo::leerEmpleado(file);
+		return new ServiciosProfesionales(desc, cod, sal, *emp, tip, hor, *fIng, *fCul);
+	}
+
+	getline(file, tipo, '\t');
+
+
+	if (tipo == "AvionComercial") {
+		avi = AvionComercial::leerAvion(file);
+	}
+	if (tipo == "AvionCarga") {
+		avi = AvionCarga::leerAvion(file);
+	}
+	if (tipo == "AvionMilitar") {
+		avi = AvionMilitar::leerAvion(file);
+	}
+
+	return new ServiciosProfesionales(desc,cod,sal,*avi,*emp,tip,hor,*fIng,*fCul);
 }
 

@@ -25,4 +25,7 @@ public:
 	string imprimirPlazasDisponibles(string pues);
 	string toString();
 
+	void guardarListaPlazas();
+	void leerListaPlazas();
+
 };

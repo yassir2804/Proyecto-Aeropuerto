@@ -99,3 +99,68 @@ string PlazoFijo::imrprimirContratoYEmpleado()
 
 	return s.str();
 }
+
+void PlazoFijo::guardarContrato(ofstream& file)
+{
+	file << "PlazoFijo" << '\t' << codContrato << '\t' << descPuesto << '\t' << salario << '\n';
+
+	if (fIngreso != NULL) fIngreso->guardarFecha(file);
+	if (fCulminacion != NULL) fCulminacion->guardarFecha(file);
+	if (empleado != NULL) empleado->guardarEmpleado(file);
+	if (avion != NULL) avion->guardarAvion(file);
+
+}
+
+ContratoBase* PlazoFijo::leerContrato(ifstream& file)
+{
+	string cod, desc, salS, tipo;
+	double sal;
+	Fecha* fIng;
+	Fecha* fCul;
+	Empleado* emp = NULL;
+	Avion* avi = NULL;
+
+	getline(file, cod, '\t');
+	getline(file, desc, '\t');
+	getline(file, salS, '\n');
+
+	sal = stod(salS);
+
+	fIng = Fecha::leerFecha(file);
+	fCul = Fecha::leerFecha(file);
+
+	getline(file, tipo, '\t');
+
+	if (tipo == "Piloto") {
+		emp = Piloto::leerEmpleado(file);
+	}
+	if (tipo == "Copiloto") {
+		emp = Copiloto::leerEmpleado(file);
+	}
+	if (tipo == "Azafata") {
+		emp = Azafata::leerEmpleado(file);
+	}
+	if (tipo == "Administrativo") {
+		emp = Administrativo::leerEmpleado(file);
+		return new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+	}
+	if (tipo == "Miscelaneo") {
+		emp = Miscelaneo::leerEmpleado(file);
+		return new PlazoFijo(desc, cod, sal, *emp, *fIng, *fCul);
+	}
+
+	getline(file, tipo, '\t');
+
+
+	if (tipo == "AvionComercial") {
+		avi = AvionComercial::leerAvion(file);
+	}
+	if (tipo == "AvionCarga") {
+		avi = AvionCarga::leerAvion(file);
+	}
+	if (tipo == "AvionMilitar") {
+		avi = AvionMilitar::leerAvion(file);
+	}
+
+	return new PlazoFijo(desc, cod, sal, *avi, *emp, *fIng, *fCul);
+}

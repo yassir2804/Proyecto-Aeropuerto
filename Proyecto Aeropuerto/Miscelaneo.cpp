@@ -38,3 +38,25 @@ Empleado* Miscelaneo::copia()
 {
 	return new Miscelaneo(nombre, cedula, edad, ocupacion, gradoEsc);
 }
+
+void Miscelaneo::guardarEmpleado(ofstream& file)
+{
+	file << "Miscelaneo" << '\t' << nombre << '\t' << cedula << '\t' << edad << '\t' << ocupacion << '\t' << gradoEsc << '\n';
+}
+
+Empleado* Miscelaneo::leerEmpleado(ifstream& file)
+{
+	string nom, ced, edS, ocu, grad;
+	int ed;
+	getline(file, nom, '\t');
+	getline(file, ced, '\t');
+	getline(file, edS, '\t');
+	getline(file, ocu, '\t');
+	getline(file, grad, '\n');
+
+	stringstream e(edS);
+	e >> ed;
+
+
+	return new Miscelaneo(nom, ced, ed, ocu, grad);
+}

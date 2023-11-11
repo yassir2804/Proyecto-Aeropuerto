@@ -17,4 +17,5 @@ public:
 	virtual string toString() = 0;
 	virtual Avion* copia() = 0;
 
+	virtual void guardarAvion(ofstream&) = 0;
 };

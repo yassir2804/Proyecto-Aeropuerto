@@ -677,6 +677,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 					{
 						if (typeid(*emp) == typeid(Piloto)) {
 
+							system("cls");
 							cout << ar->imprimeAviones();
 							cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
@@ -707,6 +708,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 							if (ar->existeAvionCivil() == false) msjNoAvionCivil();
 							else
 							{
+								system("cls");
 								cout << ar->imprimeAvionesCiviles();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
@@ -738,6 +740,7 @@ void Interfaz::ingresarServiciosProfesionales(Aeropuerto* ar)
 							if (ar->existeAvionComercial() == false) msjNoAvionComercial();
 							else
 							{
+								system("cls");
 								cout << ar->imprimeAvionesComerciales();
 								cout << "   Ingrese la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
@@ -840,7 +843,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 					else
 					{
 						if (typeid(*emp) == typeid(Piloto)) {
-
+							system("cls");
 							cout << ar->imprimeAviones();
 							cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 							cin >> pla; cout << endl;
@@ -871,6 +874,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							if (ar->existeAvionCivil() == false) msjNoAvionCivil();
 							else
 							{
+								system("cls");
 								cout << ar->imprimeAvionesCiviles();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;
@@ -901,6 +905,7 @@ void Interfaz::ingresarPlazoFijo(Aeropuerto* ar)
 							if (ar->existeAvionComercial() == false) msjNoAvionComercial();
 							else
 							{
+								system("cls");
 								cout << ar->imprimeAvionesComerciales();
 								cout << "   Digite la placa del avion que desea ligar a este contrato: ";
 								cin >> pla; cout << endl;

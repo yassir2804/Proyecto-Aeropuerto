@@ -27,4 +27,8 @@ public:
 	virtual string toString();
 	string imrprimirContratoYEmpleado();
 
+	void guardarContrato(ofstream& file);
+
+	static ContratoBase* leerContrato(ifstream& file);
+
 }; 

@@ -11,4 +11,6 @@ public:
 	virtual string toString() = 0;
 	virtual Empleado* copia() = 0;
 
+	virtual void guardarEmpleado(ofstream& file) = 0;
+
 };

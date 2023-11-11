@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<sstream>
+#include<fstream>
 
 using namespace std;
 
@@ -34,4 +35,7 @@ public:
 
 
 	Plaza* copia();
+
+	void guardarPlaza(ofstream&);
+	static Plaza* leerPlaza(ifstream&);
 };

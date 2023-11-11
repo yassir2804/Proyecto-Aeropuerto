@@ -78,6 +78,16 @@ void ContratoBase::setAvion(Avion& av)
 	avion = av.copia();
 }
 
+void ContratoBase::setFechaIngreso(Fecha& fech)
+{
+	fIngreso = &fech;
+}
+
+void ContratoBase::setFechaCulminacion(Fecha& fech)
+{
+	fCulminacion = &fech;
+}
+
 void ContratoBase::setAceptado(bool ace)
 {
 }

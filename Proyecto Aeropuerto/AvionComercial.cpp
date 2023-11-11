@@ -37,5 +37,30 @@ string AvionComercial::toString()
 
 Avion* AvionComercial::copia()
 {
-	return new AvionComercial(*fCreado->copia(), distanciaRecorrida, categoria, tipo, numPlaca);
+	return new AvionComercial(*fCreado->copia(), distanciaRecorrida, categoria, numPlaca, tipo);
+}
+
+void AvionComercial::guardarAvion(ofstream& file)
+{
+	file << "AvionComercial" << '\t' << numPlaca << '\t' << distanciaRecorrida << '\t' << tipo << '\t' << categoria << '\n';
+
+	if (fCreado != NULL) fCreado->guardarFecha(file);
+}
+
+Avion* AvionComercial::leerAvion(ifstream& file)
+{
+	string pla, disS, tip, cat;
+	double dis;
+	Fecha* fCre;
+
+	getline(file, pla, '\t');
+	getline(file, disS, '\t');
+	getline(file, tip, '\t');
+	getline(file, cat, '\n');
+
+	dis = stod(disS);
+
+	fCre = Fecha::leerFecha(file);
+
+	return new AvionComercial(*fCre, dis, cat, pla,tip);
 }

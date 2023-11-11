@@ -1,0 +1,4 @@
+1	Piloto	Ocupada
+5	5	Libre
+125	125	Ocupada
+12	125	Ocupada

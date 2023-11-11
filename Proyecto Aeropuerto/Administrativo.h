@@ -19,4 +19,7 @@ public:
 	string toString();
 	Empleado* copia();
 
+	void guardarEmpleado(ofstream& file);
+	static Empleado* leerEmpleado(ifstream& file);
+
 };

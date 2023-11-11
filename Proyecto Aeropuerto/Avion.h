@@ -2,6 +2,7 @@
 #include"Fecha.h"
 #include"Clase-Servicios.h"
 #include <iomanip>
+#include <fstream>
 
 
 class Avion {
@@ -44,4 +45,6 @@ public:
 	virtual double areaPuerta();
 
 	bool masDe20Anios(Fecha& act);
+
+	virtual void guardarAvion(ofstream&) = 0;
 };

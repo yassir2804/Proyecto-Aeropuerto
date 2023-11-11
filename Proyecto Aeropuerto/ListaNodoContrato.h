@@ -50,7 +50,9 @@ public:
 	string imprimirContratosConSuEmpleado();
 	string imprimirEmpleadosContratados();
 	string imprimirPilotosDeAvionesCarga();
-	string imprimirEmpleadoConSuAvion(string ced);
 
 	string toString();
+
+	void guardarListaContratos();
+	void leerListaContratos();
 }; 

@@ -134,3 +134,47 @@ string ListaPlaza::toString()
 	}
 	return s.str();
 }
+
+void ListaPlaza::guardarListaPlazas()
+{
+	NodoPlaza* aux = primero;
+	ofstream file;
+	file.open("../ListaPlazas.txt", ios::out);
+
+	if (file.good()) {
+		while (aux != NULL) {
+
+			aux->getPlaza()->guardarPlaza(file);
+			aux = aux->getSiguienteNodoPlaza();
+
+		}
+	}
+
+	file.close();
+
+}
+
+void ListaPlaza::leerListaPlazas()
+{
+	Plaza* pla = NULL;
+	ifstream file;
+	file.open("../ListaPlazas.txt", ios::in);
+
+	if (file.good()) {
+		while (!file.eof()) {
+
+			pla = Plaza::leerPlaza(file);
+
+			if (file.eof()) {
+				break;
+			}
+
+			if (pla != NULL) {
+				ingresaPlaza(*pla);
+			}
+		}
+	}
+
+	file.close();
+}
+

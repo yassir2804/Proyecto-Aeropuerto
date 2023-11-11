@@ -32,4 +32,7 @@ public:
 	//toString
 	string toString();
 	Avion* copia();
+
+	void guardarAvion(ofstream&);
+	static Avion* leerAvion(ifstream&);
 }; 

@@ -25,5 +25,8 @@ public:
 	string toString();
 
 	Avion* copia();
+
+	void guardarAvion(ofstream&);
+	static Avion* leerAvion(ifstream&);
 };
 #pragma once
