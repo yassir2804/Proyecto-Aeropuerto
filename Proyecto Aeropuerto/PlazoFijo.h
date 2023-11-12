@@ -1,3 +1,7 @@
+//Programadores que realizaron la creacion del codigo para el aeropuerto.
+//Fernando Felipe Santamaria Leiva 402640589
+//Yassir Jiménez Carballo 402630944
+
 #pragma once
 #include"ContratoBase.h"
 

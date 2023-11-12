@@ -149,7 +149,6 @@
     <ClCompile Include="ListaNodoContrato.cpp" />
     <ClCompile Include="ListasPlazas.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Main2.cpp" />
     <ClCompile Include="Miscelaneo.cpp" />
     <ClCompile Include="NodoAvion.cpp" />
     <ClCompile Include="NodoContrato.cpp" />
